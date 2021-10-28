@@ -3,7 +3,7 @@
     <h1>Pages</h1>
     <ul>
       <li v-for="page in $page.pages" :key="page.path">
-        <g-link :to="$page.path">{{ page.path }}</g-link>
+        <g-link :to="page.path">{{ page.path }}</g-link>
       </li>
     </ul>
   </Layout>
