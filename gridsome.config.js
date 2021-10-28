@@ -15,6 +15,14 @@ module.exports = {
       options: {
         typeName: "BlogPost",
         path: "./content/blog/**/*.md",
+        remark: {
+          plugins: [
+            [
+              "gridsome-plugin-remark-shiki",
+              { theme: "nord", skipInline: true },
+            ],
+          ],
+        },
       },
     },
   ],

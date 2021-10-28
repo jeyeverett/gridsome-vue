@@ -4601,6 +4601,15 @@
     "section-matter" "^1.0.0"
     "strip-bom-string" "^1.0.0"
 
+"gridsome-plugin-remark-shiki@^0.6.0":
+  "integrity" "sha512-2V+P/O9vumRxa6ymcqAn5V6pAsv/iYffzV6i6vFmZHL/+asFlXeFXEOYwbyccCjIqXDiLzB//oaz+PHwFpkw6A=="
+  "resolved" "https://registry.npmjs.org/gridsome-plugin-remark-shiki/-/gridsome-plugin-remark-shiki-0.6.0.tgz"
+  "version" "0.6.0"
+  dependencies:
+    "shiki" "^0.2.6"
+    "shiki-languages" "^0.2.6"
+    "unist-util-visit" "^2.0.1"
+
 "gridsome@^0.7.0", "gridsome@0.x":
   "integrity" "sha512-2/koBt4YWoTKRQR+7Gy84EHbNTa9y6JgRjBO84wOpZjEWglwxDh0cFAq8QbhHnf13mXbJVRm5aHBESO5iD5BcA=="
   "resolved" "https://registry.npmjs.org/gridsome/-/gridsome-0.7.23.tgz"
@@ -5796,6 +5805,13 @@
   dependencies:
     "minimist" "^1.2.0"
 
+"json5@^2.1.0":
+  "integrity" "sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA=="
+  "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.0.tgz"
+  "version" "2.2.0"
+  dependencies:
+    "minimist" "^1.2.5"
+
 "json5@^2.1.2":
   "integrity" "sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.0.tgz"
@@ -6820,6 +6836,13 @@
   "version" "2.0.1"
   dependencies:
     "mimic-fn" "^1.0.0"
+
+"onigasm@^2.2.5":
+  "integrity" "sha512-F+th54mPc0l1lp1ZcFMyL/jTs2Tlq4SqIHKIXGZOR/VkHkF9A7Fr5rRr5+ZG/lWeRsyrClLYRq7s/yFQ/XhWCA=="
+  "resolved" "https://registry.npmjs.org/onigasm/-/onigasm-2.2.5.tgz"
+  "version" "2.2.5"
+  dependencies:
+    "lru-cache" "^5.1.1"
 
 "optimize-css-assets-webpack-plugin@^5.0.1":
   "integrity" "sha512-mgFS1JdOtEGzD8l+EuISqL57cKO+We9GcoiQEmdCWRqqck+FGNmYJtx9qfAPzEz+lRrlThWMuGDaRkI/yWNx/Q=="
@@ -8587,6 +8610,31 @@
   "resolved" "https://registry.npmjs.org/shebang-regex/-/shebang-regex-1.0.0.tgz"
   "version" "1.0.0"
 
+"shiki-languages@^0.2.6", "shiki-languages@^0.2.7":
+  "integrity" "sha512-REmakh7pn2jCn9GDMRSK36oDgqhh+rSvJPo77sdWTOmk44C5b0XlYPwJZcFOMJWUZJE0c7FCbKclw4FLwUKLRw=="
+  "resolved" "https://registry.npmjs.org/shiki-languages/-/shiki-languages-0.2.7.tgz"
+  "version" "0.2.7"
+  dependencies:
+    "vscode-textmate" "^5.2.0"
+
+"shiki-themes@^0.2.7":
+  "integrity" "sha512-ZMmboDYw5+SEpugM8KGUq3tkZ0vXg+k60XX6NngDK7gc1Sv6YLUlanpvG3evm57uKJvfXsky/S5MzSOTtYKLjA=="
+  "resolved" "https://registry.npmjs.org/shiki-themes/-/shiki-themes-0.2.7.tgz"
+  "version" "0.2.7"
+  dependencies:
+    "json5" "^2.1.0"
+    "vscode-textmate" "^5.2.0"
+
+"shiki@^0.2.6":
+  "integrity" "sha512-bwVc7cdtYYHEO9O+XJ8aNOskKRfaQd5Y4ovLRfbQkmiLSUaR+bdlssbZUUhbQ0JAFMYcTcJ5tjG5KtnufttDHQ=="
+  "resolved" "https://registry.npmjs.org/shiki/-/shiki-0.2.7.tgz"
+  "version" "0.2.7"
+  dependencies:
+    "onigasm" "^2.2.5"
+    "shiki-languages" "^0.2.7"
+    "shiki-themes" "^0.2.7"
+    "vscode-textmate" "^5.2.0"
+
 "side-channel@^1.0.4":
   "integrity" "sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw=="
   "resolved" "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz"
@@ -9668,6 +9716,15 @@
   dependencies:
     "unist-util-visit-parents" "^2.0.0"
 
+"unist-util-visit@^2.0.1":
+  "integrity" "sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q=="
+  "resolved" "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-2.0.3.tgz"
+  "version" "2.0.3"
+  dependencies:
+    "@types/unist" "^2.0.0"
+    "unist-util-is" "^4.0.0"
+    "unist-util-visit-parents" "^3.0.0"
+
 "unist-util-visit@^2.0.3":
   "integrity" "sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q=="
   "resolved" "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-2.0.3.tgz"
@@ -9937,6 +9994,11 @@
   "integrity" "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
   "resolved" "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz"
   "version" "1.1.2"
+
+"vscode-textmate@^5.2.0":
+  "integrity" "sha512-4CvPHmfuZQaXrcCpathdh6jo7myuR+MU8BvscgQADuponpbqfmu2rwTOtCXhGwwEgStvJF8V4s9FwMKRVLNmKQ=="
+  "resolved" "https://registry.npmjs.org/vscode-textmate/-/vscode-textmate-5.4.1.tgz"
+  "version" "5.4.1"
 
 "vue-hot-reload-api@^2.3.0":
   "integrity" "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog=="
