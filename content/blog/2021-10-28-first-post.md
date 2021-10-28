@@ -1,6 +1,6 @@
 ---
 slug: "first-post"
-date: "2020-06-05"
+date: "2021-10-28"
 title: "Hipster Ipsum"
 ---
 
