@@ -8,8 +8,9 @@
         :key="tag.id"
         :to="tag.path"
         class="bg-gray-300 rounded-full px-3 py-2 mr-4 my-4 text-gray-700 hover:text-gray-300 hover:bg-gray-700"
-        >{{ tag.title }}</g-link
       >
+        {{ tag.title }}
+      </g-link>
     </div>
     <div class="mt-8 mb-16 prose xl:prose-lg" v-html="$page.post.content" />
   </Layout>
