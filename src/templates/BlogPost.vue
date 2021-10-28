@@ -2,7 +2,7 @@
   <Layout>
     <h1 class="text-xl font-semibold mb-2">{{ $page.post.title }}</h1>
     <span class="font-light">{{ $page.post.date }}</span>
-    <div class="mt-4" v-html="$page.post.content" />
+    <div class="mt-8 mb-16 prose xl:prose-lg" v-html="$page.post.content" />
   </Layout>
 </template>
 
