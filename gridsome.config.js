@@ -23,11 +23,18 @@ module.exports = {
             ],
           ],
         },
+        refs: {
+          tags: {
+            typeName: "Tag",
+            create: true,
+          },
+        },
       },
     },
   ],
   templates: {
     BlogPost: "/blog/:slug",
+    Tag: "/tag/:id",
   },
   css: {
     loaderOptions: {
