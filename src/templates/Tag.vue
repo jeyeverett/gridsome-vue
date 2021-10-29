@@ -7,9 +7,9 @@
         :key="post.node.id"
         class="mt-3"
       >
-        <g-link :to="post.node.path"
-          >{{ post.node.title }} - {{ post.node.date }}</g-link
-        >
+        <g-link :to="post.node.path">
+          {{ post.node.title }} - {{ post.node.date }}
+        </g-link>
       </li>
     </ul>
   </Layout>
