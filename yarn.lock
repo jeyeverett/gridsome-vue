@@ -10427,6 +10427,11 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-material-design-icons@^4.13.0":
+  "integrity" "sha512-TwaWrvh4J49VdkV9Uzcbr/p3FBRiBthRkIrg6SUh7ogFUljdA2ySNoAYD9dTU+mJkANIn1A6MoD/PnyLONnkWg=="
+  "resolved" "https://registry.npmjs.org/vue-material-design-icons/-/vue-material-design-icons-4.13.0.tgz"
+  "version" "4.13.0"
+
 "vue-meta@^2.2.2":
   "integrity" "sha512-XEeZUmlVeODclAjCNpWDnjgw+t3WA6gdzs6ENoIAgwO1J1d5p1tezDhtteLUFwcaQaTtayRrsx7GL6oXp/m2Jw=="
   "resolved" "https://registry.npmjs.org/vue-meta/-/vue-meta-2.4.0.tgz"
