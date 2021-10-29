@@ -4,15 +4,17 @@
       {{ $page.post.title }}
     </h1>
     <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
-      {{ $page.post.date }}
-    </span>
-    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
-      -
       <em>
         <g-link :to="$page.post.author.path">
-          by {{ $page.post.author.title }}
+          {{ $page.post.author.title }}
         </g-link>
       </em>
+    </span>
+    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
+      - {{ $page.post.date }}
+    </span>
+    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
+      - {{ $page.post.timeToRead }} min read
     </span>
     <div class="flex flex-wrap mb-4 text-sm">
       <g-link
@@ -37,6 +39,9 @@
             title
             date (format: "MMMM D, Y")
             content
+            excerpt
+            path
+            timeToRead
             author {
               title
               path
@@ -50,27 +55,32 @@
 </page-query>
 
 <script>
+import PostSEO from "../mixins/PostSEO.vue";
 export default {
-  metaInfo() {
-    return {
-      title: this.$page.post.title,
-      meta: [
-        {
-          name: "description",
-          content: `${this.$page.post.content.slice(3, 155)}...`,
-        },
-        {
-          name: "keywords",
-          content: this.$page.post.tags.reduce(
-            (acc, curr) => acc.title + ", " + curr.title
-          ),
-        },
-        {
-          name: "author",
-          content: this.$page.post.author.title,
-        },
-      ],
-    };
-  },
+  mixins: [PostSEO],
+  // metaInfo() {
+  //   return {
+  //     title: this.$page.post.title,
+  //     meta: [
+  //       {
+  //         key: "description",
+  //         name: "description",
+  //         content: this.$page.post.excerpt,
+  //       },
+  //       {
+  //         key: "keywords",
+  //         name: "keywords",
+  //         content: this.$page.post.tags.reduce(
+  //           (acc, curr) => acc.title + ", " + curr.title
+  //         ),
+  //       },
+  //       {
+  //         key: "author",
+  //         name: "author",
+  //         content: this.$page.post.author.title,
+  //       },
+  //     ],
+  //   };
+  // },
 };
 </script>
