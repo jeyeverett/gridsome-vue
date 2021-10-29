@@ -22,7 +22,7 @@ export default {
         {
           key: "description",
           name: "description",
-          content: this.$page.post.excerpt,
+          content: this.$page.post.summary,
         },
         {
           key: "keywords",
@@ -50,7 +50,7 @@ export default {
         {
           key: "og:description",
           property: "og:description",
-          content: this.$page.post.excerpt,
+          content: this.$page.post.summary,
         },
         {
           key: "og:image",
@@ -70,7 +70,7 @@ export default {
         {
           key: "twitter:description",
           name: "twitter:description",
-          content: this.$page.post.excerpt,
+          content: this.$page.post.summary,
         },
         {
           key: "twitter:card",
@@ -94,7 +94,7 @@ export default {
           json: {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            description: this.$page.post.excerpt,
+            description: this.$page.post.summary,
             datePublished: this.$page.post.date,
             author: {
               name: this.$page.post.author.title,

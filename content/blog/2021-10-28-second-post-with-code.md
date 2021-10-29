@@ -4,7 +4,7 @@ date: "2020-07-03"
 title: "Code Coloring"
 tags: ["backend", "coding"]
 author: "Jeysen Freedman"
-excerpt: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
+summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 ---
 
 ### This should be a heading 3

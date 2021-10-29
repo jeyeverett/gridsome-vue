@@ -21,11 +21,22 @@
         v-for="tag in $page.post.tags"
         :key="tag.id"
         :to="tag.path"
-        class="px-2 py-1 my-4 mr-4 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-gray-300 hover:bg-gray-700 dark:hover:text-gray-700 dark:hover:bg-gray-300 transition-all"
+        class="px-4 py-2 my-4 mr-4 font-semibold rounded-full bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-gray-300 hover:bg-gray-700 dark:hover:text-gray-700 dark:hover:bg-gray-300 transition-all"
       >
         {{ tag.title }}
       </g-link>
     </div>
+    <figure v-if="$page.post.image" class="flex flex-col mb-5">
+      <g-image
+        :alt="$page.post.image.alt"
+        :src="$page.post.image.path"
+        class="mb-2 mx-auto"
+      />
+      <figcaption
+        class="self-center font-light text-sm image-caption"
+        v-html="$page.post.image.caption"
+      />
+    </figure>
     <div
       class="mb-16 prose dark:prose-light lg:prose-lg xl:prose-xl"
       v-html="$page.post.content"
@@ -39,9 +50,14 @@
             title
             date (format: "MMMM D, Y")
             content
-            excerpt
+            summary
             path
             timeToRead
+            image {
+              path
+              caption
+              alt
+            }
             author {
               title
               path
@@ -58,29 +74,5 @@
 import PostSEO from "../mixins/PostSEO.vue";
 export default {
   mixins: [PostSEO],
-  // metaInfo() {
-  //   return {
-  //     title: this.$page.post.title,
-  //     meta: [
-  //       {
-  //         key: "description",
-  //         name: "description",
-  //         content: this.$page.post.excerpt,
-  //       },
-  //       {
-  //         key: "keywords",
-  //         name: "keywords",
-  //         content: this.$page.post.tags.reduce(
-  //           (acc, curr) => acc.title + ", " + curr.title
-  //         ),
-  //       },
-  //       {
-  //         key: "author",
-  //         name: "author",
-  //         content: this.$page.post.author.title,
-  //       },
-  //     ],
-  //   };
-  // },
 };
 </script>
