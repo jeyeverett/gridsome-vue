@@ -8,7 +8,12 @@ const autoprefixer = require("autoprefixer");
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Gridsome",
+  siteName: "Jeysen Freedman",
+  siteDescription: "lorem ipsum dolor ete marvo bleno dipo",
+  siteUrl: process.env.DEPLOY_URL || "https://testurl.test",
+  metadata: {
+    // meta data for social media, etc. goes here
+  },
   plugins: [
     {
       use: "@gridsome/source-filesystem",
@@ -28,13 +33,24 @@ module.exports = {
             typeName: "Tag",
             create: true,
           },
+          author: {
+            typeName: "Author",
+            create: true,
+          },
         },
+      },
+    },
+    {
+      use: "@gridsome/plugin-sitemap",
+      options: {
+        exclude: ["/privacy", "/legal"],
       },
     },
   ],
   templates: {
     BlogPost: "/blog/:slug",
     Tag: "/tag/:id",
+    Author: "/authors/:id",
   },
   css: {
     loaderOptions: {

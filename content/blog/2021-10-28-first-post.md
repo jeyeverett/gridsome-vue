@@ -3,6 +3,7 @@ slug: "first-post"
 date: "2021-10-28"
 title: "Hipster Ipsum"
 tags: ["backend", "hipster"]
+author: "Jeysen Freedman"
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.
