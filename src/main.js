@@ -16,6 +16,7 @@ const fontsCSS = `
        url('/fonts/montserrat-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
        url('/fonts/montserrat-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/fonts/montserrat-v18-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* montserrat-700 - latin */
 @font-face {
@@ -29,6 +30,7 @@ const fontsCSS = `
        url('/fonts/montserrat-v18-latin-700.woff') format('woff'), /* Modern Browsers */
        url('/fonts/montserrat-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('/fonts/montserrat-v18-latin-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 `;
 
