@@ -26,7 +26,7 @@
         {{ tag.title }}
       </g-link>
     </div>
-    <figure v-if="$page.post.image" class="flex flex-col mb-5">
+    <figure v-if="$page.post.image" class="flex flex-col mb-16">
       <g-image
         :alt="$page.post.image.alt"
         :src="$page.post.image.path"
