@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <g-link :to="seriesOverview">First Series</g-link>
+    <g-link :to="seriesOverviewLink">
+      <span class="">{{ seriesOverviewName }}</span>
+    </g-link>
     <h1 class="mb-2 text-4xl font-semibold text-gray-900 dark:text-gray-200">
       {{ $page.post.title }}
     </h1>
@@ -77,8 +79,15 @@ import PostSEO from "../mixins/PostSEO.vue";
 export default {
   mixins: [PostSEO],
   computed: {
-    seriesOverview() {
+    seriesOverviewLink() {
       return "/blog/" + this.$page.post.series;
+    },
+    seriesOverviewName() {
+      let name = this.$page.post.series
+        .split("-")
+        .map((elem) => elem[0].toUpperCase() + elem.slice(1))
+        .join(" ");
+      return name;
     },
   },
 };

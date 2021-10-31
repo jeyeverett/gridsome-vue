@@ -3,7 +3,7 @@ slug: "first-post"
 date: "2021-10-28"
 title: "Hipster Ipsum"
 series: "first-series"
-tags: ["backend", "hipster"]
+tags: ["backend", "freedom"]
 author: "Jeysen Freedman"
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 image:

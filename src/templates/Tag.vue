@@ -3,6 +3,9 @@
     <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-200">
       {{ $page.tag.title }}
     </h1>
+    <h2 v-if="$page.tag.description" class="mb-8">
+      {{ $page.tag.description }}
+    </h2>
     <ul class="list-outside list-disc">
       <li
         v-for="post in $page.tag.belongsTo.edges"
@@ -21,6 +24,7 @@
 query Tag($id: ID!) {
     tag: tag (id: $id) {
         title
+        description
         belongsTo {
             totalCount
             edges {

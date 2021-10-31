@@ -9,6 +9,9 @@ module.exports = function(api) {
   api.loadSource(({ getCollection }) => {
     const posts = getCollection("BlogPost");
     autoPublish(posts);
+
+    const tags = getCollection("Tag");
+    addTagDescriptions(tags);
   });
 
   api.createPages(({ createPage }) => {
@@ -37,6 +40,23 @@ const autoPublish = (posts) => {
       } else {
         node.title = `DRAFT: ${node.title}`;
       }
+    }
+  });
+};
+
+const addTagDescriptions = (tags) => {
+  const tagDescriptions = {
+    backend:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    coding:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    freedom:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+  };
+
+  tags.data().forEach((tag) => {
+    if (tagDescriptions[tag.id]) {
+      tag.description = tagDescriptions[tag.id];
     }
   });
 };
