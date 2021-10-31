@@ -17,7 +17,7 @@ module.exports = function(api) {
 };
 
 /*
-the autoPublish function below is used to autopublish blog posts with a future date
+the autoPublish function below is used to autopublish blog posts that have a future date
 
 1. Log into Zapier and create a new Zap
 2. Select "Schedule by Zapier" as the first app

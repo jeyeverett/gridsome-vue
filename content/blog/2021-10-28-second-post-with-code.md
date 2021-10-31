@@ -2,10 +2,13 @@
 slug: "third-post"
 date: "2020-07-03"
 title: "Code Coloring"
+series: "first-series"
 tags: ["backend", "coding"]
 author: "Jeysen Freedman"
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 ---
+
+> _This is part two of our test series. [Find the full series here](/blog/first-series)._
 
 ### This should be a heading 3
 

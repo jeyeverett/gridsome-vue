@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <g-link :to="seriesOverview">First Series</g-link>
     <h1 class="mb-2 text-4xl font-semibold text-gray-900 dark:text-gray-200">
       {{ $page.post.title }}
     </h1>
@@ -53,6 +54,7 @@
             summary
             path
             timeToRead
+            series
             image {
               path
               caption
@@ -74,5 +76,10 @@
 import PostSEO from "../mixins/PostSEO.vue";
 export default {
   mixins: [PostSEO],
+  computed: {
+    seriesOverview() {
+      return "/blog/" + this.$page.post.series;
+    },
+  },
 };
 </script>

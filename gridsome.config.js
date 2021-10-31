@@ -48,9 +48,9 @@ module.exports = {
     },
   ],
   templates: {
-    BlogPost: "/blog/:slug",
+    BlogPost: "/blog/:series/:slug",
     Tag: "/tag/:id",
-    Author: "/authors/:id",
+    Author: "/author/:id",
   },
   css: {
     loaderOptions: {
