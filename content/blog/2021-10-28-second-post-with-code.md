@@ -2,10 +2,11 @@
 slug: "third-post"
 date: "2020-07-03"
 title: "Code Coloring"
-series: "first-series"
+author: "jeysen-freedman"
 tags: ["backend", "coding"]
-author: "Jeysen Freedman"
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
+pillar: "first-series"
+pillarOverview: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore nemo delectus dignissimos laboriosam maiores quod. Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab itaque cupiditate delectus doloremque officia!"
 ---
 
 > _This is part two of our test series. [Find the full series here](/blog/first-series)._

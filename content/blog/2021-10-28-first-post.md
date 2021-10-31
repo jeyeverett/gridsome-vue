@@ -2,10 +2,11 @@
 slug: "first-post"
 date: "2021-10-28"
 title: "Hipster Ipsum"
-series: "first-series"
+author: "jeysen-freedman"
 tags: ["backend", "freedom"]
-author: "Jeysen Freedman"
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
+pillar: "first-series"
+pillarOverview: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore nemo delectus dignissimos laboriosam maiores quod. Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab itaque cupiditate delectus doloremque officia!"
 image:
   path: ../media/israel-pina-VJQEN-JW5eU-unsplash.jpg
   alt: "A colorful building against a blue sky background"

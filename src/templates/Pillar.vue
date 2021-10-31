@@ -2,15 +2,12 @@
   <Layout>
     <div class="py-16 mx-auto container-inner">
       <h1 class="text-3xl font-bold">
-        A Test Series
+        {{ pillarTitle }}
       </h1>
       <p class="mt-6">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-        tempore nemo delectus dignissimos laboriosam maiores quod.
-        Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab
-        itaque cupiditate delectus doloremque officia!
+        {{ pillarOverview }}
       </p>
-      <div class="px-4 py-4 mt-8 rounded-lg bg-background-secondary">
+      <div class="px-4 py-4 mt-6">
         <h2 class="mt-2 text-2xl font-bold">
           Table of Contents
         </h2>
@@ -28,7 +25,7 @@
           </li>
         </ul>
       </div>
-      <p class="mt-8 blockquote-green">
+      <p class="mt-8">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
         reiciendis dolore! Maiores totam ratione, officia ullam unde quae
         voluptates aliquam libero omnis delectus nulla voluptas facilis
@@ -39,8 +36,8 @@
 </template>
 
 <page-query>
-query Posts {
-  posts: allBlogPost (sortBy: "date", order: ASC, filter: { series: {eq: "first-series"} })  {
+query Posts($id: ID!) {
+  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: {eq: $id } })  {
     totalCount
     pageInfo {
       totalPages
@@ -54,6 +51,10 @@ query Posts {
         summary
         timeToRead
         path
+        pillar {
+          title
+        }
+        pillarOverview
       }
     }
   }
@@ -61,9 +62,22 @@ query Posts {
 </page-query>
 
 <script>
+import Utils from "../mixins/Utils.vue";
+
 export default {
-  metaInfo: {
-    title: "A Test Series",
+  mixins: [Utils],
+  metaInfo() {
+    return {
+      title: this.pillarTitle,
+    };
+  },
+  computed: {
+    pillarTitle() {
+      return this.unSlugify(this.$page.posts.edges[0].node.pillar.title);
+    },
+    pillarOverview() {
+      return this.unSlugify(this.$page.posts.edges[0].node.pillarOverview);
+    },
   },
 };
 </script>

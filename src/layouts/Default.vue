@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen flex flex-col bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors delay-100 ease-linear items-center"
+    class="min-h-screen flex flex-col bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all delay-100 ease-linear items-center"
   >
     <header
       class="flex min-w-full px-2 sm:px-8 md:px-16 justify-between items-center mt-8 mb-12"

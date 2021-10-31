@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-200">
-      {{ $page.author.title }}
+      {{ authorName }}
     </h1>
     <ul class="list-outside list-disc">
       <li
@@ -38,11 +38,20 @@ query Author($id: ID!) {
 </page-query>
 
 <script>
+import Utils from "../mixins/Utils.vue";
+
 export default {
+  mixins: [Utils],
   metaInfo() {
     return {
-      title: "Tag: " + this.$page.author.title,
+      title: "Author: " + this.authorName,
     };
+  },
+  computed: {
+    authorName() {
+      const authorName = this.unSlugify(this.$page.author.title);
+      return authorName;
+    },
   },
 };
 </script>

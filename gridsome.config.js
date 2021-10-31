@@ -37,6 +37,10 @@ module.exports = {
             typeName: "Author",
             create: true,
           },
+          pillar: {
+            typeName: "Pillar",
+            create: true,
+          },
         },
       },
     },
@@ -48,9 +52,10 @@ module.exports = {
     },
   ],
   templates: {
-    BlogPost: "/blog/:series/:slug",
-    Tag: "/tag/:id",
+    BlogPost: "/blog/:pillar/:slug",
+    Pillar: "/blog/:id",
     Author: "/author/:id",
+    Tag: "/tag/:id",
   },
   css: {
     loaderOptions: {

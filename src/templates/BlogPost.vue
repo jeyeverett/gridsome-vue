@@ -9,7 +9,7 @@
     <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
       <em>
         <g-link :to="$page.post.author.path">
-          {{ $page.post.author.title }}
+          {{ authorName }}
         </g-link>
       </em>
     </span>
@@ -56,7 +56,9 @@
             summary
             path
             timeToRead
-            series
+            pillar {
+              title
+            }
             image {
               path
               caption
@@ -76,18 +78,20 @@
 
 <script>
 import PostSEO from "../mixins/PostSEO.vue";
+import Utils from "../mixins/Utils.vue";
 export default {
-  mixins: [PostSEO],
+  mixins: [PostSEO, Utils],
   computed: {
     seriesOverviewLink() {
-      return "/blog/" + this.$page.post.series;
+      return "/blog/" + this.$page.post.pillar.title;
     },
     seriesOverviewName() {
-      let name = this.$page.post.series
-        .split("-")
-        .map((elem) => elem[0].toUpperCase() + elem.slice(1))
-        .join(" ");
-      return name;
+      const overviewName = this.unSlugify(this.$page.post.pillar.title);
+      return overviewName;
+    },
+    authorName() {
+      const authorName = this.unSlugify(this.$page.post.author.title);
+      return authorName;
     },
   },
 };
