@@ -5,6 +5,7 @@ title: "Hipster Ipsum"
 author: 
   name: "jeysen-freedman"
   image: ../media/jeysen-freedman.jpg
+  bio: "Full Stack Web Developer and Designer"
 tags: ["backend", "freedom"]
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 pillar: "first-series"
