@@ -40,6 +40,9 @@ query Posts {
         title
         date (format: "MMMM D, Y")
         path
+        pillar {
+          title
+        }
       }
     }
   }

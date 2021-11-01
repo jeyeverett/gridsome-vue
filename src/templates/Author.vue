@@ -20,7 +20,10 @@
 <page-query>
 query Author($id: ID!) {
     author: author (id: $id) {
-        title
+        title {
+          name
+          image
+        }
         belongsTo {
             totalCount
             edges {
@@ -49,7 +52,7 @@ export default {
   },
   computed: {
     authorName() {
-      const authorName = this.unSlugify(this.$page.author.title);
+      const authorName = this.unSlugify(this.$page.author.title.name);
       return authorName;
     },
   },

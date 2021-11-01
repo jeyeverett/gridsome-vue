@@ -3,22 +3,31 @@
     <g-link :to="seriesOverviewLink">
       <span class="">{{ seriesOverviewName }}</span>
     </g-link>
-    <h1 class="mb-2 text-4xl font-semibold text-gray-900 dark:text-gray-200">
+    <h1
+      class="mb-6 text-4xl font-semibold text-gray-900 dark:text-gray-200 transition-all"
+    >
       {{ $page.post.title }}
     </h1>
-    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
-      <em>
+    <div class="flex items-center font-light text-gray-500 dark:text-gray-400">
+      <g-image
+        :alt="authorName"
+        :src="$page.post.author.title.image"
+        class="rounded-full w-10 mr-3"
+      />
+      <span>
         <g-link :to="$page.post.author.path">
           {{ authorName }}
         </g-link>
-      </em>
-    </span>
-    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
-      - {{ $page.post.date }}
-    </span>
-    <span class="mb-4 font-light text-gray-700 dark:text-gray-400">
-      - {{ $page.post.timeToRead }} min read
-    </span>
+      </span>
+      <span>
+        <span class="mx-4">&nbsp;|</span>
+        {{ $page.post.date }}
+      </span>
+      <span>
+        <span class="mx-4">&nbsp;|</span>
+        {{ $page.post.timeToRead }} min read
+      </span>
+    </div>
     <div class="flex flex-wrap mb-4 text-sm">
       <g-link
         v-for="tag in $page.post.tags"
@@ -65,8 +74,11 @@
               alt
             }
             author {
-              title
               path
+              title {
+                name
+                image (width: 200, height: 200)
+              }
             }
             tags {
               title
@@ -82,15 +94,15 @@ import Utils from "../mixins/Utils.vue";
 export default {
   mixins: [PostSEO, Utils],
   computed: {
-    seriesOverviewLink() {
-      return "/blog/" + this.$page.post.pillar.title;
-    },
     seriesOverviewName() {
       const overviewName = this.unSlugify(this.$page.post.pillar.title);
       return overviewName;
     },
+    seriesOverviewLink() {
+      return "/blog/" + this.seriesOverviewName;
+    },
     authorName() {
-      const authorName = this.unSlugify(this.$page.post.author.title);
+      const authorName = this.unSlugify(this.$page.post.author.title.name);
       return authorName;
     },
   },

@@ -36,7 +36,7 @@
 </template>
 
 <page-query>
-query Posts($id: ID!) {
+query Posts ($id: ID!) {
   posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: {eq: $id } })  {
     totalCount
     pageInfo {

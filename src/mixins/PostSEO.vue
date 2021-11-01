@@ -14,7 +14,7 @@ export default {
     const siteUrl = this.$static.metadata.siteUrl;
     const postPath = this.$page.post.path;
     const image = this.$page.post.image?.path;
-    const imagePath = (image && `${siteUrl}${image.src}`) || "";
+    const imagePath = image ? `${siteUrl}${image.src}` : "";
 
     return {
       title: this.$page.post.title,
@@ -60,12 +60,12 @@ export default {
         {
           key: "og:image:width",
           property: "og:image:width",
-          content: (image && image.size.width) || "",
+          content: image ? image.size.width : "",
         },
         {
           key: "og:image:height",
           property: "og:image:height",
-          content: (image && image.size.height) || "",
+          content: image ? image.size.height : "",
         },
         {
           key: "twitter:description",
