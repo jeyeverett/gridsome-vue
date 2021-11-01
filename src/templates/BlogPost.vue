@@ -2,7 +2,7 @@
   <Layout>
     <g-link
       :to="seriesOverviewLink"
-      class="uppercase tracking-wider text-gray-500 dark:text-gray-200"
+      class="uppercase tracking-wider text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
     >
       {{ seriesOverviewName }}
     </g-link>
@@ -17,10 +17,13 @@
       <g-image
         :alt="authorName"
         :src="$page.post.author.title.image"
-        class="rounded-full w-10 mr-3"
+        class="rounded-full w-10 mr-3 "
       />
       <span class="flex-col sm:flex-row">
-        <g-link :to="$page.post.author.path">
+        <g-link
+          :to="$page.post.author.path"
+          class="hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+        >
           {{ authorName }}
         </g-link>
         <span class="block sm:inline">
@@ -59,13 +62,13 @@
       />
       <div class="flex-col">
         <span
-          class="block text-sm uppercase font-semibold tracking-wider text-gray-300 dark:text-opacity-50"
+          class="block text-sm uppercase font-semibold tracking-wider text-gray-500 dark:text-gray-400"
         >
           written by
         </span>
         <g-link
           :to="$page.post.author.path"
-          class="text-xl font-medium text-gray-700 dark:text-gray-200"
+          class="text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-300 transition-all"
         >
           {{ authorName }}
         </g-link>
@@ -130,7 +133,7 @@ export default {
       return overviewName;
     },
     seriesOverviewLink() {
-      return "/blog/" + this.seriesOverviewName;
+      return "/blog/" + this.$page.post.pillar.title;
     },
     authorName() {
       const authorName = this.unSlugify(this.$page.post.author.title.name);
