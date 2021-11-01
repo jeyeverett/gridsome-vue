@@ -1,0 +1,59 @@
+<template>
+  <article
+    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all"
+  >
+    <g-link :to="post.node.path">
+      <g-image :alt="post.node.image.alt" :src="post.node.image.path" />
+    </g-link>
+    <div class="px-4 py-2">
+      <g-link
+        :to="'/blog/' + post.node.pillar.title"
+        append=""
+        class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-200 transition-all hover:text-gray-700 dark:hover:text-gray-300"
+      >
+        {{ unSlugify(post.node.pillar.title) }}
+      </g-link>
+      <h3 class="mb-2">
+        <g-link
+          :to="post.node.path"
+          class="text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+          >{{ post.node.title }}</g-link
+        >
+      </h3>
+      <p class="text-xs mb-4">{{ post.node.summary }}</p>
+      <div class="flex items-start font-light text-gray-500 dark:text-gray-400">
+        <g-image
+          :alt="unSlugify(post.node.author.title.name)"
+          :src="post.node.author.title.image"
+          class="rounded-full w-6 mr-3"
+        />
+        <span class="mt-1">
+          <g-link
+            :to="post.node.author.path"
+            class="text-xs block transition-all hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+          >
+            {{ unSlugify(post.node.author.title.name) }}
+          </g-link>
+          <span>
+            <span class="text-xs transition-all">
+              {{ post.node.date }}
+            </span>
+            <span class="text-xs transition-all">
+              <span class="mx-1">&nbsp;|</span>
+              {{ post.node.timeToRead }} min
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script>
+import Utils from "../mixins/Utils.vue";
+
+export default {
+  props: ["post"],
+  mixins: [Utils],
+};
+</script>
