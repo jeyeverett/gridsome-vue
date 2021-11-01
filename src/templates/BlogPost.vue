@@ -1,9 +1,10 @@
 <template>
   <Layout>
-    <g-link :to="seriesOverviewLink">
-      <span class="uppercase tracking-wider text-gray-500 dark:text-gray-200">
-        {{ seriesOverviewName }}
-      </span>
+    <g-link
+      :to="seriesOverviewLink"
+      class="uppercase tracking-wider text-gray-500 dark:text-gray-200"
+    >
+      {{ seriesOverviewName }}
     </g-link>
     <h1
       class="mb-6 text-4xl font-semibold text-gray-900 dark:text-gray-200 transition-all"
@@ -11,40 +12,40 @@
       {{ $page.post.title }}
     </h1>
     <div
-      class="flex items-center font-light text-gray-500 dark:text-gray-400 mb-10"
+      class="flex items-start sm:items-center font-light text-gray-500 dark:text-gray-400 mb-10"
     >
       <g-image
         :alt="authorName"
         :src="$page.post.author.title.image"
         class="rounded-full w-10 mr-3"
       />
-      <span>
+      <span class="flex-col sm:flex-row">
         <g-link :to="$page.post.author.path">
           {{ authorName }}
         </g-link>
-      </span>
-      <span>
-        <span class="mx-4">&nbsp;|</span>
-        {{ $page.post.date }}
-      </span>
-      <span>
-        <span class="mx-4">&nbsp;|</span>
-        {{ $page.post.timeToRead }} min read
+        <span class="block sm:inline">
+          <span class="hidden sm:inline sm:mx-4">&nbsp;|</span>
+          {{ $page.post.date }}
+        </span>
+        <span class="block sm:inline">
+          <span class="hidden sm:inline sm:mx-4">&nbsp;|</span>
+          {{ $page.post.timeToRead }} min read
+        </span>
       </span>
     </div>
 
-    <figure v-if="$page.post.image" class="flex flex-col mb-16">
+    <figure v-if="$page.post.image" class="flex flex-col mb-8 sm:mb-16">
       <g-image
         :alt="$page.post.image.alt"
         :src="$page.post.image.path"
-        class="mb-2 mx-auto w-full"
+        class="mb-2 mx-auto"
       />
       <figcaption
         class="self-center font-light text-sm image-caption"
         v-html="$page.post.image.caption"
       />
     </figure>
-    <div
+    <article
       class="mb-16 prose dark:prose-light lg:prose-lg xl:prose-xl"
       v-html="$page.post.content"
     />
@@ -92,7 +93,6 @@
             title
             date (format: "MMMM D, Y")
             content
-            summary
             path
             timeToRead
             pillar {

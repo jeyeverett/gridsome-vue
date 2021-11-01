@@ -15,9 +15,9 @@
         <g-link to="/blog">Blog</g-link>
       </nav>
     </header>
-    <div class="container max-w-screen-md mx-auto px-5">
+    <main class="container max-w-screen-md mx-auto px-5">
       <slot />
-    </div>
+    </main>
   </div>
 </template>
 

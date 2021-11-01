@@ -2,7 +2,7 @@
 slug: "first-post"
 date: "2021-10-28"
 title: "Hipster Ipsum"
-author: 
+author:
   name: "jeysen-freedman"
   image: ../media/jeysen-freedman.jpg
   bio: "Full Stack Web Developer and Designer"
@@ -11,10 +11,9 @@ summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifi
 pillar: "first-series"
 pillarOverview: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore nemo delectus dignissimos laboriosam maiores quod. Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab itaque cupiditate delectus doloremque officia!"
 image:
-  path: ../media/israel-pina-VJQEN-JW5eU-unsplash.jpg
-  alt: "A colorful building against a blue sky background"
-  caption: 'Photo by <a href="https://unsplash.com/@israelpinapol?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>Israel Piña</em></a> on <a href="https://unsplash.com/@israelpinapol?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>Unsplash</em></a>
-  '
+  path: ../media/test-image.jpg
+  alt: "A typewriter and notebooks laid out on a table"
+  caption: 'Photo by <a href="https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>RetroSupply</em></a> on <a href="https://unsplash.com/s/photos/blog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>Unsplash</em></a>'
 ---
 
 > _This is part two of our test series. [Find the full series here](/blog/first-series)._

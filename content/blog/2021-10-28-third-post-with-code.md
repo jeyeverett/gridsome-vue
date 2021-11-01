@@ -1,7 +1,7 @@
 ---
-slug: "second-post"
-date: "2020-07-03"
-title: "Code Coloring"
+slug: "third-post"
+date: "2021-11-01"
+title: "Test Post"
 author:
   name: "jeysen-freedman"
   bio: "Full Stack Web Developer and Designer"
