@@ -21,8 +21,9 @@
 query Author($id: ID!) {
     author: author (id: $id) {
         title {
-          name
           image
+          name
+          bio
         }
         belongsTo {
             totalCount

@@ -6,45 +6,50 @@
     aria-label="Toggle theme between light and dark"
     @click.prevent="toggleTheme"
   >
-    <Brightness4 v-if="theme === 'light'" />
-    <Brightness7 v-else />
+    <Brightness4
+      v-if="theme === 'light'"
+      title="Toggle theme between light and dark"
+    />
+    <Brightness7 v-else title="Toggle theme between light and dark" />
   </a>
 </template>
 
 <script>
-import Brightness4 from 'vue-material-design-icons/Brightness4'
-import Brightness7 from 'vue-material-design-icons/Brightness7'
+import Brightness4 from "vue-material-design-icons/Brightness4";
+import Brightness7 from "vue-material-design-icons/Brightness7";
 
 export default {
   components: {
     Brightness4,
-    Brightness7
+    Brightness7,
   },
-  data () {
+  data() {
     return {
-      theme: ''
-    }
+      theme: "",
+    };
   },
-  mounted () {
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    const defaultTheme = userPrefersDark ? 'dark' : 'light'
-    const theme = localStorage.getItem('theme') || defaultTheme
-    this.setTheme(theme)
+  mounted() {
+    const userPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const defaultTheme = userPrefersDark ? "dark" : "light";
+    const theme = localStorage.getItem("theme") || defaultTheme;
+    this.setTheme(theme);
   },
   methods: {
-    toggleTheme () {
-      const newTheme = this.theme === 'light' ? 'dark' : 'light'
-      this.setTheme(newTheme)
+    toggleTheme() {
+      const newTheme = this.theme === "light" ? "dark" : "light";
+      this.setTheme(newTheme);
     },
-    setTheme (newTheme) {
-      this.theme = newTheme
-      if (this.theme === 'dark') {
-        document.documentElement.classList.add('dark')
+    setTheme(newTheme) {
+      this.theme = newTheme;
+      if (this.theme === "dark") {
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove("dark");
       }
-      localStorage.setItem('theme', newTheme)
-    }
-  }
-}
+      localStorage.setItem("theme", newTheme);
+    },
+  },
+};
 </script>

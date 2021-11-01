@@ -54,7 +54,7 @@ module.exports = {
   templates: {
     BlogPost: "/blog/:pillar/:slug",
     Pillar: "/blog/:id",
-    Author: "/author/:id",
+    Author: "/author/:title__name",
     Tag: "/tag/:id",
   },
   css: {

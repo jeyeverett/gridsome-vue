@@ -21,7 +21,7 @@
       />
       <span class="flex-col sm:flex-row">
         <g-link
-          :to="$page.post.author.path"
+          :to="authorLink"
           class="hover:text-gray-700 dark:hover:text-gray-300 transition-all"
         >
           {{ authorName }}
@@ -67,7 +67,7 @@
           written by
         </span>
         <g-link
-          :to="$page.post.author.path"
+          :to="authorLink"
           class="text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-gray-500 dark:hover:text-gray-300 transition-all"
         >
           {{ authorName }}
@@ -107,7 +107,6 @@
               alt
             }
             author {
-              path
               title {
                 name
                 image (width: 200, height: 200)
@@ -138,6 +137,9 @@ export default {
     authorName() {
       const authorName = this.unSlugify(this.$page.post.author.title.name);
       return authorName;
+    },
+    authorLink() {
+      return "/author/" + this.$page.post.author.title.name;
     },
   },
 };
