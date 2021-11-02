@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: [
     "./src/**/*.vue",
@@ -9,7 +11,20 @@ module.exports = {
   ],
   darkMode: "class", // or 'false' or 'media' or 'class'
   theme: {
+    colors: {
+      ...colors,
+      transparent: "transparent",
+      current: "currentColor",
+      blue: {
+        light: "#1cb7ff",
+        DEFAULT: "#1379a8",
+        dark: "#08374d",
+      },
+    },
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/images/hero.jpg')",
+      },
       typography: (theme) => ({
         light: {
           css: [

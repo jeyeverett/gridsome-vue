@@ -4,10 +4,10 @@
     <h2
       class="mb-10 font-light text-gray-500 dark:text-gray-400 transition-all"
     >
-      Our latest web development tips, tricks, insights, and resources, hot off
+      The latest web development tips, tricks, insights, and resources, hot off
       the presses.
     </h2>
-    <section
+    <ul
       class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-4 mb-16"
     >
       <PostOverview
@@ -15,13 +15,13 @@
         :key="post.path"
         :post="post"
       />
-    </section>
+    </ul>
     <Pager
       :info="$page.posts.pageInfo"
-      class="px-4 py-2 flex justify-between w-60 border border-gray-200 rounded dark:border-gray-600 transition-all mx-auto"
-      linkClass="text-sm px-4 py-2 font-semibold font-light text-gray-600 dark:text-gray-300 border rounded border-transparent hover:text-white hover:bg-gray-500 hover:border-gray-500 transition-all ease-linear"
+      class="px-4 py-2 mx-auto mb-16 flex justify-between w-60 border border-gray-200 rounded dark:border-gray-600 transition-all"
+      link-class="text-sm px-4 py-2 font-semibold font-light text-gray-600 dark:text-gray-300 border border-transparent rounded hover:text-white hover:bg-gray-500 hover:border-gray-500 transition-all ease-linear"
+      active-link-class="text-blue bg-gray-200 dark:bg-gray-600 border-gray-200 dark:border-gray-600"
       :range="3"
-      activeLinkClass="text-blue bg-gray-200 border-gray-200 dark:border-gray-600 dark:bg-gray-600"
     />
   </Layout>
 </template>

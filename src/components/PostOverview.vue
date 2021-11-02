@@ -1,5 +1,5 @@
 <template>
-  <article
+  <li
     class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all"
   >
     <g-link :to="post.node.path">
@@ -17,8 +17,9 @@
         <g-link
           :to="post.node.path"
           class="text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
-          >{{ post.node.title }}</g-link
         >
+          {{ post.node.title }}
+        </g-link>
       </h3>
       <p class="text-xs mb-4">{{ post.node.summary }}</p>
       <div class="flex items-start font-light text-gray-500 dark:text-gray-400">
@@ -46,14 +47,14 @@
         </span>
       </div>
     </div>
-  </article>
+  </li>
 </template>
 
 <script>
 import Utils from "../mixins/Utils.vue";
 
 export default {
-  props: ["post"],
   mixins: [Utils],
+  props: ["post"],
 };
 </script>
