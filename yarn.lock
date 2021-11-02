@@ -10511,7 +10511,7 @@
   "resolved" "https://registry.npmjs.org/vue-typed-js/-/vue-typed-js-0.1.2.tgz"
   "version" "0.1.2"
   dependencies:
-    "typed.js" "git+https://github.com/mattboldt/typed.js.git"
+    "typed.js" "git+https://github.com/jeyeverett/typed.js.git"
 
 "vue@^2 || ^3.0.0-0", "vue@^2.6.10":
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
