@@ -17,7 +17,7 @@
       <g-image
         :alt="authorName"
         :src="$page.post.author.title.image"
-        class="rounded-full w-10 mr-3 "
+        class="rounded-full w-8 sm:w-10 mr-3 "
       />
       <span class="flex-col sm:flex-row">
         <g-link
