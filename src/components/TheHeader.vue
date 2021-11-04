@@ -10,36 +10,15 @@
     >
       <theme-switcher class="py-1 sm:py-2 sm:mr-3" v-if="$route.path !== '/'" />
       <span class="mt-4 sm:mt-0 sm:flex">
-        <g-link
-          class="font-medium px-2 py-1 sm:px-4 sm:py-2 sm:mx-1 border border-transparent rounded-sm hover:bg-gray-300 hover:text-blue transition-all"
-          to="/about/"
-        >
-          About
-        </g-link>
-        <g-link
-          class="font-medium px-2 py-1 sm:px-4 sm:py-2 sm:mx-1 border border-transparent rounded-sm hover:bg-gray-300 hover:text-blue transition-all"
-          to="/projects"
-        >
-          Projects
-        </g-link>
-        <g-link
-          class="font-medium px-2 py-1 sm:px-4 sm:py-2 sm:mx-1 border border-transparent rounded-sm hover:bg-gray-300 hover:text-blue transition-all"
-          to="/blog"
-        >
-          Blog
-        </g-link>
-        <g-link
-          class="font-medium px-2 py-1 sm:px-4 sm:py-2 sm:mx-1 border border-transparent rounded-sm hover:bg-gray-300 hover:text-blue transition-all sm:hidden"
-          to="/contact"
-        >
-          Contact
-        </g-link>
+        <nav-link route="about" />
+        <nav-link route="projects" />
+        <nav-link route="blog" />
         <contact-button
           :isDisplayed="true"
           :isTyping="false"
           buttonText="Contact me"
           textClasses="font-medium"
-          class="hidden sm:block"
+          class="ml-1 hidden sm:block"
         />
       </span>
     </nav>
@@ -49,11 +28,13 @@
 <script>
 import ThemeSwitcher from "../components/ThemeSwitcher.vue";
 import ContactButton from "../components/ContactButton.vue";
+import NavLink from "../components/NavLink.vue";
 
 export default {
   components: {
     ThemeSwitcher,
     ContactButton,
+    NavLink,
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <g-link
     to="/contact"
-    class="text-white px-4 py-2 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark transition-all"
+    class="text-white px-4 py-2 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark transition-all shadow"
     :class="buttonClasses"
     v-if="isDisplayed"
   >

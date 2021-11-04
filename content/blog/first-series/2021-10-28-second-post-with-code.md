@@ -9,7 +9,9 @@ author:
 tags: ["backend", "coding"]
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 pillar: "first-series"
-pillarOverview: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore nemo delectus dignissimos laboriosam maiores quod. Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab itaque cupiditate delectus doloremque officia!"
+pillarContent:
+  image: ""
+  text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore nemo delectus dignissimos laboriosam maiores quod. Necessitatibus unde quod dolore aliquam, numquam beatae assumenda? Ab itaque cupiditate delectus doloremque officia!"
 image:
   path: ./media/test-image.jpg
   alt: "A typewriter and notebooks laid out on a table"

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-200">
+    <h1 class="heading-primary">
       {{ authorName }}
     </h1>
     <ul class="list-outside list-disc">

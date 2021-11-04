@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="text-3xl font-semibold mb-2">Blog</h1>
+    <h1 class="heading-primary">Blog</h1>
     <h2
       class="mb-10 font-light text-gray-500 dark:text-gray-400 transition-all"
     >

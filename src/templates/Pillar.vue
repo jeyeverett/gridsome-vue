@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="py-16 mx-auto container-inner">
-      <h1 class="text-3xl font-bold">
+      <h1 class="heading-primary">
         {{ pillarTitle }}
       </h1>
       <p class="mt-6">
@@ -54,7 +54,9 @@ query Posts ($id: ID!) {
         pillar {
           title
         }
-        pillarOverview
+        pillarContent {
+          text
+        }
       }
     }
   }
@@ -76,7 +78,7 @@ export default {
       return this.unSlugify(this.$page.posts.edges[0].node.pillar.title);
     },
     pillarOverview() {
-      return this.unSlugify(this.$page.posts.edges[0].node.pillarOverview);
+      return this.unSlugify(this.$page.posts.edges[0].node.pillarContent.text);
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-hero-pattern h-screen pt-6 bg-cover">
+  <div class="bg-hero-pattern h-screen pt-6 bg-cover bg-no-repeat">
     <the-header style="marginTop: 0;" />
     <section class="px-2 sm:px-20 py-10">
       <div
@@ -17,7 +17,7 @@
         </vue-typed-js>
         <vue-typed-js
           :strings="['Full Stack Web Developer']"
-          class="pl-1 mb-5 md:mb-10 text-md sm:text-2xl tracking-wide sm:tracking-wider uppercase"
+          class="sm:pl-1 mb-5 md:mb-10 text-md sm:text-2xl tracking-wide sm:tracking-wider uppercase"
           style="color: #1379a8"
           :startDelay="500"
           @onStringTyped="disableCursor('h2')"
@@ -34,18 +34,18 @@
             'Do you dream of using powerful modern web technologies to solve real problems, supercharge your business and reach a global audience?',
           ]"
           class="pl-1 mb-14 md:mb-20 text-md w-full md:w-3/6"
+          id="p"
           :startDelay="500"
-          :typeSpeed="25"
+          :typeSpeed="15"
           :showCursor="false"
           @onComplete="disableCursor('p')"
-          id="p"
           v-if="h2Complete"
         >
           <p class="typing text-center sm:text-left" />
         </vue-typed-js>
 
         <transition
-          enter-active-class="transition-all delay-1000 duration-700 ease-out"
+          enter-active-class="transition-all delay-1000 duration-1000 ease-out"
           enter-class="opacity-0"
           enter-to-class="opacity-100"
         >
@@ -81,7 +81,6 @@ export default {
       h1Complete: false,
       h2Complete: false,
       pComplete: false,
-      animate: false,
     };
   },
   methods: {
@@ -91,9 +90,6 @@ export default {
         container.removeChild(container.lastChild);
       }
       this[id + "Complete"] = true;
-    },
-    animateButton() {
-      this.animate = true;
     },
   },
 };

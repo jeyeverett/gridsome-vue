@@ -75,22 +75,22 @@ const fontsCSS = `
        url('/fonts/montserrat-v18-latin-700.svg#Montserrat') format('svg'); /* Legacy iOS */
   font-display: swap;
 }
-/* montserrat-900 - latin */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 900;
-  src: url('/fonts/montserrat-v18-latin-900.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('/fonts/montserrat-v18-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/montserrat-v18-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/montserrat-v18-latin-900.woff') format('woff'), /* Modern Browsers */
-       url('/fonts/montserrat-v18-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/montserrat-v18-latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
-  font-display: swap;
-}
 `;
 
+// /* montserrat-900 - latin */
+// @font-face {
+//   font-family: 'Montserrat';
+//   font-style: normal;
+//   font-weight: 900;
+//   src: url('/fonts/montserrat-v18-latin-900.eot'); /* IE9 Compat Modes */
+//   src: local(''),
+//        url('/fonts/montserrat-v18-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/fonts/montserrat-v18-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/fonts/montserrat-v18-latin-900.woff') format('woff'), /* Modern Browsers */
+//        url('/fonts/montserrat-v18-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/fonts/montserrat-v18-latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
+//   font-display: swap;
+// }
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);

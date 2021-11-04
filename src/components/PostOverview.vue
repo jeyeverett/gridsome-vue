@@ -1,6 +1,6 @@
 <template>
   <li
-    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all"
+    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all shadow"
   >
     <g-link :to="post.node.path">
       <g-image :alt="post.node.image.alt" :src="post.node.image.path" />
