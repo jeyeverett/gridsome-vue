@@ -5,7 +5,7 @@ title: "Test Post"
 author:
   name: "jeysen-freedman"
   bio: "Full Stack Web Developer and Designer"
-  image: ../../../media/jeysen-freedman.jpg
+  image: ../../media/jeysen-freedman.jpg
 tags: ["backend", "coding"]
 summary: "I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings."
 pillar: "first-series"

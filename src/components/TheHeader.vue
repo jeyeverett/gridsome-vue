@@ -6,18 +6,18 @@
       <g-link to="/" class="text-blue">Logo.</g-link>
     </strong>
     <nav
-      class="flex flex-col items-center sm:flex-row sm:justify-end w-full sm:w-3/5 mt-4 sm:mt-0"
+      class="flex flex-col items-center md:flex-row md:justify-end w-full mt-4 md:mt-0"
     >
       <theme-switcher class="py-1 sm:py-2 sm:mr-3" v-if="$route.path !== '/'" />
       <span class="mt-4 sm:mt-0 sm:flex">
-        <nav-link route="about" />
         <nav-link route="projects" />
         <nav-link route="blog" />
+        <nav-link route="about" />
         <contact-button
-          :isDisplayed="true"
-          :isTyping="false"
-          buttonText="Contact me"
-          textClasses="font-medium"
+          :is-displayed="true"
+          :is-typing="false"
+          button-text="Contact me"
+          text-classes="font-medium"
           class="ml-1 hidden sm:block"
         />
       </span>

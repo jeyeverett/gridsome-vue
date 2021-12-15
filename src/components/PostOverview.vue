@@ -31,7 +31,7 @@
         <span class="mt-1">
           <g-link
             :to="'/author/' + post.node.author.title.name"
-            class="text-xs block transition-all hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+            class="text-xs block transition-all hover:text-gray-700 dark:hover:text-gray-300"
           >
             {{ unSlugify(post.node.author.title.name) }}
           </g-link>

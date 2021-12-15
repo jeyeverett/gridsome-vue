@@ -3,7 +3,7 @@
     class="min-h-screen flex flex-col bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-all delay-100 ease-linear items-center"
   >
     <the-header />
-    <main class="container max-w-screen-md mx-auto px-5">
+    <main class="w-full md:w-3/4 xl:w-2/3 mx-auto px-5">
       <slot />
     </main>
   </div>

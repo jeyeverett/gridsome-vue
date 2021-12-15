@@ -7,7 +7,7 @@
       {{ seriesOverviewName }}
     </g-link>
     <h1
-      class="mb-6 text-4xl font-semibold text-gray-900 dark:text-gray-200 transition-all"
+      class="mb-6 text-4xl font-semibold text-gray-700 dark:text-gray-200 transition-all"
     >
       {{ $page.post.title }}
     </h1>
@@ -37,7 +37,7 @@
       </span>
     </div>
 
-    <figure v-if="$page.post.image" class="flex flex-col mb-8 sm:mb-16">
+    <figure v-if="$page.post.image" class="flex flex-col mb-4 sm:mb-8">
       <g-image
         :alt="$page.post.image.alt"
         :src="$page.post.image.path"
@@ -48,8 +48,12 @@
         v-html="$page.post.image.caption"
       />
     </figure>
+
+    <TableOfContents :heading-list="postHeadings" />
+
     <article
-      class="mb-16 prose dark:prose-light lg:prose-lg xl:prose-xl"
+      id="post-content"
+      class="mb-16 md:px-2 xl:px-4 prose dark:prose-light lg:prose-lg xl:prose-xl"
       v-html="$page.post.content"
     />
     <div
@@ -124,8 +128,18 @@
 <script>
 import PostSEO from "../mixins/PostSEO.vue";
 import Utils from "../mixins/Utils.vue";
+import TableOfContents from "../components/TableOfContents.vue";
+
 export default {
+  components: {
+    TableOfContents,
+  },
   mixins: [PostSEO, Utils],
+  data() {
+    return {
+      postHeadings: null,
+    };
+  },
   computed: {
     seriesOverviewName() {
       const overviewName = this.unSlugify(this.$page.post.pillar.title);
@@ -140,6 +154,16 @@ export default {
     },
     authorLink() {
       return "/author/" + this.$page.post.author.title.name;
+    },
+  },
+  created() {
+    setTimeout(() => this.generateHeadingList(), 100);
+  },
+  methods: {
+    generateHeadingList() {
+      const post = document.getElementById("post-content");
+      const headings = post.querySelectorAll("h2, h3, h4, h5");
+      this.postHeadings = headings;
     },
   },
 };

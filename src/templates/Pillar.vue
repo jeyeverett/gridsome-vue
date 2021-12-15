@@ -4,9 +4,10 @@
       <h1 class="heading-primary">
         {{ pillarTitle }}
       </h1>
-      <p class="mt-6">
-        {{ pillarOverview }}
-      </p>
+      <p
+        class="mt-6 prose dark:prose-light lg:prose-lg xl:prose-xl"
+        v-html="pillarOverview"
+      />
       <div class="px-4 py-4 mt-6">
         <h2 class="mt-2 text-2xl font-bold">
           Table of Contents
@@ -25,12 +26,6 @@
           </li>
         </ul>
       </div>
-      <p class="mt-8">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-        reiciendis dolore! Maiores totam ratione, officia ullam unde quae
-        voluptates aliquam libero omnis delectus nulla voluptas facilis
-        doloremque deleniti similique autem.
-      </p>
     </div>
   </Layout>
 </template>
@@ -56,6 +51,7 @@ query Posts ($id: ID!) {
         }
         pillarContent {
           text
+          pillarTitle
         }
       }
     }
@@ -75,10 +71,11 @@ export default {
   },
   computed: {
     pillarTitle() {
-      return this.unSlugify(this.$page.posts.edges[0].node.pillar.title);
+      console.log(this.$page.posts.edges[0].node.pillarContent.pillarTitle);
+      return this.$page.posts.edges[0].node.pillarContent.pillarTitle;
     },
     pillarOverview() {
-      return this.unSlugify(this.$page.posts.edges[0].node.pillarContent.text);
+      return this.$page.posts.edges[0].node.pillarContent.text;
     },
   },
 };
