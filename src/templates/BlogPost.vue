@@ -49,7 +49,9 @@
       />
     </figure>
 
-    <TableOfContents :heading-list="postHeadings" />
+    <ClientOnly>
+      <TableOfContents />
+    </ClientOnly>
 
     <article
       id="post-content"
@@ -154,16 +156,6 @@ export default {
     },
     authorLink() {
       return "/author/" + this.$page.post.author.title.name;
-    },
-  },
-  created() {
-    setTimeout(() => this.generateHeadingList(), 100);
-  },
-  methods: {
-    generateHeadingList() {
-      const post = document.getElementById("post-content");
-      const headings = post.querySelectorAll("h2, h3, h4, h5");
-      this.postHeadings = headings;
     },
   },
 };
