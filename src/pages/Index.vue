@@ -3,7 +3,7 @@
     class="bg-hero-pattern-sm md:bg-hero-pattern-md xl:bg-hero-pattern-lg h-screen pt-6 bg-cover bg-no-repeat"
   >
     <the-header style="marginTop: 0;" />
-    <section class="px-2 sm:px-20 py-10">
+    <section class="xs:px-2 sm:px-20 xs:py-10">
       <div
         class="flex flex-col items-center sm:block sm:ml-5 md:ml-10 xl:ml-36"
       >
@@ -30,13 +30,13 @@
         </vue-typed-js>
 
         <transition
-          enter-active-class="transform transition-all duration-700 ease-out"
-          enter-class="opacity-0 translate-y-20"
-          enter-to-class="opacity-100 translate-y-0"
+          enter-active-class="transition-all delay-200 duration-700 ease-out"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
         >
           <p
             v-if="h2Complete"
-            class="pl-1 text-lg text-gray-600 font-medium mb-14 md:mb-20 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed"
+            class="xs:pl-1 text-sm xs:text-base sm:text-lg text-gray-600 font-medium mb-8 xs:mb-14 md:mb-20 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed"
           >
             I combine full-stack JavaScript with cloud technology to design and
             build high performance web applications.
@@ -44,9 +44,9 @@
         </transition>
 
         <transition
-          enter-active-class="transform transition-all button-transition duration-1000 ease-out"
-          enter-class="opacity-0 translate-y-20"
-          enter-to-class="opacity-100 translate-y-0"
+          enter-active-class="transition-all button-transition duration-1000 ease-out"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
         >
           <Button
             :is-displayed="h2Complete"

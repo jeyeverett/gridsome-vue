@@ -1,5 +1,5 @@
 <template>
-  <footer class="px-4 py-14 bg-gray-700 w-full mt-10">
+  <footer class="px-4 py-14 bg-gray-700 w-full">
     <nav
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-white w-5/6 mx-auto"
     >
@@ -74,7 +74,7 @@
               for="email"
               class="absolute left-2 pt-0.5 text-gray-900 text-sm font-medium uppercase tracking-wider cursor-text select-none"
             >
-              Email
+              Your Email
             </label>
             <input
               type="email"

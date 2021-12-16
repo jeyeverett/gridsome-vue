@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <section class="flex flex-col justify-between items-center mt-10 relative">
+    <section
+      class="flex flex-col justify-between items-center mt-10 relative pb-10"
+    >
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center"
       >
@@ -70,8 +72,8 @@
           </a>
         </span>
       </section>
-      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
-        <span class="md:px-8 py-4 mb-2">
+      <section class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+        <span class="px-8 sm:px-16 md:px-0 lg:px-8 py-4 mb-2">
           <PersonIcon
             classes="h-32 w-32 text-gray-500 dark:text-gray-200 mx-auto mb-10"
           />
@@ -87,7 +89,7 @@
             to create highly performant and scalable web solutions.
           </p>
         </span>
-        <span class="md:px-8 py-4 mb-2">
+        <span class="px-8 sm:px-16 md:px-0 py-4 mb-2">
           <EarthIcon
             classes="h-32 w-32 text-gray-500 dark:text-gray-200 mx-auto mb-10"
           />
@@ -103,7 +105,7 @@
             to empower and transform their lives.
           </p>
         </span>
-        <span class="md:px-8 py-4 mb-2">
+        <span class="px-8 sm:px-16 md:px-0 py-4 mb-2">
           <IdIcon
             classes="h-32 w-32 text-gray-500 dark:text-gray-200 mx-auto mb-10"
           />
@@ -119,7 +121,7 @@
             natural and sustainable lifestyle.
           </p>
         </span>
-        <span class="md:px-8 py-4 mb-2">
+        <span class="px-8 sm:px-16 md:px-0 py-4 mb-2">
           <LightBulbIcon
             classes="h-32 w-32 text-gray-500 dark:text-gray-200 mx-auto mb-10"
           />
@@ -135,7 +137,7 @@
             acre organic farm!
           </p>
         </span>
-      </div>
+      </section>
     </section>
   </Layout>
 </template>
@@ -158,3 +160,5 @@ export default {
   },
 };
 </script>
+
+<style></style>

@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: [
@@ -20,6 +21,10 @@ module.exports = {
         DEFAULT: "#1379a8",
         dark: "#08374d",
       },
+    },
+    screens: {
+      xs: "480px",
+      ...defaultTheme.screens,
     },
     extend: {
       backgroundImage: {
