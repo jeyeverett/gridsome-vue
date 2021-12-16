@@ -9,7 +9,10 @@
 </static-query>
 
 <script>
+import Utils from "./Utils.vue";
+
 export default {
+  mixins: [Utils],
   metaInfo() {
     const siteUrl = this.$static.metadata.siteUrl;
     const postPath = this.$page.post.path;
@@ -27,14 +30,15 @@ export default {
         {
           key: "keywords",
           name: "keywords",
-          content: this.$page.post.tags.reduce(
-            (acc, curr) => acc.title + ", " + curr.title
-          ),
+          content: this.$page.post.tags.reduce((acc, curr, index) => {
+            if (index === 0) return curr.title;
+            return acc + ", " + curr.title;
+          }, ""),
         },
         {
           key: "author",
           name: "author",
-          content: this.$page.post.author.title,
+          content: this.unSlugify(this.$page.post.author.title.name),
         },
         { key: "og:url", property: "og:url", content: `${siteUrl}${postPath}` },
         {
@@ -97,7 +101,7 @@ export default {
             description: this.$page.post.summary,
             datePublished: this.$page.post.date,
             author: {
-              name: this.$page.post.author.title,
+              name: this.unSlugify(this.$page.post.author.title.name),
             },
             headline: this.$page.post.title,
             image: imagePath,

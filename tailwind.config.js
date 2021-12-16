@@ -23,7 +23,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/images/hero.jpg')",
+        "hero-pattern-lg": "url('/images/hero.jpg')",
+        "hero-pattern-sm": "url('/images/hero_small.jpg')",
+        "hero-pattern-md": "url('/images/hero_medium.jpg')",
       },
       typography: (theme) => ({
         light: {

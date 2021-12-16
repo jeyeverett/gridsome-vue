@@ -17,7 +17,7 @@
       <g-image
         :alt="authorName"
         :src="$page.post.author.title.image"
-        class="rounded-full w-8 sm:w-10 mr-3 "
+        class="rounded-full w-8 sm:w-10 mr-3"
       />
       <span class="flex-col sm:flex-row">
         <g-link
@@ -55,7 +55,7 @@
 
     <article
       id="post-content"
-      class="mb-16 md:px-2 xl:px-4 prose dark:prose-light lg:prose-lg xl:prose-xl"
+      class="mb-16 md:px-2 xl:px-4 mx-auto prose dark:prose-light lg:prose-lg xl:prose-xl"
       v-html="$page.post.content"
     />
     <div
@@ -102,6 +102,7 @@
             title
             date (format: "MMMM D, Y")
             content
+            summary
             path
             timeToRead
             pillar {
@@ -137,22 +138,15 @@ export default {
     TableOfContents,
   },
   mixins: [PostSEO, Utils],
-  data() {
-    return {
-      postHeadings: null,
-    };
-  },
   computed: {
     seriesOverviewName() {
-      const overviewName = this.unSlugify(this.$page.post.pillar.title);
-      return overviewName;
+      return this.unSlugify(this.$page.post.pillar.title);
     },
     seriesOverviewLink() {
       return "/blog/" + this.$page.post.pillar.title;
     },
     authorName() {
-      const authorName = this.unSlugify(this.$page.post.author.title.name);
-      return authorName;
+      return this.unSlugify(this.$page.post.author.title.name);
     },
     authorLink() {
       return "/author/" + this.$page.post.author.title.name;

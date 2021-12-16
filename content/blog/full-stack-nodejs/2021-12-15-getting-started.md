@@ -4,7 +4,7 @@ date: "2021-12-15"
 title: "Getting Started with Full-Stack Node.js Development"
 author:
   name: "jeysen-freedman"
-  bio: "Full Stack Web Developer and Designer"
+  bio: "Full Stack Web Developer"
   image: ../../media/jeysen-freedman.jpg
 tags:
   [
@@ -26,9 +26,9 @@ pillarContent:
   pillarTitle: "Building a Full-Stack Node.js Application | The Step-by-Step JavaScript Developer's Guide"
   text: "<em>'Building a Full-Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide'</em> is an ongoing series on full-stack Node.js web development.  Each step in the series covers a variety of web development topics, including: back-end development, front-end development, best practices, useful libraries, design patterns, error handling, UI/UX design, and much more."
 image:
-  path: ./media/test-image.jpg
+  path: ./media/nodejs_logo.svg.png
   alt: "A typewriter and notebooks laid out on a table"
-  caption: 'Photo by <a href="https://unsplash.com/@retrosupply?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>RetroSupply</em></a> on <a href="https://unsplash.com/s/photos/blog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><em>Unsplash</em></a>'
+  caption: 'Photo by <a href="https://nodejs.org/en/about/resources/"><em>Node.js</em></a>'
 ---
 
 > _This is part one of **"Building a Full-Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"**. [Find the full series here](/blog/full-stack-nodejs)._
@@ -39,11 +39,15 @@ This is the first article in an _open-ended_ guide to full-stack Node.js web dev
 
 The goal of this guide is to give you the step-by-step instructions I wish I had when I first began learning web development. It follows a _hands-on_ approach to learning web development supplemented by the details - _that in my experience_ - were helpful in connecting the dots.
 
-The focus is on learning skills and not on building a capstone project, so the process will be more like playing in a sandbox then building a finished product. We will be adding different features as we move along, exploring as much as we can in each article. My focus is on providing you the building blocks you need to build whatever **you'd** like. To do that we will be evolving this project piece by piece as we explore the basics, experiment, design, create, test, refactor and beyond.
+The focus is on learning skills and not on building a capstone project, so the process will be more like playing in a sandbox then building a finished product. We will be adding different features as we move along, exploring as much as we can in each article.
 
-> The **major technologies** covered will naturally follow my own experience as a JavaScript focused web developer: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and more. But this list is just the beginning and I hope to introduce you to as many fantastic web technologies as I can.
+My goal is to provide you with the building blocks you need to build whatever you'd like. To do that we will be evolving this project piece by piece as we explore the basics, experiment, design, create, test, refactor and beyond.
+
+> The **major technologies** include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
 
 This guide assumes you have some basic understand of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web. I recommend: FILL_OUT_LATER. That being said, this guide keeps the beginner in mind and offers detailed explanation as much as possible.
+
+### New to Web Development?
 
 If you are new to web development, you are probably trying to get your bearings. You may be overwhelmed by all the directions you can go. Technologies, frameworks, programming languages... it's easy to feel intimidated. The only thing I can tell you is: _welcome to the web_.
 
@@ -77,11 +81,11 @@ To get started you need Node.js installed on your computer. I am starting with v
 
 You can check if you have Node.js installed, and what version it is, by typing `node -v` into the command line.
 
-You can download Node.js from https://nodejs.org/. Choose the LTS option, which stands for _long term stable_ and is the more reliable option. The Current option has experimental features and is not recommended for **production** applications.
+You can download Node.js from https://nodejs.org/. Choose the **LTS option**, which stands for _long term stable_ and is the more reliable option. The _Current_ option has experimental features and is not recommended for **production** applications.
 
 > We are in _development_ while we build our software - when its complete we deploy it to **production** so other people can use it
 
-Keep in mind that a difference in Node.js MAJOR version numbers means significant changes to the API - I am using **v14**. We will practice with updating the version number along the way but be aware that using different versions than the one's used in this guide could result in unexpected behavior.
+Keep in mind that a difference in Node.js MAJOR version numbers means significant changes to the API - I am using **v14**. We will practice with updating the version number along the way but be aware that using different versions than those used in this guide could result in unexpected behavior.
 
 > **What is an API?**
 >
@@ -207,7 +211,7 @@ If you open your **package.json** file you should now see `"express"` under `"de
     }
 ```
 
-> If your _version number_ for express is different - don't worry. As long as the major version is **4** everything will be fine. (refer to Semantic Versioning above)
+> As long your major version is **4** you are good to go.
 
 > The caret symbol "^" tells npm to use the latest _minor version_
 
@@ -302,8 +306,8 @@ In this article you learned that _Node.js_ gives us the ability to run JavaScrip
 
 You saw that you can use _node package manager_ (_npm_) to access the _npm registry_ and choose from over a million different _packages_ to use in your project.
 
-You installed _Express.js_, configured _ES Modules_ in the Node environment, and tested your setup to ensure everything was working.
+You installed _Express.js_, configured _ES Modules_ in the Node environment, and tested your environment to ensure everything was good to go.
 
-Now what our development environment is set up, in the next article we will begin building our first web server with Express.js and Node.
+Now that our development environment is set up, in the next article we will begin building our first web server with Express.js and Node.
 
 Thanks for following along and I'll see you in the next one!

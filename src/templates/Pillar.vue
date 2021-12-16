@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="py-16 mx-auto container-inner">
+    <section class="py-16 mx-auto container-inner">
       <h1 class="heading-primary">
         {{ pillarTitle }}
       </h1>
@@ -26,13 +26,26 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
+    <section>
+      <h2 class="text-3xl text-gray-700 font-semibold mb-10">Posts</h2>
+      <ul
+        class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
+      >
+        <PostOverview
+          v-for="post in $page.posts.edges"
+          :key="post.path"
+          :post="post"
+        />
+      </ul>
+      <Pager :page-info="$page.posts.pageInfo" :range="3" />
+    </section>
   </Layout>
 </template>
 
 <page-query>
-query Posts ($id: ID!) {
-  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: {eq: $id } })  {
+query Posts ($id: ID!, $page: Int) {
+  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: {eq: $id } },  perPage: 6, page: $page) @paginate  {
     totalCount
     pageInfo {
       totalPages
@@ -40,18 +53,29 @@ query Posts ($id: ID!) {
     }
     edges {
       node {
-        id
         title
         date (format: "MMMM D, Y")
+        path
         summary
         timeToRead
-        path
+        image {
+          path
+          caption
+          alt
+        }
         pillar {
           title
         }
         pillarContent {
-          text
           pillarTitle
+          text
+        }
+        author {
+          path
+          title {
+            name
+            image (width: 200, height: 200)
+          }
         }
       }
     }
@@ -61,8 +85,14 @@ query Posts ($id: ID!) {
 
 <script>
 import Utils from "../mixins/Utils.vue";
+import Pager from "../components/Pager.vue";
+import PostOverview from "../components/PostOverview.vue";
 
 export default {
+  components: {
+    Pager,
+    PostOverview,
+  },
   mixins: [Utils],
   metaInfo() {
     return {
@@ -71,7 +101,6 @@ export default {
   },
   computed: {
     pillarTitle() {
-      console.log(this.$page.posts.edges[0].node.pillarContent.pillarTitle);
       return this.$page.posts.edges[0].node.pillarContent.pillarTitle;
     },
     pillarOverview() {

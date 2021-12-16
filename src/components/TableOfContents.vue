@@ -1,16 +1,16 @@
 <template>
   <nav
     v-if="headings"
-    class="flex flex-col bg-gray-100 rounded-sm px-4 py-2 w-max mx-auto"
+    class="flex flex-col bg-gray-100 dark:bg-gray-700 dark:text-white rounded-sm px-4 py-2 w-max mx-auto"
   >
-    <h2 class="text-gray-700 font-semibold text-lg mb-2">
+    <h2 class="text-gray-700 dark:text-white font-semibold text-lg mb-2">
       Table of Contents
     </h2>
     <a
       v-for="item in headings"
       :key="item.id"
       :href="`#${item.id}`"
-      class="block text-gray-700 italic hover:bg-gray-200"
+      class="block text-gray-700 dark:text-white italic hover:bg-gray-200 dark:hover:bg-gray-600"
       :class="{
         'font-semibold': item.tagName === 'H2',
         'ml-2 font-medium': item.tagName === 'H3',

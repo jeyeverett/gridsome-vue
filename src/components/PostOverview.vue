@@ -1,14 +1,19 @@
 <template>
   <li
-    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all shadow"
+    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all shadow mx-auto"
+    style="max-width: 300px; min-width: 250px;"
   >
     <g-link :to="post.node.path">
-      <g-image :alt="post.node.image.alt" :src="post.node.image.path" />
+      <g-image
+        :alt="post.node.image.alt"
+        :src="post.node.image.path"
+        height="250"
+        class="h-40"
+      />
     </g-link>
     <div class="px-4 py-2">
       <g-link
         :to="'/blog/' + post.node.pillar.title"
-        append=""
         class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-200 transition-all hover:text-gray-700 dark:hover:text-gray-300"
       >
         {{ unSlugify(post.node.pillar.title) }}
@@ -17,8 +22,13 @@
         <g-link
           :to="post.node.path"
           class="text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+          :title="post.node.title"
         >
-          {{ post.node.title }}
+          {{
+            post.node.title.length < 25
+              ? post.node.title
+              : `${post.node.title.slice(0, 25)}..`
+          }}
         </g-link>
       </h3>
       <p class="text-xs mb-4">{{ post.node.summary }}</p>
