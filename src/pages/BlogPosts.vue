@@ -1,17 +1,9 @@
 <template>
   <Layout>
-    <section class="mx-auto pb-10">
-      <h1 class="text-5xl font-semibold text-gray-700 dark:text-white mb-4">
-        Blog
+    <section class="mx-auto">
+      <h1 class="text-5xl font-semibold text-gray-700 dark:text-white mb-10">
+        All Posts
       </h1>
-      <h3 class="mb-10 font-light text-gray-500 dark:text-white transition-all">
-        The latest web development tips, tricks, insights, and resources, hot
-        off the presses.
-      </h3>
-
-      <h2 class="text-3xl font-semibold text-gray-700 dark:text-white mb-8">
-        Recent Posts
-      </h2>
       <ul
         class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
       >
@@ -22,21 +14,18 @@
           class="post"
         />
       </ul>
-      <div class="text-center">
-        <g-link
-          to="/blog-posts"
-          class="text-gray-900 px-4 py-2 border border-gray-700 rounded hover:shadow-lg hover:bg-gray-300 transition-all shadow truncate font-medium"
-        >
-          See all posts
-        </g-link>
-      </div>
+      <Pager :page-info="$page.posts.pageInfo" :range="1" />
     </section>
   </Layout>
 </template>
 
 <page-query>
-query Posts {
-  posts: allBlogPost (sortBy: "date", order: DESC) {
+query Posts ($page: Int) {
+  posts: allBlogPost (sortBy: "date", order: DESC, perPage: 1, page: $page) @paginate {
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         title
@@ -67,10 +56,12 @@ query Posts {
 
 <script>
 import gsap from "gsap";
+import Pager from "../components/Pager.vue";
 import PostOverview from "../components/PostOverview.vue";
 
 export default {
   components: {
+    Pager,
     PostOverview,
   },
   metaInfo: {

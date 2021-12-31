@@ -4980,6 +4980,11 @@
     "webpack-merge" "^4.2.1"
     "yaml-loader" "^0.5.0"
 
+"gsap@^3.9.0":
+  "integrity" "sha512-YfIBNHJu4UHES1Vj780+sXtQuiD78QQwgJqktaXE9PO9OuXz5l4ETz05pnhxUfJcxJy4SUINXJxT9ZZhuYwU2g=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.9.0.tgz"
+  "version" "3.9.0"
+
 "har-schema@^2.0.0":
   "integrity" "sha1-qUwiJOvKwEeCoNkDVSHyRzW37JI="
   "resolved" "https://registry.npmjs.org/har-schema/-/har-schema-2.0.0.tgz"
@@ -9911,7 +9916,7 @@
     "media-typer" "0.3.0"
     "mime-types" "~2.1.24"
 
-"typed.js@git+https://github.com/mattboldt/typed.js.git":
+"typed.js@git+https://github.com/jeyeverett/typed.js":
   "resolved" "git+ssh://git@github.com/mattboldt/typed.js.git#a8c8686576dc52d416d1e734b3b3eeffcc28bd93"
   "version" "2.0.12"
 
@@ -10511,7 +10516,7 @@
   "resolved" "https://registry.npmjs.org/vue-typed-js/-/vue-typed-js-0.1.2.tgz"
   "version" "0.1.2"
   dependencies:
-    "typed.js" "git+https://github.com/jeyeverett/typed.js.git"
+    "typed.js" "git+https://github.com/jeyeverett/typed.js"
 
 "vue@^2 || ^3.0.0-0", "vue@^2.6.10":
   "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="

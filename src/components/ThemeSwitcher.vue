@@ -17,12 +17,14 @@
 <script>
 import Brightness4 from "vue-material-design-icons/Brightness4";
 import Brightness7 from "vue-material-design-icons/Brightness7";
+import Utils from "../mixins/Utils.vue";
 
 export default {
   components: {
     Brightness4,
     Brightness7,
   },
+  mixins: [Utils],
   data() {
     return {
       theme: "",
@@ -40,15 +42,6 @@ export default {
     toggleTheme() {
       const newTheme = this.theme === "light" ? "dark" : "light";
       this.setTheme(newTheme);
-    },
-    setTheme(newTheme) {
-      this.theme = newTheme;
-      if (this.theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-      localStorage.setItem("theme", newTheme);
     },
   },
 };

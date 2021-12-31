@@ -1,14 +1,15 @@
 <template>
   <li
-    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden transition-all shadow mx-auto"
+    class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden shadow mx-auto"
     style="max-width: 300px; min-width: 250px;"
   >
     <g-link :to="post.node.path">
       <g-image
         :alt="post.node.image.alt"
         :src="post.node.image.path"
-        height="250"
-        class="h-40"
+        height="160"
+        width="300"
+        class="h-40 object-cover object-center"
       />
     </g-link>
     <div class="px-4 py-2">

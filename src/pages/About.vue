@@ -72,8 +72,8 @@
           </a>
         </span>
       </section>
-      <section class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
-        <span class="px-8 sm:px-16 md:px-0 lg:px-8 py-4 mb-2">
+      <section class="grid grid-cols-1 md:grid-cols-2 md:gap-12 xl:gap-16">
+        <span class="px-8 sm:px-16 md:px-0 py-4 mb-2">
           <PersonIcon
             classes="h-32 w-32 text-gray-500 dark:text-gray-200 mx-auto mb-10"
           />

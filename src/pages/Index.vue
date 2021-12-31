@@ -13,7 +13,7 @@
           class="mb-2 text-4xl sm:text-6xl font-bold tracking-normal sm:tracking-tight"
           style="color: #1379a8"
           :start-delay="1000"
-          @onStringTyped="disableCursor('h1')"
+          @onStringTyped="completeAnimation('h1')"
         >
           <h1 class="typing text-center sm:text-left" />
         </vue-typed-js>
@@ -24,32 +24,26 @@
           class="sm:pl-1 mb-5 md:mb-10 text-md sm:text-2xl tracking-wide sm:tracking-wider uppercase"
           style="color: #1379a8"
           :start-delay="500"
-          @onStringTyped="disableCursor('h2')"
+          @onStringTyped="completeAnimation('h2')"
         >
           <h2 class="typing font-semibold text-center sm:text-left" />
         </vue-typed-js>
-
-        <transition
-          enter-active-class="transition-all delay-200 duration-700 ease-out"
-          enter-class="opacity-0"
-          enter-to-class="opacity-100"
-        >
+        <transition @before-enter="beforeEnterP" @enter="enterP">
           <p
             v-if="h2Complete"
-            class="xs:pl-1 text-sm xs:text-base sm:text-lg text-gray-600 font-medium mb-8 xs:mb-14 md:mb-20 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed"
+            appear
+            :css="false"
+            class="xs:pl-1 text-sm text-center sm:text-left xs:text-base sm:text-lg text-gray-600 font-medium mb-8 xs:mb-14 md:mb-20 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed "
           >
             I combine full-stack JavaScript with cloud technology to design and
             build high performance web applications.
           </p>
         </transition>
 
-        <transition
-          enter-active-class="transition-all button-transition duration-1000 ease-out"
-          enter-class="opacity-0"
-          enter-to-class="opacity-100"
-        >
+        <transition @before-enter="beforeAnimateButton" @enter="animateButton">
           <Button
-            :is-displayed="h2Complete"
+            v-if="pComplete"
+            appear
             button-text="Let's work together!"
             button-classes="px-6 py-3"
             text-classes="font-semibold"
@@ -61,9 +55,11 @@
 </template>
 
 <script>
+import { VueTypedJs } from "vue-typed-js";
+import gsap from "gsap";
 import TheHeader from "../components/TheHeader.vue";
 import Button from "../components/Button.vue";
-import { VueTypedJs } from "vue-typed-js";
+import Utils from "../mixins/Utils.vue";
 
 export default {
   components: {
@@ -71,22 +67,69 @@ export default {
     Button,
     VueTypedJs,
   },
+  mixins: [Utils],
   metaInfo: {
-    title: "Hello, world!",
+    title: "Welcome!",
   },
   data() {
     return {
       h1Complete: false,
       h2Complete: false,
+      pComplete: false,
     };
   },
+  mounted() {
+    this.setTheme("light");
+  },
   methods: {
-    disableCursor(id) {
-      if (id !== "p") {
-        const container = document.getElementById(id);
-        container.removeChild(container.lastChild);
+    beforeEnterP(el) {
+      el.style.opacity = 0;
+      el.style.transform = "scale(0,0)";
+    },
+    enterP(el, done) {
+      gsap.to(el, {
+        duration: 0.5,
+        opacity: 1,
+        scale: 1,
+        ease: "power1",
+        onComplete: () => {
+          setTimeout(
+            () => this.completeAnimation(el.tagName.toLowerCase()),
+            2000
+          );
+          done();
+        },
+      });
+    },
+    beforeAnimateButton(el) {
+      gsap.from(el, {
+        opacity: 0,
+        scale: 0,
+        y: 200,
+      });
+    },
+    animateButton(el, done) {
+      gsap.to(el, {
+        duration: 0.5,
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        ease: "power1",
+        onComplete: () => {
+          this.completeAnimation(el.tagName.toLowerCase());
+          done();
+        },
+      });
+    },
+    completeAnimation(id) {
+      if (id === "h1" || id === "h2") {
+        this.disableCursor(id);
       }
       this[id + "Complete"] = true;
+    },
+    disableCursor(id) {
+      const container = document.getElementById(id);
+      container.removeChild(container.lastChild);
     },
   },
 };

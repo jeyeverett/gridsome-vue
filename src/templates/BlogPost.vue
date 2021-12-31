@@ -41,7 +41,9 @@
       <g-image
         :alt="$page.post.image.alt"
         :src="$page.post.image.path"
-        class="mb-2 mx-auto"
+        height="400"
+        width="600"
+        class="mb-2 mx-auto w-3/4 object-fit object-center"
       />
       <figcaption
         class="self-center font-light text-sm image-caption"
