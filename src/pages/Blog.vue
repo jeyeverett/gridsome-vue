@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="mx-auto pb-10">
+    <section class="mx-auto">
       <h1 class="text-5xl font-semibold text-gray-700 dark:text-white mb-4">
         Blog
       </h1>
@@ -25,7 +25,7 @@
       <div class="text-center">
         <g-link
           to="/blog-posts"
-          class="text-gray-900 px-4 py-2 border border-gray-700 rounded hover:shadow-lg hover:bg-gray-300 transition-all shadow truncate font-medium"
+          class="text-gray-900 px-4 py-2 border border-gray-700 dark:border-white dark:text-white rounded hover:shadow-lg hover:bg-gray-700 hover:text-white dark:hover:bg-gray-700 transition-all shadow truncate font-medium"
         >
           See all posts
         </g-link>

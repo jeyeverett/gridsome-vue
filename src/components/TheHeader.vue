@@ -20,13 +20,14 @@
         <NavLink route="about" />
         <Button
           :is-displayed="true"
-          :is-typing="false"
           button-text="Contact me"
           text-classes="font-medium"
           class="ml-1 hidden sm:block"
+          @click="toggleModal"
         />
       </span>
     </nav>
+    <Modal :is-modal-visible="isModalVisible" @click="toggleModal" />
   </header>
 </template>
 
@@ -35,6 +36,7 @@ import ThemeSwitcher from "../components/ThemeSwitcher.vue";
 import Button from "./Button.vue";
 import NavLink from "../components/NavLink.vue";
 import Logo from "../components/Logo.vue";
+import Modal from "../components/Modal.vue";
 
 export default {
   components: {
@@ -42,6 +44,19 @@ export default {
     Button,
     NavLink,
     Logo,
+    Modal,
+  },
+  emits: ["toggle-modal"],
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.isModalVisible = !this.isModalVisible;
+      this.$emit("toggle-modal");
+    },
   },
 };
 </script>

@@ -1,8 +1,6 @@
 <template>
   <Layout>
-    <section
-      class="flex flex-col justify-between items-center mt-10 relative pb-10"
-    >
+    <section class="flex flex-col justify-between items-center mt-10 relative">
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center"
       >
@@ -101,8 +99,8 @@
           <p class="font-medium leading-relaxed">
             I'm interested in applying web technologies to solve problems
             related to local agriculture, renewable energy, sustainable housing,
-            and mental health. I want to help people and businesses use the web
-            to empower and transform their lives.
+            mental health and education. I want to help people and businesses
+            use the web to empower and transform their lives.
           </p>
         </span>
         <span class="px-8 sm:px-16 md:px-0 py-4 mb-2">
@@ -131,8 +129,8 @@
             Fun Fact
           </h4>
           <p class="font-medium leading-relaxed text-gray-700 dark:text-white">
-            In-between my career transition from engineering consultant to web
-            developer, I had the opportunity to learn timber framing and log
+            While making the switch from engineering consulting to software
+            development, I had the opportunity to learn timber framing and log
             building, build custom homes, and even spend a season managing a 60
             acre organic farm!
           </p>

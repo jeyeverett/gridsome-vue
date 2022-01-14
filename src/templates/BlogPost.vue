@@ -85,7 +85,7 @@
         </span>
       </div>
     </div>
-    <div class="flex flex-wrap my-10 text-sm">
+    <div class="flex flex-wrap mt-10 text-sm">
       <g-link
         v-for="tag in $page.post.tags"
         :key="tag.id"

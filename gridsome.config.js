@@ -14,6 +14,7 @@ module.exports = {
   metadata: {
     // meta data for social media, etc. goes here
   },
+  icon: "src/favicon.png",
   plugins: [
     {
       use: "@gridsome/source-filesystem",

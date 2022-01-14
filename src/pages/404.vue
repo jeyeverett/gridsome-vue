@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="flex flex-col items-center pb-10">
+    <section class="flex flex-col items-center">
       <h1 class="text-4xl text-gray-700 dark:text-white font-medium my-10">
         Uh oh!
       </h1>
