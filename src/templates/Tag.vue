@@ -1,14 +1,20 @@
 <template>
   <Layout>
     <section class="min-h-screen">
-      <h1 class="mb-2 text-xl font-semibold text-gray-900 dark:text-gray-200">
+      <h1
+        class="mb-2 text-3xl font-semibold text-gray-700 dark:text-gray-200 uppercase tracking-wide"
+      >
         {{ $page.tag.title }}
       </h1>
       <h2 v-if="$page.tag.description" class="mb-8">
         {{ $page.tag.description }}
       </h2>
+      <h3 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">
+        Recent Posts
+      </h3>
       <ul
         class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
+        v-if="postsExist"
       >
         <PostOverview
           v-for="post in $page.tag.belongsTo.edges"
@@ -16,6 +22,7 @@
           :post="post"
         />
       </ul>
+      <p v-else>Posts for this tag are coming soon!</p>
       <Pager :page-info="$page.tag.belongsTo.pageInfo" :range="3" />
     </section>
   </Layout>
@@ -73,6 +80,11 @@ export default {
     return {
       title: "Tag: " + this.$page.tag.title,
     };
+  },
+  computed: {
+    postsExist() {
+      return !!this.$page.tag.belongsTo.edges[0].node.title;
+    },
   },
 };
 </script>

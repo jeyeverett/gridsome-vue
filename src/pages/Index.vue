@@ -28,24 +28,24 @@
         >
           <h2 class="typing font-semibold text-center sm:text-left" />
         </VueTypedJs>
-        <transition appear @before-enter="beforeEnterP" @enter="enterP">
+        <transition appear @before-enter="beforeEnter" @enter="enter">
           <p
             v-if="h2Complete"
             :css="false"
-            class="xs:pl-1 text-sm text-center sm:text-left xs:text-base sm:text-lg text-gray-600 font-medium mb-8 xs:mb-14 md:mb-20 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed "
+            class="xs:pl-1 text-sm text-center sm:text-left xs:text-base sm:text-lg text-gray-600 font-medium mb-8 md:mb-12 text-md w-3/4 md:w-1/2 lg:w-1/3 leading-relaxed "
           >
             I combine full stack JavaScript with cloud technology to design and
             build high performance web applications.
           </p>
         </transition>
-
-        <transition @before-enter="beforeAnimateButton" @enter="animateButton">
+        <transition appear @before-enter="beforeEnter" @enter="enter">
           <Button
             v-if="pComplete"
-            appear
-            button-text="Let's work together!"
+            :css="false"
+            button-text="Let's work together"
             button-classes="px-6 py-3"
             text-classes="font-semibold"
+            :class="buttonComplete ? 'transition-all' : ''"
             @click="toggleModal"
           />
         </transition>
@@ -76,6 +76,7 @@ export default {
       h1Complete: false,
       h2Complete: false,
       pComplete: false,
+      buttonComplete: false,
     };
   },
   mounted() {
@@ -85,41 +86,25 @@ export default {
     toggleModal() {
       this.$refs.header.toggleModal();
     },
-    beforeEnterP(el) {
-      el.style.opacity = 0;
-      el.style.transform = "scale(0,0)";
+    beforeEnter(el) {
+      gsap.from(el, {
+        opacity: 1,
+        y: -50,
+        scale: el.tagName.toLowerCase() === "button" ? 0 : 1,
+      });
     },
-    enterP(el, done) {
+    enter(el, done) {
       gsap.to(el, {
         duration: 0.75,
         opacity: 1,
+        y: 0,
         scale: 1,
         ease: "power1",
         onComplete: () => {
           setTimeout(
             () => this.completeAnimation(el.tagName.toLowerCase()),
-            1750
+            1250
           );
-          done();
-        },
-      });
-    },
-    beforeAnimateButton(el) {
-      gsap.from(el, {
-        opacity: 0,
-        scale: 0,
-        y: 200,
-      });
-    },
-    animateButton(el, done) {
-      gsap.to(el, {
-        duration: 0.5,
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        ease: "power1",
-        onComplete: () => {
-          this.completeAnimation(el.tagName.toLowerCase());
           done();
         },
       });

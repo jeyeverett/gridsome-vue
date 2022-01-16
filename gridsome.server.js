@@ -47,11 +47,10 @@ const autoPublish = (posts) => {
 const addTagDescriptions = (tags) => {
   const tagDescriptions = {
     backend:
-      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+      "Backend subjects focused on nodejs and its libraries, web servers, integration with databases, cloud infrastructure and deployment",
     coding:
       "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
-    nodejs:
-      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    nodejs: "Diving into using nodejs ",
     npm:
       "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
     semver:
@@ -65,6 +64,18 @@ const addTagDescriptions = (tags) => {
     api:
       "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
     expressjs:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    vuejs:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    gridsome:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    markdown:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    ssg:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    tailwindcss:
+      "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
+    seo:
       "Banh mi authentic fashion axe affogato shoreditch umami bicycle rights keytar put a bird on it drinking vinegar pitchfork taxidermy.",
   };
 

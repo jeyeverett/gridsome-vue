@@ -8,14 +8,21 @@
   >
     <div v-if="isModalVisible" class="backdrop" @click="$emit('click')">
       <aside
-        class="px-10 py-10 sm:px-12 sm:py-12 bg-gray-800 rounded shadow-lg w-3/4 sm:w-1/2"
+        class="p-8 xs:p-10 sm:p-12 bg-gray-800 rounded shadow-lg w-3/4 sm:w-1/2 relative"
         @click.stop
       >
+        <div
+          class="absolute top-2 right-4 text-gray-200 font-semibold text-lg cursor-pointer"
+          @click="$emit('click')"
+        >
+          x
+        </div>
         <g-image
+          alt="Jeysen Freedman"
           src="../../content/media/jeysen-freedman.jpg"
           width="400"
           height="400"
-          class="rounded-lg w-20 mb-8 mx-auto"
+          class="rounded-lg w-20 mb-8 mx-auto select-none"
         />
         <h3 class="text-white uppercase text-center mb-8">Contact Me</h3>
         <ContactForm />

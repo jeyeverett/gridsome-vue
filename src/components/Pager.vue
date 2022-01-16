@@ -14,8 +14,5 @@ import { Pager } from "gridsome";
 export default {
   components: { Pager },
   props: ["pageInfo", "range"],
-  mounted() {
-    console.log(this.pageInfo);
-  },
 };
 </script>

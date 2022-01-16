@@ -63,6 +63,7 @@
             class="flex flex-col sm:flex-row items-center justify-center sm:justify-start"
           >
             <g-image
+              alt="Jeysen Freedman"
               src="../../content/media/jeysen-freedman.jpg"
               width="200"
               height="200"
@@ -114,7 +115,7 @@
             title="twitter"
           >
             <img
-              src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png"
+              src="https://img.icons8.com/ios-glyphs/48/FFFFFF/twitter--v1.png"
               class="mt-2 h-7"
             />
           </a>
@@ -129,6 +130,7 @@
         <ContactForm />
       </div>
     </nav>
+    <p>Copyright &copy; 2021 by Jeysen Freedman - All Rights Reserved</p>
   </footer>
 </template>
 

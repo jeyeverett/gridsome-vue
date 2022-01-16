@@ -4,10 +4,10 @@
       <h1 class="text-5xl font-semibold text-gray-700 dark:text-white mb-4">
         Blog
       </h1>
-      <h3 class="mb-10 font-light text-gray-500 dark:text-white transition-all">
+      <p class="mb-10 font-light text-gray-500 dark:text-white transition-all">
         The latest web development tips, tricks, insights, and resources, hot
         off the presses.
-      </h3>
+      </p>
 
       <h2 class="text-3xl font-semibold text-gray-700 dark:text-white mb-8">
         Recent Posts
@@ -17,7 +17,7 @@
       >
         <PostOverview
           v-for="post in $page.posts.edges"
-          :key="post.path"
+          :key="post.node.path"
           :post="post"
           class="post"
         />
@@ -25,7 +25,7 @@
       <div class="text-center">
         <g-link
           to="/blog-posts"
-          class="text-gray-900 px-4 py-2 border border-gray-700 dark:border-white dark:text-white rounded hover:shadow-lg hover:bg-gray-700 hover:text-white dark:hover:bg-gray-700 transition-all shadow truncate font-medium"
+          class="text-gray-700 px-4 py-2 border border-gray-700 dark:border-white dark:text-white rounded hover:shadow-lg hover:bg-gray-700 hover:text-white dark:hover:bg-gray-700 transition-all shadow truncate font-medium"
         >
           See all posts
         </g-link>
@@ -78,19 +78,13 @@ export default {
   },
   mounted() {
     gsap.from(".post", {
-      duration: 0.5,
+      duration: 0.75,
       opacity: 0,
       scale: 0,
       y: 200,
       ease: "power1",
-      stagger: 0.1,
+      stagger: 0.25,
     });
   },
 };
 </script>
-
-<style scoped>
-.post {
-  overflow: hidden;
-}
-</style>

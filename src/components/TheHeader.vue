@@ -14,7 +14,7 @@
       class="flex flex-col items-center md:flex-row md:justify-end w-full mt-4 md:mt-0"
     >
       <theme-switcher class="py-1 sm:py-2 sm:mr-3" v-if="$route.path !== '/'" />
-      <span class="mt-4 sm:mt-0 sm:flex">
+      <span class="mt-4 sm:mt-0 flex items-center">
         <NavLink route="projects" />
         <NavLink route="blog" />
         <NavLink route="about" />
@@ -22,12 +22,17 @@
           :is-displayed="true"
           button-text="Contact me"
           text-classes="font-medium"
-          class="ml-1 hidden sm:block"
+          class="ml-1 hidden sm:block transition-all"
           @click="toggleModal"
+        />
+        <MailIcon
+          classes="block sm:hidden h-7 w-7 mb-0.5 ml-1 cursor-pointer text-blue"
+          @click="toggleModal"
+          title="contact"
         />
       </span>
     </nav>
-    <Modal :is-modal-visible="isModalVisible" @click="toggleModal" />
+    <Modal :is-modal-visible="isModalVisible" @click="isModalVisible = false" />
   </header>
 </template>
 
@@ -37,6 +42,7 @@ import Button from "./Button.vue";
 import NavLink from "../components/NavLink.vue";
 import Logo from "../components/Logo.vue";
 import Modal from "../components/Modal.vue";
+import MailIcon from "../components/icons/MailIcon.vue";
 
 export default {
   components: {
@@ -45,6 +51,7 @@ export default {
     NavLink,
     Logo,
     Modal,
+    MailIcon,
   },
   emits: ["toggle-modal"],
   data() {

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="text-white px-4 py-2 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow truncate transition-all"
+    class="text-white px-4 py-2 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow truncate"
     :class="buttonClasses"
     @click="$emit('click')"
   >

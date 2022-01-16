@@ -9,11 +9,11 @@ const autoprefixer = require("autoprefixer");
 
 module.exports = {
   siteName: "Jeysen Freedman",
-  siteDescription: "lorem ipsum dolor ete marvo bleno dipo",
+  siteDescription: "Jeysen Freedman's personal website",
   siteUrl: process.env.DEPLOY_URL || "https://testurl.test",
-  metadata: {
-    // meta data for social media, etc. goes here
-  },
+  // metadata: {
+  //   // meta data for social media, etc. goes here
+  // },
   icon: "src/favicon.png",
   plugins: [
     {
@@ -46,6 +46,27 @@ module.exports = {
       },
     },
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "./content/projects/*.md",
+        typeName: "Project",
+        remark: {
+          plugins: [
+            [
+              "gridsome-plugin-remark-shiki",
+              { theme: "nord", skipInline: true },
+            ],
+          ],
+        },
+        refs: {
+          tags: {
+            typeName: "Tag",
+            create: true,
+          },
+        },
+      },
+    },
+    {
       use: "@gridsome/plugin-sitemap",
       options: {
         exclude: ["/privacy", "/legal"],
@@ -57,6 +78,7 @@ module.exports = {
     Pillar: "/blog/:id",
     Author: "/author/:title__name",
     Tag: "/tag/:id",
+    Project: "/projects/:slug",
   },
   css: {
     loaderOptions: {

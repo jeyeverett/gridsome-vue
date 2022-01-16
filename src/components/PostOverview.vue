@@ -22,7 +22,7 @@
       <h3 class="mb-2">
         <g-link
           :to="post.node.path"
-          class="text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+          class="font-medium text-gray-500 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
           :title="post.node.title"
         >
           {{
@@ -32,7 +32,7 @@
           }}
         </g-link>
       </h3>
-      <p class="text-xs mb-4">{{ post.node.summary }}</p>
+      <p class="text-xs mb-4 text-justify">{{ post.node.summary }}</p>
       <div class="flex items-start font-light text-gray-500 dark:text-gray-400">
         <g-image
           :alt="unSlugify(post.node.author.title.name)"

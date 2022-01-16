@@ -17,6 +17,7 @@ export default {
     const siteUrl = this.$static.metadata.siteUrl;
     const postPath = this.$page.post.path;
     const image = this.$page.post.image?.path;
+    const imageAlt = this.$page.post.image?.alt;
     const imagePath = image ? `${siteUrl}${image.src}` : "";
 
     return {
@@ -87,9 +88,19 @@ export default {
           content: imagePath,
         },
         {
+          key: "twitter:image:alt",
+          property: "twitter:image:alt",
+          content: imageAlt,
+        },
+        {
           key: "twitter:title",
           property: "twitter:title",
           content: this.$page.post.title,
+        },
+        {
+          key: "twitter:site",
+          property: "twitter:site",
+          content: "@jeysenfreedman",
         },
       ],
       script: [
