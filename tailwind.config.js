@@ -32,6 +32,9 @@ module.exports = {
         "hero-pattern-sm": "url('/images/hero_small.jpg')",
         "hero-pattern-md": "url('/images/hero_medium.jpg')",
       },
+      animation: {
+        "ping-once": "ping 1s cubic-bezier(0, 0, 0.2, 1) reverse",
+      },
       typography: (theme) => ({
         light: {
           css: [

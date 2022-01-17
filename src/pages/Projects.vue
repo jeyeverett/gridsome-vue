@@ -34,6 +34,7 @@ query Projects {
         title
         date (format: "MMMM D, Y")
         path
+        slug
         siteLink
         githubLink
         summary
@@ -62,6 +63,11 @@ export default {
     title: "Projects",
   },
   mounted() {
+    let scrollId;
+    if (window.location.href.includes("#")) {
+      scrollId = window.location.href.split("#").pop();
+    }
+
     gsap.from(".project", {
       duration: 0.75,
       opacity: 0,
@@ -69,6 +75,15 @@ export default {
       y: 200,
       ease: "power1",
       stagger: 0.25,
+      onComplete: () => {
+        if (scrollId) {
+          const element = document.getElementById(scrollId);
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+          element.classList.add("animate-ping-once");
+        }
+      },
     });
   },
 };

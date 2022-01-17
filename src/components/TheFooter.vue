@@ -1,5 +1,5 @@
 <template>
-  <footer class="px-4 py-14 bg-gray-700 w-full">
+  <footer class="px-4 pt-14 pb-6 bg-gray-700 w-full relative">
     <nav
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-white w-5/6 mx-auto"
     >
@@ -27,34 +27,34 @@
           Projects
         </g-link>
         <g-link
-          to="/projects/project-1"
+          to="/projects/#post-makr"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 1 - lorem ipsum
+          Project 1 - Post Makr
         </g-link>
         <g-link
-          to="/projects/project-2"
+          to="/projects/#personal-website"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 2 - ete ben
+          Project 2 - Portfolio Website
         </g-link>
         <g-link
-          to="/projects/project-3"
+          to="/projects/#object-detector"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 3 - lorem ipsum dol
+          Project 3 - Object Detector
         </g-link>
         <g-link
-          to="/projects/project-4"
+          to="/projects/#shopify-vuejs-theme"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 4 - si coma
+          Project 4 - Shopify VueJS Theme
         </g-link>
         <g-link
-          to="/projects/project-5"
+          to="/projects/#booxapp"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 5 - belem
+          Project 5 - Booxapp
         </g-link>
       </div>
       <div class="flex flex-col items-center sm:items-start mx-2 mb-4 sm:mb-0">
@@ -96,6 +96,7 @@
             <img
               src="https://img.icons8.com/color/48/FFFFFF/linkedin.png"
               class="mt-2 h-8 filter grayscale"
+              alt="linkedin"
             />
           </a>
           <a
@@ -107,6 +108,7 @@
             <img
               src="https://img.icons8.com/fluent-systems-regular/48/FFFFFF/github.png"
               class="mt-2 h-7"
+              alt="github"
             />
           </a>
           <a
@@ -117,6 +119,7 @@
             <img
               src="https://img.icons8.com/ios-glyphs/48/FFFFFF/twitter--v1.png"
               class="mt-2 h-7"
+              alt="twitter"
             />
           </a>
         </div>
@@ -130,7 +133,9 @@
         <ContactForm />
       </div>
     </nav>
-    <p>Copyright &copy; 2021 by Jeysen Freedman - All Rights Reserved</p>
+    <p class="mt-14 text-center text-gray-200 text-sm">
+      Copyright &copy; 2022 by Jeysen Freedman - All Rights Reserved
+    </p>
   </footer>
 </template>
 

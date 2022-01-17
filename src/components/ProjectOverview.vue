@@ -2,6 +2,7 @@
   <li
     class="border border-color-gray-200 dark:border-color-gray-50 rounded dark:border-gray-600 overflow-hidden shadow mx-auto relative"
     style="max-width: 300px; min-width: 250px;"
+    :id="project.node.slug"
   >
     <!-- <g-link :to="project.node.path"> -->
     <g-image
