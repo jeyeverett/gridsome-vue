@@ -78,7 +78,7 @@ module.exports = {
     Pillar: "/blog/:id",
     Author: "/author/:title__name",
     Tag: "/tag/:id",
-    Project: "/projects/:slug",
+    Project: "/projects/:title",
   },
   css: {
     loaderOptions: {

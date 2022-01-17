@@ -1,35 +1,24 @@
 ---
-slug: "carrotcart"
-date: "2021-07-18"
-title: "CarrotCart"
-summary: "A full stack e-commerce app built with a ReactJS/Redux frontend and a NodeJS and ExpressJS backend to handle Stripe payments. Firebase auth and Firestore NoSQL database. Styled with Sass and styled-components."
-siteLink: "https://carrotcart.herokuapp.com/"
-githubLink: "https://github.com/jeyeverett/carrotcart"
-highlights:
-  [
-    "ReactJS/Redux",
-    "NodeJS/ExpressJS",
-    "Styled-components/Sass",
-    "Firebase",
-    "Stripe",
-  ]
+slug: "codecoach"
+date: "2021-08-19"
+title: "CodeCoach"
+summary: "Single page VueJS coaching app with Firebase auth and Firestore Real-Time Database accessed via the Firebase Database REST API.  App state managed by Vuex.  Contact a coach for mentorship or register as a coach and create a profile."
+siteLink: "https://coachu-71b4b.web.app/"
+githubLink: "https://github.com/jeyeverett/codecoach"
+highlights: ["VueJS", "Vuex", "Sass", "Firebase RTB", "Firebase Hosting"]
 tags:
   [
-    "reactjs",
-    "redux",
-    "sass",
+    "vuejs",
     "firebase",
-    "stripe",
-    "nodejs",
-    "expressjs",
-    "jsx",
+    "single page application",
+    "sass",
     "javascript",
     "coding",
   ]
 image:
-  path: ./media/carrotcart.png
-  alt: "CarrotCart website landing page"
-  caption: "CarrotCart website landing page"
+  path: ./media/codecoach.png
+  alt: "CodeCoach main page"
+  caption: "CodeCoach main page"
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

@@ -4,8 +4,12 @@
       <h1 class="text-5xl font-semibold text-gray-700 mb-2">
         {{ authorName }}
       </h1>
-      <p class="text-gray-700 mt-4 font-medium">{{ $page.author.title.bio }}</p>
-      <h2 class="text-3xl text-gray-700 font-semibold my-10">Posts</h2>
+      <p class="text-gray-700 mt-4 mb-8 font-medium">
+        {{ $page.author.title.bio }}
+      </p>
+      <h2 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">
+        Recent Posts
+      </h2>
       <ul
         class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
       >

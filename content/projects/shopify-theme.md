@@ -1,35 +1,16 @@
 ---
-slug: "carrotcart"
-date: "2021-07-18"
-title: "CarrotCart"
-summary: "A full stack e-commerce app built with a ReactJS/Redux frontend and a NodeJS and ExpressJS backend to handle Stripe payments. Firebase auth and Firestore NoSQL database. Styled with Sass and styled-components."
-siteLink: "https://carrotcart.herokuapp.com/"
-githubLink: "https://github.com/jeyeverett/carrotcart"
-highlights:
-  [
-    "ReactJS/Redux",
-    "NodeJS/ExpressJS",
-    "Styled-components/Sass",
-    "Firebase",
-    "Stripe",
-  ]
-tags:
-  [
-    "reactjs",
-    "redux",
-    "sass",
-    "firebase",
-    "stripe",
-    "nodejs",
-    "expressjs",
-    "jsx",
-    "javascript",
-    "coding",
-  ]
+slug: "shopify-vuejs-theme"
+date: "2021-11-14"
+title: "Shopify VueJS Theme"
+summary: "Shopify theme built using VueJS and designed from scratch with TailwindCSS.  Enhanced user experience via the Shopify AJAX API for dynamic cart updates. Image carousel using SwiperJS.  Interactive components for size and color selection."
+siteLink: ""
+githubLink: "https://github.com/jeyeverett/shopify-cli-vuejs"
+highlights: ["VueJS", "TailwindCSS", "SwiperJS", "AJAX", "Shopify"]
+tags: ["shopify", "vuejs", "ecommerce", "tailwindcss", "javascript", "coding"]
 image:
-  path: ./media/carrotcart.png
-  alt: "CarrotCart website landing page"
-  caption: "CarrotCart website landing page"
+  path: ./media/shopify-vuejs.png
+  alt: "Shopify store featured collection"
+  caption: "Shopify store featured collection"
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

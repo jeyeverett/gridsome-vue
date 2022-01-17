@@ -1,19 +1,27 @@
 ---
 slug: "fleemarket"
-date: "2021-06-02"
+date: "2021-05-15"
 title: "Fleemarket"
 summary: "A full stack e-commerce app built with NodeJS, ExpressJS and EJS (MVC architecture).  Stripe checkout.  Auth from scratch using bcrypt.  MongoDB NoSQL database. Dynamically generated receipts via pdfkit."
 siteLink: "https://fleemarket.herokuapp.com/"
 githubLink: "https://github.com/jeyeverett/fleemarket"
 highlights: ["EJS", "NodeJS/ExpressJS", "Sass", "Mongoose/MongoDB", "Stripe"]
-tags: ["nodejs", "expressjs", "mongodb", "ejs", "sass", "javascript", "coding"]
+tags:
+  [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "ejs",
+    "sass",
+    "javascript",
+    "coding",
+    "stripe",
+  ]
 image:
   path: ./media/fleemarket.png
   alt: "Fleemarket website landing page"
   caption: "Fleemarket website landing page"
 ---
-
-> _This is part two of our test series. [Find the full series here](/blog/first-series)._
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.
 

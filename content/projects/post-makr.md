@@ -1,35 +1,27 @@
 ---
-slug: "carrotcart"
-date: "2021-07-18"
-title: "CarrotCart"
-summary: "A full stack e-commerce app built with a ReactJS/Redux frontend and a NodeJS and ExpressJS backend to handle Stripe payments. Firebase auth and Firestore NoSQL database. Styled with Sass and styled-components."
-siteLink: "https://carrotcart.herokuapp.com/"
-githubLink: "https://github.com/jeyeverett/carrotcart"
-highlights:
-  [
-    "ReactJS/Redux",
-    "NodeJS/ExpressJS",
-    "Styled-components/Sass",
-    "Firebase",
-    "Stripe",
-  ]
+slug: "post-makr"
+date: "2022-01-01"
+title: "Post Makr"
+summary: "Full stack ReactJS blogging app built on NextJS.  Firebase auth, Firestore NoSQL database and Firebase Storage. Blog posts written in markdown are rendered via React Markdown.  React, Firebase, react-hook-form and custom hooks."
+siteLink: "https://post-makr.vercel.app/"
+githubLink: "https://github.com/jeyeverett/next-firebase"
+highlights: ["ReactJS", "NextJS", "TailwindCSS", "Firebase", "Vercel"]
 tags:
   [
     "reactjs",
-    "redux",
-    "sass",
-    "firebase",
-    "stripe",
-    "nodejs",
-    "expressjs",
-    "jsx",
+    "nextjs",
+    "markdown",
+    "static site generation",
+    "server side rendering",
+    "tailwindcss",
+    "seo",
     "javascript",
     "coding",
   ]
 image:
-  path: ./media/carrotcart.png
-  alt: "CarrotCart website landing page"
-  caption: "CarrotCart website landing page"
+  path: ./media/post-makr.png
+  alt: "Post Makr edit post page"
+  caption: "Post Makr edit post page"
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

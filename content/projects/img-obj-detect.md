@@ -1,35 +1,36 @@
 ---
-slug: "carrotcart"
-date: "2021-07-18"
-title: "CarrotCart"
-summary: "A full stack e-commerce app built with a ReactJS/Redux frontend and a NodeJS and ExpressJS backend to handle Stripe payments. Firebase auth and Firestore NoSQL database. Styled with Sass and styled-components."
-siteLink: "https://carrotcart.herokuapp.com/"
-githubLink: "https://github.com/jeyeverett/carrotcart"
+slug: "object-detector"
+date: "2021-09-09"
+title: "Object Detector"
+summary: "Full stack app using Machine Learning via TensorflowJS and the SSD Mobilenet model to locally detect and classify objects. SQL database using Postgres and KnexJS. Redis and JWTs for user session management. Dockerized local development."
+siteLink: "https://img-obj-detect.herokuapp.com/"
+githubLink: "https://github.com/jeyeverett/img-obj-detect"
 highlights:
   [
-    "ReactJS/Redux",
-    "NodeJS/ExpressJS",
-    "Styled-components/Sass",
-    "Firebase",
-    "Stripe",
+    "ReactJS/TensorflowJS",
+    "NodeJS/ExpressJS/Docker",
+    "Bootstrap/Tachyons",
+    "Knex/Postgres/Redis",
+    "Heroku",
   ]
 tags:
   [
-    "reactjs",
-    "redux",
-    "sass",
-    "firebase",
-    "stripe",
     "nodejs",
     "expressjs",
-    "jsx",
+    "postgres",
+    "docker",
+    "reactjs",
+    "Redis",
+    "bootstrap",
+    "machine learning",
+    "tensorflowjs",
     "javascript",
     "coding",
   ]
 image:
-  path: ./media/carrotcart.png
-  alt: "CarrotCart website landing page"
-  caption: "CarrotCart website landing page"
+  path: ./media/img-obj-detect.png
+  alt: "Object Detector website main page"
+  caption: "Object Detector website landing page"
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

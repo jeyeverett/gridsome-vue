@@ -6,12 +6,12 @@
       >
         {{ $page.tag.title }}
       </h1>
-      <h2 v-if="$page.tag.description" class="mb-8">
+      <p v-if="$page.tag.description" class="mb-8">
         {{ $page.tag.description }}
-      </h2>
-      <h3 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">
+      </p>
+      <h2 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">
         Recent Posts
-      </h3>
+      </h2>
       <ul
         class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
         v-if="postsExist"

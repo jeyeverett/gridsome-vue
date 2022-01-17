@@ -1,8 +1,8 @@
 ---
 slug: "booxapp"
-date: "2021-07-05"
+date: "2021-06-02"
 title: "booxapp"
-summary: "Full stack book app built on NodeJS and ExpressJS with SSR pages using EJS. CRUD operations for books, reviews and user profiles. Real-time chat with WebSockets and Socket.io. Auth via PassportJS. Mapbox GLJS integration."
+summary: "Full stack book sharing and review app built on NodeJS and ExpressJS with SSR pages using EJS. CRUD operations for books, reviews and user profiles. Real-time chat with WebSockets and Socket.io. Auth via PassportJS. Mapbox GLJS integration."
 siteLink: "https://booxapp.herokuapp.com/"
 githubLink: "https://github.com/jeyeverett/boox"
 highlights:
@@ -11,7 +11,7 @@ highlights:
     "Socket.io",
     "Bootstrap/Sass",
     "Mongoose/MongoDB",
-    "Heroku",
+    "Mapbox GLJS",
   ]
 tags:
   [
@@ -29,8 +29,6 @@ image:
   alt: "booxapp landing page"
   caption: "The booxapp demo project landing page"
 ---
-
-> _This is part two of our test series. [Find the full series here](/blog/first-series)._
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.
 
