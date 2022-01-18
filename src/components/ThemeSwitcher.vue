@@ -1,5 +1,5 @@
 <template>
-  <a
+  <button
     href="#"
     class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
     title="Toggle theme between light and dark"
@@ -11,7 +11,7 @@
       title="Toggle theme between light and dark"
     />
     <Brightness7 v-else title="Toggle theme between light and dark" />
-  </a>
+  </button>
 </template>
 
 <script>

@@ -38,6 +38,8 @@
           :alt="unSlugify(post.node.author.title.name)"
           :src="post.node.author.title.image"
           class="rounded-full w-6 mr-3"
+          width="24"
+          height="24"
         />
         <span class="mt-1">
           <g-link

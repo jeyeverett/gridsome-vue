@@ -86,7 +86,7 @@
           <div>Cloud Specialist</div>
         </figcaption>
 
-        <div class="flex items-center mt-2 sm: pl-4">
+        <div class="flex items-center mt-2 sm:pl-4">
           <a
             href="https://linkedin.com/in/jeysenfreedman"
             target="_blank"
@@ -97,6 +97,8 @@
               src="https://img.icons8.com/color/48/FFFFFF/linkedin.png"
               class="mt-2 h-8 filter grayscale"
               alt="linkedin"
+              height="32"
+              width="32"
             />
           </a>
           <a
@@ -109,6 +111,8 @@
               src="https://img.icons8.com/fluent-systems-regular/48/FFFFFF/github.png"
               class="mt-2 h-7"
               alt="github"
+              height="28"
+              width="28"
             />
           </a>
           <a
@@ -120,6 +124,8 @@
               src="https://img.icons8.com/ios-glyphs/48/FFFFFF/twitter--v1.png"
               class="mt-2 h-7"
               alt="twitter"
+              height="28"
+              width="28"
             />
           </a>
         </div>

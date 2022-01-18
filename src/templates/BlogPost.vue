@@ -18,6 +18,8 @@
         :alt="authorName"
         :src="$page.post.author.title.image"
         class="rounded-full w-8 sm:w-10 mr-3"
+        height="446"
+        width="730"
       />
       <span class="flex-col sm:flex-row">
         <g-link
@@ -67,6 +69,8 @@
         :alt="authorName"
         :src="$page.post.author.title.image"
         class="rounded-full w-10 mr-3"
+        width="40"
+        height="40"
       />
       <div class="flex-col">
         <span

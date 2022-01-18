@@ -21,7 +21,7 @@
           v-if="h1Complete"
           id="h2"
           :strings="['Full Stack Web Developer']"
-          class="sm:pl-1 mb-5 md:mb-10 text-md sm:text-2xl tracking-wide sm:tracking-wider uppercase"
+          class="sm:pl-1 mb-5 md:mb-10 text-md sm:text-2xl font-semibold tracking-wide sm:tracking-wider uppercase"
           style="color: #1379a8"
           :start-delay="500"
           @onStringTyped="completeAnimation('h2')"

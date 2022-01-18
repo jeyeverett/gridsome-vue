@@ -81,10 +81,29 @@ export default {
           element.scrollIntoView({
             behavior: "smooth",
           });
-          element.classList.add("animate-ping-once");
+          element.classList.add("animate-shadow-pulse");
         }
       },
     });
   },
 };
 </script>
+
+<style scoped>
+.animate-shadow-pulse {
+  animation: shadow-pulse 1s cubic-bezier(0, 0, 0.2, 1);
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 3px 6px 0 rgba(19, 121, 168, 0.25),
+      0 2px 4px 0 rgba(19, 121, 168, 0.25);
+  }
+  100% {
+    box-shadow: 0 6px 12px 0 rgba(19, 121, 168, 0.5),
+      0 4px 8px 0 rgba(19, 121, 168, 0.5);
+  }
+}
+</style>

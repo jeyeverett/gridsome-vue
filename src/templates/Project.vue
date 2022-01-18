@@ -17,6 +17,8 @@
         alt="Jeysen Freedman"
         src="../../content/media/jeysen-freedman.jpg"
         class="rounded-full w-8 sm:w-10 mr-3"
+        width="40"
+        height="40"
       />
       <span class="flex-col sm:flex-row">
         <g-link
@@ -62,6 +64,8 @@
         alt="Jeysen Freedman"
         src="../../content/media/jeysen-freedman.jpg"
         class="rounded-full w-10 mr-3"
+        width="40"
+        height="40"
       />
       <div class="flex-col">
         <span
