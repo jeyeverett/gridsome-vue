@@ -15,10 +15,15 @@ tags:
     "javascript",
     "coding",
   ]
+pillar: "projects"
 image:
   path: ./media/codecoach.png
   alt: "CodeCoach main page"
   caption: "CodeCoach main page"
+author:
+  name: "jeysen-freedman"
+  bio: "Full Stack Web Developer"
+  image: ../media/jeysen-freedman.jpg
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

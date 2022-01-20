@@ -45,7 +45,7 @@
 
 <page-query>
 query Posts ($id: ID!, $page: Int) {
-  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: {eq: $id } },  perPage: 6, page: $page) @paginate  {
+  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: { eq: $id, ne: "projects" } },  perPage: 6, page: $page) @paginate  {
     totalCount
     pageInfo {
       totalPages
@@ -106,6 +106,12 @@ export default {
     pillarOverview() {
       return this.$page.posts.edges[0].node.pillarContent.text;
     },
+  },
+  mounted() {
+    console.log(window.location.href);
+    if (window.location.href.includes("projects")) {
+      window.location.replace("http://localhost:8080/projects");
+    }
   },
 };
 </script>

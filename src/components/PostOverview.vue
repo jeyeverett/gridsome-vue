@@ -14,7 +14,7 @@
     </g-link>
     <div class="px-4 py-2">
       <g-link
-        :to="'/blog/' + post.node.pillar.title"
+        :to="getPillarLink()"
         class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-200 transition-all hover:text-gray-700 dark:hover:text-gray-300"
       >
         {{ unSlugify(post.node.pillar.title) }}
@@ -69,5 +69,15 @@ import Utils from "../mixins/Utils.vue";
 export default {
   mixins: [Utils],
   props: ["post"],
+  methods: {
+    getPillarLink() {
+      const { title } = this.post.node.pillar;
+      if (title === "projects") {
+        return title;
+      } else {
+        return "/blog/" + title;
+      }
+    },
+  },
 };
 </script>

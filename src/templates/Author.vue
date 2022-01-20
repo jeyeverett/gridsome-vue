@@ -63,6 +63,29 @@ query Author($id: ID!, $page: Int) {
                       }
                     }
                   }
+                  
+                  ...on Project {
+                    title
+                    date (format: "MMMM D, Y")
+                    path
+                    summary
+                    timeToRead
+                    image {
+                      path
+                      caption
+                      alt
+                    }
+                    pillar {
+                      title
+                    }
+                    author {
+                      path
+                      title {
+                        name
+                        image (width: 200, height: 200)
+                      }
+                    }
+                  }
               }
           }
         }

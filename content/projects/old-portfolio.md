@@ -7,10 +7,15 @@ siteLink: "https://jeyeverett.github.io/old-portfolio/"
 githubLink: "https://github.com/jeyeverett/old-portfolio"
 highlights: ["HTML", "Sass", "CSS Animation", "Flexbox/CSS Grid", "Formspree"]
 tags: ["css", "sass", "javascript", "coding"]
+pillar: "projects"
 image:
   path: ./media/old-portfolio.png
   alt: "Old portfolio"
   caption: "Old portfolio"
+author:
+  name: "jeysen-freedman"
+  bio: "Full Stack Web Developer"
+  image: ../media/jeysen-freedman.jpg
 ---
 
 I'm baby chartreuse knausgaard gastropub deep v mlkshk pickled crucifix chicharrones meggings. Listicle jianbing tbh sriracha tofu, waistcoat post-ironic copper mug williamsburg scenester. Banh mi tilde swag beard. PBR&B disrupt affogato 8-bit fanny pack. Tacos fam brooklyn jean shorts. Taiyaki fam +1 tote bag chia palo santo.

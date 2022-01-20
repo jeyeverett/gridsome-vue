@@ -63,6 +63,14 @@ module.exports = {
             typeName: "Tag",
             create: true,
           },
+          pillar: {
+            typeName: "Pillar",
+            create: true,
+          },
+          author: {
+            typeName: "Author",
+            create: true,
+          },
         },
       },
     },
