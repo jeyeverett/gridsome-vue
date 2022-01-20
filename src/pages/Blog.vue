@@ -13,7 +13,7 @@
         Recent Posts
       </h2>
       <ul
-        class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
+        class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16 mx-auto"
       >
         <PostOverview
           v-for="post in $page.posts.edges"

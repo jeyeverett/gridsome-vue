@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+}
+
+code {
+  padding: 4px 8px;
+  background-color: lightgray;
+  border: 0px transparent;
+  border-radius: 4px;
+  @apply dark:text-gray-700;
+}
+
+code::before {
+  display: none;
+}
+
+code::after {
+  display: none;
+}
+
+blockquote * {
+  @apply text-base;
+}
+
+blockquote p::before {
+  display: none;
+}
+
+blockquote p::after {
+  display: none;
+}
+
+p img {
+  margin: 0 auto;
+}
+
+#post-content h2 {
+  @apply text-3xl;
+}
+
+#post-content h3 {
+  @apply text-2xl;
+}
+
+#post-content h4 {
+  @apply text-xl;
+}
+
+#post-content * {
+  @apply text-gray-700 dark:text-gray-200;
+}
+
+#post-content ol li {
+  @apply my-0;
+}
+
+#post-content p code {
+  @apply dark:text-gray-700;
+}
+
+#post-content a {
+  @apply hover:text-gray-500 transition-all;
+}

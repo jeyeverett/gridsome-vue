@@ -21,7 +21,7 @@
 
 <page-query>
 query Posts ($page: Int) {
-  posts: allBlogPost (sortBy: "date", order: DESC, perPage: 1, page: $page) @paginate {
+  posts: allBlogPost (sortBy: "date", order: DESC, perPage: 6, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage

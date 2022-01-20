@@ -33,7 +33,7 @@ query Tag($id: ID!, $page: Int) {
     tag: tag (id: $id) {
         title
         description
-        belongsTo(sortBy: "date", order: DESC, perPage: 1, page: $page) @paginate {
+        belongsTo(sortBy: "date", order: DESC, perPage: 6, page: $page) @paginate {
           pageInfo {
             totalPages
             currentPage

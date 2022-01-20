@@ -3,6 +3,7 @@
 
 import DefaultLayout from "~/layouts/Default.vue";
 import "./css/main.css";
+import "./css/markdown.css";
 
 const fontsCSS = `
 /* montserrat-300 - latin */

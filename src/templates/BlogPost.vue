@@ -45,7 +45,7 @@
         :src="$page.post.image.path"
         height="400"
         width="600"
-        class="mb-2 mx-auto w-3/4 object-fit object-center"
+        class="mb-2 mx-auto w-3/4 object-fit object-center rounded"
       />
       <figcaption
         class="self-center font-light text-sm image-caption"

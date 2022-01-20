@@ -10,7 +10,7 @@ const autoprefixer = require("autoprefixer");
 module.exports = {
   siteName: "Jeysen Freedman",
   siteDescription: "Jeysen Freedman's personal website",
-  siteUrl: process.env.DEPLOY_URL || "https://testurl.test",
+  siteUrl: process.env.DEPLOY_URL || "https://www.jeysenfreedman.com",
   // metadata: {
   //   // meta data for social media, etc. goes here
   // },
@@ -74,7 +74,7 @@ module.exports = {
     },
   ],
   templates: {
-    BlogPost: "/blog/:pillar/:slug",
+    BlogPost: "/blog/:pillar/:title",
     Pillar: "/blog/:id",
     Author: "/author/:title__name",
     Tag: "/tag/:id",

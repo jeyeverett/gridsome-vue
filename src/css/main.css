@@ -7,27 +7,3 @@
 .heading-primary {
   @apply text-blue dark:text-white text-4xl font-semibold mb-2 transition-all;
 }
-
-code {
-  padding: 4px 8px;
-  background-color: lightgray;
-  border: 0px transparent;
-  border-radius: 4px;
-  @apply dark:text-gray-700;
-}
-
-code::before {
-  display: none;
-}
-
-code::after {
-  display: none;
-}
-
-blockquote p::before {
-  display: none;
-}
-
-blockquote p::after {
-  display: none;
-}
