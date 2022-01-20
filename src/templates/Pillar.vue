@@ -108,9 +108,8 @@ export default {
     },
   },
   mounted() {
-    console.log(window.location.href);
     if (window.location.href.includes("projects")) {
-      window.location.replace("http://localhost:8080/projects");
+      window.location.replace("https://jeysenfreedman.com/projects");
     }
   },
 };
