@@ -42,7 +42,7 @@
     <figure v-if="$page.post.image" class="flex flex-col mb-4 sm:mb-8">
       <g-image
         :alt="$page.post.image.alt"
-        :src="$page.post.image.path"
+        :src="$page.post.image.pathLarge"
         height="400"
         width="600"
         class="mb-2 mx-auto w-3/4 object-fit object-center rounded"
@@ -115,7 +115,7 @@
           title
         }
         image {
-          path
+          pathLarge
           caption
           alt
         }

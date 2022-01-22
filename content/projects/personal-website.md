@@ -21,7 +21,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/portfolio-website.jpg
+  pathSmall: ./media/portfolio-website_small.png
+  pathLarge: ./media/portfolio-website_large.png
   alt: "Portfolio website landing page"
   caption: "My portfolio website landing page"
 author:

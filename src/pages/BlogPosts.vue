@@ -34,7 +34,7 @@ query Posts ($page: Int) {
         summary
         timeToRead
         image {
-          path
+          pathSmall
           caption
           alt
         }

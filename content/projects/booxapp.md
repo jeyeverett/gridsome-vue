@@ -26,7 +26,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/booxapp.png
+  pathSmall: ./media/booxapp_small.png
+  pathLarge: ./media/booxapp_large.png
   alt: "booxapp landing page"
   caption: "The booxapp demo project landing page"
 author:

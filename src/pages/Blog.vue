@@ -45,7 +45,7 @@ query Posts {
         summary
         timeToRead
         image {
-          path
+          pathSmall
           caption
           alt
         }

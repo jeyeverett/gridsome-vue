@@ -82,7 +82,7 @@ module.exports = {
     },
   ],
   templates: {
-    BlogPost: "/blog/:pillar/:title",
+    BlogPost: "/blog/:pillar/:slug",
     Pillar: "/blog/:id",
     Author: "/author/:title__name",
     Tag: "/tag/:id",

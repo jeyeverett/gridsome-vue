@@ -1,6 +1,6 @@
 ---
-slug: "getting-started"
-date: "2022-01-25"
+slug: "building-a-nodejs-web-server"
+date: "2022-01-05"
 title: "Building a Web Server with Node.js and Express.js"
 author:
   name: "jeysen-freedman"
@@ -10,24 +10,24 @@ tags:
   [
     "nodejs",
     "npm",
-    "semver",
     "javascript",
-    "getting started",
     "backend",
     "web server",
+    "middleware",
     "api",
     "expressjs",
     "coding",
   ]
-summary: ""
+summary: "In this article you'll look at using the path, fs and http core Node.js modules to code some basic server features.  Next, you'll get an Express.js server started, write Express middleware, serve static assets like HTML, CSS and JS files, and install dependencies."
 pillar: "full-stack-nodejs"
 pillarContent:
-  image: ""
+  image: ./media/nodejs_logo.png
   pillarTitle: "Building a Full Stack Node.js Application | The Step-by-Step JavaScript Developer's Guide"
   text: "<em>'Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide'</em> is an ongoing series on full stack Node.js web development.  Each step in the series covers a variety of web development topics, including: back-end development, front-end development, best practices, useful libraries, design patterns, error handling, UI/UX design, and much more."
 image:
-  path: ./media/web-server.png
-  alt: "A web server"
+  pathLarge: ./media/building-a-nodejs-web-server_large.jpg
+  pathSmall: ./media/building-a-nodejs-web-server_small.jpg
+  alt: "A physical web server"
   caption: 'Photo by <a href="https://unsplash.com/@tvick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Taylor Vick</i></a> on <a href="https://unsplash.com/s/photos/web-server?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Unsplash</i></a>
   '
 ---
@@ -40,7 +40,7 @@ In the previous article you learned that _Node.js_ gives us the ability to run J
 
 You also learned that you have access to a million plus different _packages_ on the _npm registry_ for use in your project via the _node package manager_ (_npm_).
 
-To continue with _Part 2_, you should have a Node.js project initialized with _Express.js_ and _ES Modules_ configured in _package.json_. For a recap, see [Part 1](/blog/full-stack-nodejs/getting-started-with-full-stack-node-js-development/#installing-expressjs) starting from _Installing Express.js_.
+To continue with _Part 2_, you should have a Node.js project initialized with _Express.js_ and _ES Modules_ configured in _package.json_. For a recap, see [Part 1](/blog/full-stack-nodejs/getting-started-with-full-stack-nodejs/#installing-expressjs) starting from _Installing Express.js_.
 
 We will begin this article with an overview of web servers and the path, url, fs and http core Node.js modules. If you're already familiar with these topics you can jump right into [express](#express).
 
@@ -58,17 +58,19 @@ For example, when you want to use Google Search, you enter `www.google.com` into
 
 ### Web 1.0
 
-Traditionally, when you entered just a website's domain name (`www.example.com`) into your web browser, you were requesting the web page stored at the hosting server's **root directory**, usually called the **index page**. Although it isn't always shown, a _trailing slash_ is always assumed, so `www.example.com` and `www.example.com/` are equivalent.
+Traditionally, when you entered just a website's domain name (`www.example.com`) into your web browser, you requested the web page stored at the hosting server's **root directory**, usually called the **index page**. Although it isn't always shown, a _trailing slash_ is assumed, so `www.example.com` and `www.example.com/` are equivalent.
 
 > The index page has the special name of **index.html**
 
-Similar to how your computer stores files at specific _paths_, a basic server stores and retrieves files via its **file system**. When your URL contains additional information, e.g. `www.example.com/new/`, you are being more specific about what you want the server to return. In this case, the server would return the index page located in the _"new"_ folder.
+Similar to how your computer stores files at specific _paths_, a basic server can store and retrieve files via its **file system**. When your URL contains additional information, e.g. `www.example.com/new/`, you're being more specific about what you want the server to return. In this case, the server would return the index page located in the _"new"_ folder.
 
-> If you entered `www.example.com/new/thing.html` you would get the **thing.html** page located in the _new_ folder.
+> If you entered `www.example.com/new/thing.html` you would get the **thing.html** page located in the **new** folder.
 
-In the first version of the web (Web 1.0), this was basically all there was to it. You requested a file from a server based on the URL you provided, and the server responded accordingly.
+> Files could eventually be generated dynamically on the server, using languages like Perl and PHP.
 
-> This is a simplified explanation, and in fact, web masters were creative in trying to add more functionality to websites at this time. The major issue was a lack of standardization (everyone was using different methods to accomplish the same goals) which is what fueled the leap to Web 2.0.
+In the first version of the web (Web 1.0), this was basically all there was to it. You requested a file from a server based on the URL you provided, and the server responded accordingly. In other words, Web 1.0 was **read-only**.
+
+> This is a simplified explanation, and in fact, web masters were creative in trying to add more functionality as the web grew. The major issue was a lack of standardization (everyone was using different methods to accomplish the same goals) which is what fueled the leap to Web 2.0.
 
 ### Web 2.0
 
@@ -80,12 +82,12 @@ To manage the ability to _create_, _read_ (retrieve), _update_, and _destroy_ (d
 
 Here began the era of Web APIs, with the most well known being the **REST API**.
 
-> **REST** - aka "**Re**presentational **S**tate **T**ransfer - is a standard for mapping CRUD functionality onto HTTP. Specifically, the additional HTTP features called **HTTP verbs**
+> **REST** - aka "**Re**presentational **S**tate **T**ransfer - is the modern standard for mapping CRUD functionality onto HTTP. Specifically, the additional HTTP features called **HTTP verbs**
 
 **The main HTTP verbs are mapped to CRUD as follows:**
 
-- **POST** equals _create_
 - **GET** equals _read_
+- **POST** equals _create_
 - **PUT/PATCH** equals _update_
 - **DELETE** equals _destroy_
 
@@ -93,17 +95,17 @@ With these enhancements, web servers became more powerful but also more complex.
 
 ## Node.js
 
-Since a primary application of Node.js is to build a web server, let's build one ourselves. A Web 1.0 type server is trivial to set up, so we will jump right into building a server that can handle full CRUD operations.
+Since a primary application of Node.js is to build a web server, let's learn what's required to build one ourselves. A Web 1.0 type server is trivial to set up, so we will jump right into building a server that can handle full CRUD operations via a REST API.
 
 Node.js ships with several _core modules_ but the few most commonly used to build a web server are the **path**, **url**, **fs**, and **http** modules.
 
-Let's combine these with _express_ and build a web server.
-
-> The **http** module is the core web server module included with Node.js, but since **express** is built on it, and abstracts a lot of its functionality making the process much easier, we won't dig too much into it here.
+Let's explore these modules and then combine them with _express_ to build a web server.
 
 ### The path and url modules
 
-The **path** module helps Node.js applications use the correct file path needed to access files on its file system. The **url** module provides a helper function for resolving the current directory when using ES Modules. This is useful because different operating systems use different formats for structuring file paths.
+The **path** module helps Node.js applications use the correct file path needed to access files on its file system. We'll use the **url** module's **fileURLToPath** method as a helper function for resolving the current directory when using ES Modules.
+
+These modules are useful because different operating systems use different formats for structuring file paths.
 
 > For example, Linux paths are separated by a **forward slash** `/` while Windows paths can use either forward `/` or back `\` slashes (but can't combine the two in a single path).
 
@@ -130,9 +132,9 @@ console.log(path.dirname(fileURLToPath(import.meta.url))); // logs C:\Users\jeys
 
 Run the code from the CLI with the `node path.js` command.
 
-If you study the logs above or in your terminal, you can see that we start with the current file path provided by `import.meta.url` and use the `fileURLToPath` function followed by the `path.dirname` method to transform our file path to point to the current directory (folder) we are in (also called the working directory).
+If you study the logs above or in your terminal, you can see that we start with the current file path provided by `import.meta.url` and use the `fileURLToPath` function with the `path.dirname` method to transform the path. The result is a path that points to the current directory (folder) we're in (also called the working directory) regardless of the OS.
 
-Since we will always access files _relative_ to the file we are working in, we will want to assign the result of this transformation to a variable, traditionally called `__dirname`:
+Since we'll always access files _relative_ to the file we're working in, we'll want to assign the result of this transformation to a variable, traditionally called `__dirname`:
 
 ```js
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -156,10 +158,16 @@ For example, if you had the following project structure:
             image.jpg
 ```
 
-You could access the `image.jpg` file with:
+You could access the `image.jpg` file with (starting in path.js):
 
 ```js
 path.join(__dirname, ".", "media", "image.jpg"); // results in C:\Users\jeysen\node-tutorial\media\image.jpg
+```
+
+Or the entire media folder with:
+
+```js
+path.join(__dirname, ".", "media"); // results in C:\Users\jeysen\node-tutorial\media
 ```
 
 You could access the `bio.txt` file with:
@@ -168,7 +176,7 @@ You could access the `bio.txt` file with:
 path.join(__dirname, "..", "bio.txt"); // results in C:\Users\jeysen\bio.txt
 ```
 
-You can use these techniques to navigate anywhere in your project's directory.
+You can use these techniques to get a path anywhere in your project's directory.
 
 Let's apply this to reading and writing files to the file system.
 
@@ -176,7 +184,7 @@ Let's apply this to reading and writing files to the file system.
 
 The **fs** or _file system module_ gives Node.js applications the ability to read and write files to the file system.
 
-File system access can be either **synchronous** or **asynchronous**. We will first look at the **synchronous** approach to writing/reading files and then implement the _promise-based_ **asynchronous** approach.
+File system access can be either **synchronous** or **asynchronous**. We'll first look at the **synchronous** approach to writing/reading files and then implement the _promise-based_ **asynchronous** approach.
 
 #### fs synchronous operations
 
@@ -190,7 +198,7 @@ import fs from "fs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 ```
 
-Now create a folder named "documents" which we will write a text file to.
+Now create a folder named "documents" which we'll write a text file to.
 
 Add the following code to `fs.js` and run it from the CLI with `node fs.js`:
 
@@ -208,15 +216,19 @@ const data = fs.readFileSync(
 console.log(data); // logs "Hello World!
 ```
 
-As you can see from the above code, we use the `writeFileSync` and `readFileSync` to _synchronously_ write and read from the file system. If you look in the _documents_ folder you can confirm the _hello.txt_ file was created.
+With this code you used the `writeFileSync` and `readFileSync` to _synchronously_ write and read from the file system. If you look in the _documents_ folder you can confirm the _hello.txt_ file was created.
 
-Because we are creating a text file, we specify the encoding as **"ascii"**. If you didn't provide an _encoding type_ then the `readFileSync` command would return a **Buffer** which is basically a container for raw data. Node offers a variety of encoding types for you to choose from depending on your application.
+Because we're creating a text file, we specify the encoding as **"ascii"**. If you didn't provide an _encoding type_ then the `readFileSync` command would return a **Buffer** which is basically a container for raw data.
+
+> Node offers a variety of encoding types for you to choose from depending on your application.
 
 #### fs asynchronous operations
 
 Since Node.js is single threaded, using synchronous fs operations will block the main thread. This is bad news, but we can easily fix this by taking advantage of Node's asynchronous nature.
 
 Modern Node offers a **promise-based** alternative to synchronous fs operations. If you aren't familiar with promises, they basically allow you to write readable async code, whereas in the past you had to use a nested mess of "callback functions" aka _callback hell_.
+
+> Remember that Node.js uses an **event loop** to manage its asynchronous operations. So the callback function is executed when the asynchronous code is finished and Node is ready to handle the result.
 
 Let's move forward with the modern promise-based approach.
 
@@ -243,7 +255,7 @@ Running this code with `node fs.js` will give the same result as before, but thi
 
 This is an upgrade from the synchronous approach to fs operations, but we can make the code even more readable by moving from **.then/.catch syntax** to **async/await syntax** enclosed in a **try/catch block**.
 
-Since we can't use the `await` keyword at the top level (outside a function) we will encapsulate the **fs** code in a function and make it flexible by providing both the filename and content as function arguments. We will also `export` the function so we can use it elsewhere.
+Since we can't use the `await` keyword at the top level (outside a function) we'll encapsulate the **fs** code in a function and make it flexible by providing both the filename and content as function arguments. We'll also `export` the function so we can use it in other project files.
 
 ```js
 export async function writeThenRead(filename, content) {
@@ -275,7 +287,7 @@ Let's expand on these fs operations by integrating them into a web server.
 
 ### The http module
 
-Although we will use _express_ to build a more complex web server, let's take a quick look at the **http module** to see how it works.
+Although we'll use _express_ to build a more complex web server, let's take a quick look at the **http module** to see how it works.
 
 Create a file called `https.js` and add the following:
 
@@ -289,7 +301,11 @@ http
   .listen(3000, () => console.log("Server listening on Port 3000"));
 ```
 
-As you can see, all a server does is listen for HTTP traffic on a specific port (port 3000 in this case) which it receives as a **request object**. We use the **request object** to extract information regarding the request and usually data sent by the client. To reply to a request we use the **response object**. The request and response objects are usually shortened to just **req** and **res** respectively.
+As you can see, all a server does is listen for HTTP traffic on a specific port (port 3000 in this case). Incoming traffic is received as a **request object**. We use the **request object** to extract information regarding the request which typically includes the HTTP method, url, HTTP headers, and possibly data sent by the client. To reply to a request we use the **response object**.
+
+> The request and response objects are usually shortened to just **req** and **res** respectively.
+
+> HTTP headers provide **meta** information about the HTTP message itself. They'll tell you about cookies, the content-type, authorization, caching, and a lot more.
 
 If you run this code with `node http.js` and then navigate to `http://localhost:3000/` in your browser, you should see _"Received a request!"_ logged to your console.
 
@@ -312,7 +328,7 @@ You should now see "Hello!" when you access `http://localhost:3000/` from your b
 
 > Note that you need to call **res.end()** to actually send the response.
 
-Now let's create a text file for every incoming request using the `writeThenRead` function and then return its contents to the client. We will keep track of the request number in the `requestNumber` variable.
+Now let's create a text file for every incoming request using the `writeThenRead` function and then return its contents to the client. We'll keep track of the request number in the `requestNumber` variable and use this value to number the files.
 
 ```js
 import http from "http";
@@ -335,7 +351,7 @@ http
 
 If you start the server with `node http.js` and try connecting to it via the web browser, you should receive the text: _"You are connection number 1!"_.
 
-You may notice that you are actually generating **two .txt files** for every request you make to your server. This is because modern browsers will make additional requests on their own. In this case, the browser is looking for the **favicon** - the small image shown at the top of the browser window, on the window's tab.
+You may notice that you're actually generating **two .txt files** for every request you make to your server. This is because modern browsers will make additional requests on their own. In this case, the browser is looking for the **favicon** - the small image shown at the top of the browser window, on the window's tab.
 
 To prevent this, you can wrap your code in an `if` check and only run your code when the request isn't for the favicon.
 
@@ -351,13 +367,15 @@ if (req.url !== "/favicon.ico") {
 }
 ```
 
-Now that you've gotten a taste for the basic http module, let's build something complex with **express**.
+Now that you have a taste for a basic http server, let's build something more complex with **express**.
 
 ## Express
 
-Alright, the moment you've been waiting for has finally arrived. It's time to dig into **express**. If you've read everything up till now, congratulations! If not, that's cool too :).
+The moment you've been waiting for has finally arrived! It's time to dig into **express**. If you've read everything up till now, congratulations! If not, that's cool too :).
 
 Let's build this thing.
+
+### The API details
 
 The API will:
 
@@ -374,6 +392,8 @@ As a bonus, we will build the frontend (responsible for collecting the user inpu
 
 > A CDN, or "content delivery network", is a globally distributed network that provides high speed access to static files.
 
+### The project structure
+
 The project structure will look like:
 
 ```
@@ -387,7 +407,9 @@ The project structure will look like:
     index.html
 ```
 
-We've got our work cut out for us but to get started, first make sure you are in the working directory that includes your **package.json** file with **express** installed.
+### Basic express server
+
+We've got our work cut out for us but to get started, first make sure you're in the working directory that includes your **package.json** file with **express** installed.
 
 Add the following code to **index.js**:
 
@@ -408,9 +430,13 @@ app.listen(3000, () => {
 
 The only thing new here is that we created our express app by calling `express()` and assigned it to the `app` variable. We can then call the `.listen()` method to start our server, just like we did with the `http` module.
 
-Next, create the **public folder** and within it, the **index.html page**.
+### Static assets
 
-If you're using VS Code, you can open up the **index.html** page and type `!` to get HTML boilerplate code, then add the `h1`, `div` and `script` tags shown below.
+Static assets are files that don't change, that we want every connected user to receive. These usually include **html**, **css**, **js**, and **image** files. They're typically located in a folder named **public**.
+
+Create the **public folder** and within it, the **index.html page**.
+
+If you're using VS Code, you can open up the **index.html** page and type `!` to get HTML boilerplate code. Then add the `h1`, `div` and `script` tags shown below.
 
 Or, copy and paste the following HTML code:
 
@@ -439,17 +465,39 @@ At this point, if we started the server with `node index.js` and tried to access
 Cannot GET /
 ```
 
-Like we talked about earlier, when we try to access a web page from the browser, the most basic thing we are trying to do is request a file. But we haven't told **express** to serve any files yet.
+Like we talked about earlier, when we try to access a web page from the browser, the most basic thing we're trying to do is request a file. But we haven't told **express** to serve any files yet.
 
-Let's make this happen by implementing our first middleware functions.
+### Middleware
+
+Anytime we want to do something to _every_ request that comes in to the server, we'll want to use **middleware**. In other words, middleware is code we write or _use_ that'll apply to every request.
 
 > Middleware functions are just functions that have access to the request and response objects for **every** request/response.
 
-> Middleware functions execute in the order they are defined.
+> Middleware functions execute in the order they're defined.
 
 To implement a middleware function we call the `.use()` method on the `app` object, and provide it a function that gets the _request_ and _response_ objects in addition to a special function called `next`. The `next` function has to be explicitly called from middleware or _express_ will not proceed and the connection will timeout.
 
-The first middleware will simply log information about the request's **HTTP method** and **url** to the console.
+#### Serving static assets with middleware
+
+Since we want every request to the server to receive the static assets, let's serve them by implementing our first middleware function.
+
+We'll use middleware to serve our static assets by calling express's built in function `.static()`:
+
+> Note that the only static asset we have right now is the index.html file.
+
+```js
+app.use(express.static(path.join(__dirname, ".", "public")));
+```
+
+Now, run your server with `node index.js` and visit `http://localhost:3000/` from your browser. You should see **Express** written on the web page.
+
+This works because we're visiting the **root** of our server. If we tried to visit any other page, like `http://localhost:3000/new`, we would see "Cannot GET /new" in the browser.
+
+We'll fix this issue in a minute, but first lets add some more middleware to see what's happening on our server when we make a request.
+
+#### Logging middleware
+
+We can write a simple middleware that logs information about the request's **HTTP method** and **url** to the console.
 
 > Recall the common HTTP methods are GET, POST, PUT/PATCH, and DELETE
 
@@ -462,24 +510,143 @@ app.use((req, res, next) => {
 });
 ```
 
-Next, we will use middleware to serve our static assets by calling express's built in middleware function `.static()`:
-
-> Note that the only static asset we have right now is the index.html file.
-
-```js
-app.use(express.static(path.join(__dirname, ".", "public")));
-```
-
-Now, run your server with `node index.js` and visit `http://localhost:3000/` from your browser. You should see **Express** written on the web page.
+Now start the server and visit `http://localhost:3000/new` again.
 
 In your console, you should see the following:
 
 ```
 $ node index.js
 Server running on port 3000
-Request: GET /
+Request: GET /new
 ```
 
-> You can see that requesting a web page is a GET request and like we talked about earlier, the **url** points to a location on the server and begins **after** the **domain name**.
+> You can see that requesting a web page uses the GET method and like we talked about earlier, the **url** points to a location on the server and begins **after** the **domain name**.
 
-add app.get('/\*') route that epxlicitly sends the index.html file
+### URL endpoints
+
+So we know our server is receiving the request, it just doesn't know what to do with it.
+
+Since we're using React, we'll only ever serve one page to a user (the _index.html_ page).
+
+Let's write our first URL endpoint to send the _index.html_ file in response to **any** request:
+
+```js
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, ".", "public", "index.html"));
+});
+```
+
+We use the asterisk symbol **"\*"** as a wildcard to catch any **GET** request. In other words, you can now try to access any web page on the server and it'll always respond with the _index.html_ page.
+
+> Remember to restart your server any time you make a change to it.
+
+Notice that we write endpoints in **express** using the syntax:
+
+```js
+app.HTTP_VERB("/URL_ENDPOINT", (req, res) => {
+  // handle the request here
+});
+```
+
+### Browser devtools
+
+To really understand how the browser is communicating with the server, you need to know how to use the browser's devtools.
+
+Briefly, you can open the devtools with the keyboard shortcut F12, or right click in an open web page and select **Inspect** at the bottom.
+
+Using the tabs at the top of the devtools, navigate to the **Console** tab to see error messages.
+
+> The **Console** also offers full JavaScript REPL (read-evaluate-print-loop) functionality, which means you can use it as a JavaScript playground.
+
+If you want more information about network requests, go to the **Network** tab.
+
+We'll get more familar with the devtools as we proceed through the series.
+
+### Development dependencies
+
+We can make our lives a bit easier by adding some development dependencies. These are **npm packages** that we'll only use in building our app, and not in the final product.
+
+Constantly restarting our server whenever we make a change to the code is getting super annoying, so lets add [nodemon](https://www.npmjs.com/package/nodemon), a package that'll restart any time it sees a change.
+
+We'll improve our logging by including the [morgan](https://www.npmjs.com/package/morgan) package while were at it.
+
+Install the packages with `npm install --save-dev nodemon morgan`.
+
+You should see them added to the _package.json_ file, under `"devDependencies"`:
+
+```json
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+```
+
+#### Automatic restarts with nodemon
+
+To make using **nodemon** easier, you'll write an **npm script**.
+
+> npm scripts let you automate CLI commands. You won't see much of a difference in this case, but eventually it'll make a big difference.
+
+Add this to `"scripts"` in the _package.json_ file:
+
+```json
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+```
+
+Now start your server with `npm start` and you'll see it restart on its own whenever you make a change.
+
+#### Logging with morgan
+
+You can add morgan as middleware by first importing it into _index.js_ and then calling it with `app.use(morgan('combined'))`. You can delete the simple logging middleware we wrote previously.
+
+> See the [morgan documentation](https://www.npmjs.com/package/morgan) for more options.
+
+```js
+import morgan from "morgan";
+
+app.use(morgan("combined"));
+```
+
+Try making a request to the server and you'll see some useful information about the request printed to the console.
+
+### Wrap up
+
+Is it just me, or is this article getting really long?
+
+Let's pick it up in the next one.
+
+Here's the code up to this point:
+
+```js
+import { fileURLToPath } from "url";
+import path from "path";
+import fs from "fs/promises";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+import { ExpressError } from "./utils.js";
+import express from "express";
+const app = express();
+
+import morgan from "morgan";
+
+app.use(morgan("combined"));
+
+app.use(express.static(path.join(__dirname, ".", "public")));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, ".", "public", "index.html"));
+});
+
+app.listen(3000, () => {
+  console.log("Server initiated on port 3000");
+});
+```
+
+We're only just getting started, but if you've followed along up till now then you're getting a very detailed understanding of how Node.js and web servers work. Great job!
+
+In the next article we'll continue building the backend API, introduce the React frontend, write data sent by the client to the file system, add some error handling, and more.
+
+Have a coffee and I'll see ya in the next one!

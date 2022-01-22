@@ -1,5 +1,5 @@
 ---
-slug: "getting-started"
+slug: "getting-started-with-full-stack-nodejs"
 date: "2021-12-15"
 title: "Getting Started with Full Stack Node.js Development"
 author:
@@ -19,14 +19,15 @@ tags:
     "expressjs",
     "coding",
   ]
-summary: "In this article you will learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager."
+summary: "In this article you'll learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager.  You'll learn how to use modern ES Modules in a Node environment and how install and import Express.js into a JavaScript file."
 pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png
   pillarTitle: "Building a Full Stack Node.js Application | The Step-by-Step JavaScript Developer's Guide"
   text: "<em>'Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide'</em> is an ongoing series on full stack Node.js web development.  Each step in the series covers a variety of web development topics, including: back-end development, front-end development, best practices, useful libraries, design patterns, error handling, UI/UX design, and much more."
 image:
-  path: ./media/nodejs_logo.png
+  pathLarge: ./media/nodejs_logo_large.png
+  pathSmall: ./media/nodejs_logo_small.png
   alt: "Node.js logo"
   caption: 'Photo by <a href="https://nodejs.org/en/about/resources/"><em>Node.js</em></a>'
 ---
@@ -41,13 +42,15 @@ The goal of this guide is to give you the step-by-step instructions I wish I had
 
 > The **major technologies** we will explore over the course of the series include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
 
-This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn basics. That being said, this guide tries to keep the beginner in mind and offers detailed explanations as much as possible.
+This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web to get a primer. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn the basics.
+
+That being said, I'm hoping this guide can offer value to developers of all levels.
 
 ### New to Web Development?
 
 If you are new to web development, you are probably trying to get your bearings. You may be overwhelmed by all the directions you can go. Technologies, frameworks, programming languages... it's easy to feel intimidated. The only thing I can tell you is: _welcome to the web_.
 
-**Don't panic!** Everyone is there with you. The web is kind of like the Wild West - the frontier. Things are evolving at a crazy and increasing rate as everyone scrambles to strike gold, and it's easy to get lost in the noise. But this gold rush is just beginning and you have the opportunity now to commit to being a part of it.
+**Don't panic!** You're not alone. The web is kind of like the Wild West - the frontier. Things are evolving at a crazy and increasing rate as everyone scrambles to strike gold, and it's easy to get lost in the noise. But this gold rush is still just beginning and you have the opportunity now to commit to being a part of it.
 
 Learning web skills can literally transform your life, as it has the lives of so many already. There is endless opportunity to learn, grow, innovate, contribute, and of course, make money. No other skillset can give you the flexibility, freedom and opportunity that a web career offers.
 
@@ -311,6 +314,8 @@ console.log(express);
 Running `node index.js` you should see the _express object_ logged to the terminal.
 
 Congratulations, your Node.js environment is ready to go!
+
+> If you run into any issues when following this guide, or any tutorial for that matter, being able to figure the issue on your own is **extremely** important. This ability to **debug** and **problem solve** is essential to being a successful developer. If you learn to use Google to research your issue, you'll see that 9 times out of 10 someone else has had the same issue and figured out the solution. If you've tried everything, you can contact me or post your problem to [stackoverflow](https://stackoverflow.com/) including the full details of your problem and your code.
 
 ## Conclusion
 

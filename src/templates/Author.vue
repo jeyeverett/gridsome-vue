@@ -47,7 +47,7 @@ query Author($id: ID!, $page: Int) {
                     summary
                     timeToRead
                     image {
-                      path
+                      pathSmall
                       caption
                       alt
                     }
@@ -71,7 +71,7 @@ query Author($id: ID!, $page: Int) {
                     summary
                     timeToRead
                     image {
-                      path
+                      pathSmall
                       caption
                       alt
                     }

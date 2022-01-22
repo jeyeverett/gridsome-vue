@@ -28,6 +28,8 @@
           .replace("Fs", "FS")
           .replace("10", "1.0")
           .replace("20", "2.0")
+          .replace("Api", "API")
+          .replace("Url", "URL")
       }}
     </a>
   </nav>

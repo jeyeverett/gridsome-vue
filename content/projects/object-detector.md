@@ -29,7 +29,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/img-obj-detect.png
+  pathSmall: ./media/object-detector_small.png
+  pathLarge: ./media/object-detector_large.png
   alt: "Object Detector website main page"
   caption: "Object Detector website landing page"
 author:

@@ -41,7 +41,7 @@ query Projects {
         highlights
         timeToRead
         image {
-          path
+          pathSmall
           caption
           alt
         }

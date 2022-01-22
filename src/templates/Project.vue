@@ -107,7 +107,7 @@
       githubLink
       timeToRead
       image {
-        path
+        pathLarge
         caption
         alt
       }

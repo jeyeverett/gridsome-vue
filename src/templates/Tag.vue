@@ -48,7 +48,7 @@ query Tag($id: ID!, $page: Int) {
                     summary
                     timeToRead
                     image {
-                      path
+                      pathSmall
                       caption
                       alt
                     }
@@ -70,7 +70,7 @@ query Tag($id: ID!, $page: Int) {
                     summary
                     timeToRead
                     image {
-                      path
+                      pathSmall
                       caption
                       alt
                     }

@@ -9,7 +9,8 @@ highlights: ["HTML", "Sass", "CSS Animation", "Flexbox/CSS Grid", "Formspree"]
 tags: ["css", "sass", "javascript", "coding"]
 pillar: "projects"
 image:
-  path: ./media/old-portfolio.png
+  pathSmall: ./media/old-portfolio_small.png
+  pathLarge: ./media/old-portfolio_large.png
   alt: "Old portfolio"
   caption: "Old portfolio"
 author:

@@ -32,7 +32,6 @@
           name="about"
           tag="p"
           class="xs:pl-1 text-center sm:text-left xs:text-base sm:text-lg text-gray-600 font-medium mb-8 md:mb-12 text-md w-96 leading-relaxed"
-          v-if="h2Complete"
           @before-enter="beforeEnterP"
           @enter="enterP"
           appear
@@ -40,22 +39,28 @@
           <span
             v-for="fragment in fragments"
             :key="fragment"
-            class="inline-block break-words"
+            class="inline-block break-words code"
             style="margin-right: 3.2px;"
           >
             {{ fragment }}
           </span>
         </transition-group>
         <transition appear @before-enter="beforeEnter" @enter="enter">
-          <Button
+          <VueTypedJs
             v-if="spanComplete"
-            :css="false"
-            button-text="Let's work together"
-            button-classes="px-6 py-3"
-            text-classes="font-semibold"
-            :class="buttonComplete ? 'transition-all' : ''"
-            @click="toggleModal"
-          />
+            :strings="['Let\'s work together']"
+            class=""
+            :show-cursor="false"
+            :start-delay="500"
+          >
+            <button
+              class="typing text-white font-semibold px-6 py-3 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow-lg relative"
+              style="width: 210.8px; height: 50px;"
+              :style="{ 'transition-all': buttonComplete }"
+              id="button"
+              @click="toggleModal"
+            />
+          </VueTypedJs>
         </transition>
       </div>
     </section>
@@ -66,13 +71,11 @@
 import { VueTypedJs } from "vue-typed-js";
 import gsap from "gsap";
 import TheHeader from "../components/TheHeader.vue";
-import Button from "../components/Button.vue";
 import Utils from "../mixins/Utils.vue";
 
 export default {
   components: {
     TheHeader,
-    Button,
     VueTypedJs,
   },
   mixins: [Utils],
@@ -99,7 +102,7 @@ export default {
       gsap.from(el, {
         opacity: 1,
         y: -50,
-        scale: el.tagName.toLowerCase() === "button" ? 0 : 1,
+        scale: el.tagName.toLowerCase() === "button" || "div" ? 0 : 1,
       });
     },
     enter(el, done) {
@@ -124,7 +127,6 @@ export default {
         x: Math.round((Math.random() - 0.5) * 400 + 10),
         y: Math.round(Math.random() * 500),
       });
-      console.log(el.style);
     },
     enterP(el, done) {
       gsap.to(el, {
@@ -147,18 +149,24 @@ export default {
       if (id === "h1" || id === "h2") {
         this.disableCursor(id);
       }
+
       this[id + "Complete"] = true;
 
       if (this.h2Complete) {
-        this.fragments = [
-          "I combine",
-          "full stack JavaScript",
-          "with",
-          "cloud technology",
-          "to design and build",
-          "high performance",
-          "web applications.",
-        ];
+        setTimeout(
+          () =>
+            (this.fragments = [
+              "I combine",
+              "full stack",
+              "JavaScript",
+              "with",
+              "cloud technology",
+              "to design and build",
+              "high performance",
+              "web applications.",
+            ]),
+          500
+        );
       }
     },
     disableCursor(id) {
@@ -172,6 +180,12 @@ export default {
 <style>
 .button-transition {
   transition-delay: 2s;
+}
+
+.code:nth-child(3) {
+  font-family: monospace;
+  color: rgb(243 244 246);
+  @apply bg-gray-500 py-1 px-2 rounded;
 }
 /* .about-item {
   transition: all 1s;

@@ -7,7 +7,7 @@
     <!-- <g-link :to="project.node.path"> -->
     <g-image
       :alt="project.node.image.alt"
-      :src="project.node.image.path"
+      :src="project.node.image.pathSmall"
       height="160"
       width="298"
       class="h-40 object-cover object-center"
@@ -36,7 +36,7 @@
         {{ project.node.summary }}
       </p>
       <ul
-        class="pt-1 border-t border-gray-200 mt-2 flex flex-col items-center justify-center"
+        class="pt-1 pb-1 border-t border-b border-gray-200 my-2 flex flex-col items-center justify-center"
       >
         <li
           v-for="highlight in project.node.highlights"
@@ -48,6 +48,7 @@
       </ul>
     </div>
     <span class="flex justify-between w-full absolute bottom-3">
+      <!-- prettier-ignore -->
       <a
         :href="project.node.siteLink"
         :disasbled="!project.node.siteLink"
@@ -56,13 +57,11 @@
             !project.node.siteLink
               ? 'text-gray-400'
               : 'text-gray-600 hover:bg-gray-300'
-          } rounded-sm shadow-sm transition-all`
-        "
+          } rounded-sm shadow-sm transition-all`"
         :title="
           project.node.siteLink
             ? `${project.node.title} live view`
-            : 'No live view available'
-        "
+            : 'No live view available'"
       >
         Live View
       </a>

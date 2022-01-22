@@ -28,7 +28,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/carrotcart.png
+  pathSmall: ./media/carrotcart_small.png
+  pathLarge: ./media/carrotcart_large.png
   alt: "CarrotCart website landing page"
   caption: "CarrotCart website landing page"
 author:

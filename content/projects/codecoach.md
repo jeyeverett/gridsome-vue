@@ -17,7 +17,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/codecoach.png
+  pathSmall: ./media/codecoach_small.png
+  pathLarge: ./media/codecoach_large.png
   alt: "CodeCoach main page"
   caption: "CodeCoach main page"
 author:

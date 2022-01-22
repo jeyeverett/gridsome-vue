@@ -20,7 +20,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/post-makr.png
+  pathSmall: ./media/post-makr_small.png
+  pathLarge: ./media/post-makr_large.png
   alt: "Post Makr edit post page"
   caption: "Post Makr edit post page"
 author:

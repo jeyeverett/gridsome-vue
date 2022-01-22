@@ -9,7 +9,8 @@ highlights: ["VueJS", "TailwindCSS", "SwiperJS", "AJAX", "Shopify"]
 tags: ["shopify", "vuejs", "ecommerce", "tailwindcss", "javascript", "coding"]
 pillar: "projects"
 image:
-  path: ./media/shopify-vuejs.png
+  pathSmall: ./media/shopify-vuejs_small.png
+  pathLarge: ./media/shopify-vuejs_large.png
   alt: "Shopify store featured collection"
   caption: "Shopify store featured collection"
 author:

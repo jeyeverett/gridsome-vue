@@ -6,7 +6,7 @@
     <g-link :to="post.node.path">
       <g-image
         :alt="post.node.image.alt"
-        :src="post.node.image.path"
+        :src="post.node.image.pathSmall"
         height="160"
         width="300"
         class="h-40 object-cover object-center"

@@ -19,7 +19,8 @@ tags:
   ]
 pillar: "projects"
 image:
-  path: ./media/fleemarket.png
+  pathSmall: ./media/fleemarket_small.png
+  pathLarge: ./media/fleemarket_large.png
   alt: "Fleemarket website landing page"
   caption: "Fleemarket website landing page"
 author:
