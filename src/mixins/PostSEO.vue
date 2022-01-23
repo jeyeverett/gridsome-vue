@@ -16,7 +16,7 @@ export default {
   metaInfo() {
     const siteUrl = this.$static.metadata.siteUrl;
     const postPath = this.$page.post.path;
-    const image = this.$page.post.image?.path;
+    const image = this.$page.post.image?.pathLarge;
     const imageAlt = this.$page.post.image?.alt;
     const imagePath = image ? `${siteUrl}${image.src}` : "";
 

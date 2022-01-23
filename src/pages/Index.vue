@@ -80,7 +80,63 @@ export default {
   },
   mixins: [Utils],
   metaInfo: {
-    title: "Welcome!",
+    title: "Homepage",
+    meta: [
+      {
+        key: "description",
+        name: "description",
+        content:
+          "Hi, I'm Jeysen.  I combine full stack JavaScript with cloud technology to design and build high performance web applications.",
+      },
+      {
+        key: "keywords",
+        name: "keywords",
+        content:
+          "web development, full stack, frontend, backend, javascript, nodejs, reactjs, vuejs, software developer, engineer",
+      },
+      {
+        key: "author",
+        name: "author",
+        content: "Jeysen Freedman",
+      },
+      {
+        key: "og:url",
+        property: "og:url",
+        content: "https://www.jeysenfreedman.com/",
+      },
+      {
+        key: "og:title",
+        property: "og:title",
+        content: "Jeysen Freedman Full Stack Web Developer",
+      },
+      {
+        key: "og:description",
+        property: "og:description",
+        content:
+          "Hi, I'm Jeysen.  I combine full stack JavaScript with cloud technology to design and build high performance web applications.",
+      },
+      {
+        key: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Hi, I'm Jeysen.  I combine full stack JavaScript with cloud technology to design and build high performance web applications.",
+      },
+      {
+        key: "twitter:card",
+        name: "twitter:card",
+        content: "summary",
+      },
+      {
+        key: "twitter:title",
+        property: "twitter:title",
+        content: "Jeysen Freedman | Full Stack Web Developer",
+      },
+      {
+        key: "twitter:site",
+        property: "twitter:site",
+        content: "@jeysenfreedman",
+      },
+    ],
   },
   data() {
     return {

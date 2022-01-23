@@ -6,6 +6,7 @@
       <g-link
         to="/"
         class="text-blue flex items-center justify-center md:justify-start"
+        aria-label="logo link to homepage"
       >
         <Logo classes="text-blue dark:text-white" />
       </g-link>

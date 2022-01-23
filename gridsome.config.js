@@ -8,7 +8,7 @@ const autoprefixer = require("autoprefixer");
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Jeysen Freedman",
+  siteName: "Jeysen Freedman | Full Stack Web Developer",
   siteDescription: "Jeysen Freedman's personal website",
   siteUrl: process.env.DEPLOY_URL || "https://www.jeysenfreedman.com",
   // metadata: {
