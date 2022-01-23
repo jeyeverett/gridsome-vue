@@ -53,10 +53,6 @@
       />
     </figure>
 
-    <ClientOnly>
-      <TableOfContents />
-    </ClientOnly>
-
     <article
       id="post-content"
       class="mb-16 md:px-2 xl:px-4 mx-auto prose dark:prose-light lg:prose-lg xl:prose-xl"
@@ -137,12 +133,8 @@
 <script>
 import PostSEO from "../mixins/PostSEO.vue";
 import Utils from "../mixins/Utils.vue";
-import TableOfContents from "../components/TableOfContents.vue";
 
 export default {
-  components: {
-    TableOfContents,
-  },
   mixins: [PostSEO, Utils],
   computed: {
     seriesOverviewName() {

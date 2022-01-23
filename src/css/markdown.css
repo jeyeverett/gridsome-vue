@@ -61,3 +61,41 @@ p img {
 #post-content a {
   @apply hover:text-gray-500 transition-all;
 }
+
+#post-content #table-of-contents {
+  @apply flex flex-col border-2 border-gray-200 dark:border-gray-700 dark:text-white rounded px-4 py-2 w-max mx-auto text-gray-700;
+}
+
+#post-content #table-of-contents > * {
+  @apply p-0 m-0 no-underline;
+}
+
+#post-content #table-of-contents div {
+  @apply text-center uppercase tracking-wide text-gray-700 dark:text-white font-semibold text-lg mb-2 border-0 m-0 mx-auto;
+}
+
+#post-content #table-of-contents ul,
+#post-content #table-of-contents ul > *,
+#post-content #table-of-contents ul li a {
+  @apply list-none p-0 m-0 text-sm italic no-underline;
+}
+
+#post-content #table-of-contents ul li::before {
+  content: none;
+}
+
+#post-content #table-of-contents ul li {
+  @apply pl-2;
+}
+
+#post-content #table-of-contents ul li a {
+  @apply font-bold hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-gray-200;
+}
+
+#post-content #table-of-contents ul li ul li a {
+  @apply font-semibold;
+}
+
+#post-content #table-of-contents ul li ul li ul li a {
+  @apply font-normal;
+}

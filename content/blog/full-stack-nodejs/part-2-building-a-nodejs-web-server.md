@@ -34,6 +34,48 @@ image:
 
 > This is part two of **"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"**. [Find the full series here](/blog/full-stack-nodejs).
 
+<nav id="table-of-contents">
+  <div>Table of Contents</div>
+  <ul>
+    <li><a href="#introduction">Introduction<a><li>
+    <li><a href="#web-server-basics">Web Server Basics<a><li>
+    <ul>
+      <li><a href="#web-10">Web 1.0<a><li>
+      <li><a href="#web-20">Web 2.0<a><li>
+    </ul>
+    <li><a href="#nodejs">Node.js<a><li>
+    <ul>
+      <li><a href="#the-path-and-url-modules">The Path and URL Modules<a><li>
+      <li><a href="#the-fs-module">The FS Module<a><li>
+      <ul>
+        <li><a href="#fs-synchronous-operations">FS Synchronous Operations<a><li>
+        <li><a href="#fs-asynchronous-operations">FS Asynchronous Operations<a><li>
+      </ul>
+      <li><a href="#the-http-module">The HTTP Module<a><li>
+    </ul>
+    <li><a href="#express">Express<a><li>
+    <ul>
+      <li><a href="#the-api-details">The API Details<a><li>
+      <li><a href="#the-project-structure">The Project Structure<a><li>
+      <li><a href="#basic-express-server">Basic Express Server<a><li>
+      <li><a href="#static-assets">Static Assets<a><li>
+      <li><a href="#middleware">Middleware<a><li>
+      <ul>
+        <li><a href="#serving-static-assets-with-middleware">Serving Static Assets with Middleware<a><li>
+        <li><a href="#logging-middleware">Logging Middleware<a><li>
+      </ul>
+      <li><a href="#url-endpoints">URL Endpoints<a><li>
+      <li><a href="#browser-devtools">Browser Devtools<a><li>
+      <li><a href="#development-dependencies">Development Dependencies<a><li>
+      <ul>
+        <li><a href="#automatic-restarts-with-nodemon">Automatic Restarts with Nodemon<a><li>
+        <li><a href="#logging-with-morgan">Logging with Morgan<a><li>
+      </ul>
+    </ul>
+    <li><a href="#wrap-up">Wrap Up<a><li>
+  </ul>
+</nav>
+
 ## Introduction
 
 In the previous article you learned that _Node.js_ gives us the ability to run JavaScript outside the browser and specifically, to build production-grade backend web servers.
@@ -611,7 +653,7 @@ app.use(morgan("combined"));
 
 Try making a request to the server and you'll see some useful information about the request printed to the console.
 
-### Wrap up
+## Wrap up
 
 Is it just me, or is this article getting really long?
 

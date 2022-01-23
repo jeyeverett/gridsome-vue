@@ -54,7 +54,7 @@
             :start-delay="500"
           >
             <button
-              class="typing text-white font-semibold px-6 py-3 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow-lg relative"
+              class="typing text-white font-semibold px-6 py-3 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow-lg truncate"
               style="width: 210.8px; height: 50px;"
               :style="{ 'transition-all': buttonComplete }"
               id="button"
@@ -184,8 +184,9 @@ export default {
 
 .code:nth-child(3) {
   font-family: monospace;
-  color: rgb(243 244 246);
-  @apply bg-gray-500 py-1 px-2 rounded;
+  /* color: rgb(243 244 246); */
+  /* @apply bg-gray-500 py-1 px-2 rounded; */
+  @apply text-blue border-b-4 border-blue font-semibold leading-tight;
 }
 /* .about-item {
   transition: all 1s;

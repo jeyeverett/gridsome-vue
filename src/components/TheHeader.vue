@@ -13,7 +13,7 @@
     <nav
       class="flex flex-col items-center md:flex-row md:justify-end w-full mt-4 md:mt-0"
     >
-      <theme-switcher class="py-1 sm:py-2 sm:mr-3" v-if="$route.path !== '/'" />
+      <theme-switcher class="py-1 sm:py-2 md:mr-3" v-if="$route.path !== '/'" />
       <span class="mt-4 sm:mt-0 flex items-center">
         <NavLink route="projects" />
         <NavLink route="blog" />

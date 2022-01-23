@@ -34,13 +34,55 @@ image:
 
 > _This is part one of **"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"**. [Find the full series here](/blog/full-stack-nodejs)._
 
+<nav id="table-of-contents">
+  <div>Table of Contents</div>
+  <ul>
+    <li><a href="#introduction">Introduction<a><li>
+    <ul>
+      <li><a href="#new-to-web-development">New to Web Development<a><li>
+    </ul>
+    <li><a href="#getting-started">Getting Started<a><li>
+    <ul>
+      <li><a href="#nodejs">Node.js<a><li>
+      <ul>
+        <li><a href="#under-the-hood">Under the Hood<a><li>
+      </ul>
+    </ul>
+    <ul>
+      <li><a href="#installing-nodejs">Installing Node.js<a><li>
+      <ul>
+        <li><a href="#semantic-versioning">Semantic Versioning<a><li>
+      </ul>
+    </ul>
+    <ul>
+      <li><a href="#node-package-manager">Node Package Manager (NPM)<a><li>
+      <ul>
+        <li><a href="#the-npm-registry">The NPM Registry<a><li>
+        <li><a href="#the-packagejson-file">The Package.json File<a><li>
+      </ul>
+    </ul>
+    <ul>
+      <li><a href="#installing-expressjs">Installing Express.js<a><li>
+      <ul>
+        <li><a href="#the-package-lockjson-file">The Package-lock.json File<a><li>
+        <li><a href="#the-node_modules-folder">The Node_Modules Folder<a><li>
+      </ul>
+    </ul>
+    <ul>
+      <li><a href="#using-es-modules">Using ES Modules<a><li>
+      <li><a href="#testing-your-setup">Testing Your Setup<a><li>
+    </ul>
+    <li><a href="#conclusion">Conclusion<a><li>
+  </ul>
+</nav>
+
 ## Introduction
 
 This is the first article in an _open-ended_ guide to full stack Node.js web development. I was inspired to create _"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"_ by [Aaron Frost's keynote on building bridges](https://youtu.be/E8TkRKWGSVc).
 
 The goal of this guide is to give you the step-by-step instructions I wish I had when I first began learning web development. It follows a _hands-on_ approach to learning JavaScript oriented web development supplemented by the details _that I found helpful_ in connecting the dots.
 
-> The **major technologies** we will explore over the course of the series include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
+> The **major technologies** we'll explore over the course of the series include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
 
 This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web to get a primer. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn the basics.
 
@@ -48,9 +90,9 @@ That being said, I'm hoping this guide can offer value to developers of all leve
 
 ### New to Web Development?
 
-If you are new to web development, you are probably trying to get your bearings. You may be overwhelmed by all the directions you can go. Technologies, frameworks, programming languages... it's easy to feel intimidated. The only thing I can tell you is: _welcome to the web_.
+If you're new to web development, you're probably trying to get your bearings. You may be overwhelmed by the many directions you can go. Technologies, frameworks, programming languages... it's easy to feel intimidated. _Welcome to the web!_
 
-**Don't panic!** You're not alone. The web is kind of like the Wild West - the frontier. Things are evolving at a crazy and increasing rate as everyone scrambles to strike gold, and it's easy to get lost in the noise. But this gold rush is still just beginning and you have the opportunity now to commit to being a part of it.
+The web is kind of like the Wild West - the frontier. Things are evolving at a crazy and increasing rate as everyone scrambles to strike gold, and it's easy to get lost in the noise. But this gold rush is still just beginning and you have the opportunity now to commit to being a part of it.
 
 Learning web skills can literally transform your life, as it has the lives of so many already. There is endless opportunity to learn, grow, innovate, contribute, and of course, make money. No other skillset can give you the flexibility, freedom and opportunity that a web career offers.
 
@@ -60,7 +102,7 @@ Whether your main area of interest is web development, design, digital marketing
 
 ## Getting Started
 
-Welcome to the first step in your journey to mastering full stack Node.js web development. In this article we will look at what Node.js is, why it's useful, and how to get started using it.
+Welcome to the first step in your journey to mastering full stack Node.js web development. In this article we'll look at what Node.js is, why it's useful, and how to get started using it.
 
 This article provides a lot of background on Node.js, so if you already have it installed and want to jump right in, feel free to skip on to part 2.
 
@@ -103,7 +145,7 @@ You can download Node.js from https://nodejs.org/. Choose the **LTS option**, wh
 > - Whenever we programmatically work with another piece of software, such as Node.js, we use its API to implement the functionality we need
 > - When you need more information on an API, consult its _documentation_
 
-> If you are interested, you can download _node version manager_ aka _nvm_ for Windows or Mac/Linux. This simple program gives you the flexibility to switch between any of the previous node versions.
+> If you're interested, you can download _node version manager_ aka _nvm_ for Windows or Mac/Linux. This simple program gives you the flexibility to switch between any of the previous node versions.
 
 ---
 
@@ -163,7 +205,7 @@ You can manually create a **package.json** file in the _root_ of your project di
 
 Follow the CLI instructions or press `enter` to accept the default input. In the future, use `npm init -y` to skip this step and accept the defaults.
 
-Execute `ls` in the CLI to _list_ the files in your current directory and you should see **package.json** . If you open this file in your text editor (I use VSCode, and use the `code .` command to open it from the CLI) you will see the following JSON:
+Execute `ls` in the CLI to _list_ the files in your current directory and you should see **package.json** . If you open this file in your text editor (I use VSCode, and use the `code .` command to open it from the CLI) you'll see the following JSON:
 
 ```json
 {
@@ -285,7 +327,7 @@ Your _package.json_ file should now look like this:
 }
 ```
 
-### Testing our Setup
+### Testing Your Setup
 
 In the root of your project, create a file called _index.js_.
 
@@ -299,7 +341,7 @@ console.log(process.version);
 
 Run _index.js_ from the CLI with the command `node index.js`.
 
-You should see the version of Node.js you are using logged to the console:
+You should see the version of Node.js you're using logged to the console:
 
     $ node index.js
     v16.13.2
@@ -325,6 +367,6 @@ You saw that you can use _node package manager_ (_npm_) to access the _npm regis
 
 You installed _Express.js_, configured _ES Modules_ in the Node environment, and tested your environment to ensure everything was set up correctly.
 
-Now that our development environment is set up, in the next article we will begin building our first web server with Express.js and Node.
+Now that our development environment is set up, in the next article we'll begin building our first web server with Express.js and Node.
 
 Thanks for following along and I'll see you in the next one!
