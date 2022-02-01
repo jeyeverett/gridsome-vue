@@ -45,7 +45,7 @@
 
 <page-query>
 query Posts ($id: ID!, $page: Int) {
-  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: { eq: $id, ne: "projects" } },  perPage: 6, page: $page) @paginate  {
+  posts: allBlogPost (sortBy: "date", order: ASC, filter: { pillar: { in: [$id] } }, perPage: 6, page: $page) @paginate  {
     totalCount
     pageInfo {
       totalPages
@@ -108,6 +108,8 @@ export default {
     },
   },
   mounted() {
+    // console.log(this.pillarTitle);
+    // console.log(this.pillarOverview);
     if (window.location.href.includes("projects")) {
       window.location.replace("https://jeysenfreedman.com/projects");
     }

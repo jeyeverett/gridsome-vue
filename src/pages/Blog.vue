@@ -36,7 +36,7 @@
 
 <page-query>
 query Posts {
-  posts: allBlogPost (sortBy: "date", order: DESC) {
+  posts: allBlogPost (sortBy: "date", order: DESC, filter: { title: { ne: "Projects Page" } },) {
     edges {
       node {
         title

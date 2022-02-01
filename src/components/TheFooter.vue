@@ -11,12 +11,13 @@
           Blog
         </g-link>
         <g-link
-          v-for="post in $static.posts.edges"
+          v-for="post in $static.posts.edges.slice(0, 4)"
           :key="post.node.title"
           :to="post.node.path"
           class="text-xs mb-2 mx-auto sm:ml-1 w-3/4 lg:w-full hover:text-gray-200 transition-all"
+          :title="post.node.title"
         >
-          {{ post.node.title }}
+          {{ post.node.title.slice(0, 40) + "..." }}
         </g-link>
       </div>
       <div class="flex flex-col mx-2 text-center sm:text-left">
@@ -30,31 +31,25 @@
           to="/projects/#post-makr"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 1 - Post Makr
+          Post Makr - Next.js & Firebase
         </g-link>
         <g-link
           to="/projects/#personal-website"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 2 - Portfolio Website
+          Portfolio Website - Vue.js & Gridsome
         </g-link>
         <g-link
           to="/projects/#object-detector"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 3 - Object Detector
-        </g-link>
-        <g-link
-          to="/projects/#shopify-vuejs-theme"
-          class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
-        >
-          Project 4 - Shopify VueJS Theme
+          Object Detector - React.js & Tensorflow.js
         </g-link>
         <g-link
           to="/projects/#booxapp"
           class="text-xs mb-2 ml-1 hover:text-gray-200 transition-all"
         >
-          Project 5 - Booxapp
+          Booxapp - Node.js & Express.js
         </g-link>
       </div>
       <div class="flex flex-col items-center sm:items-start mx-2 mb-4 sm:mb-0">

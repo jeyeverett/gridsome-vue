@@ -23,7 +23,7 @@ pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png
   pillarTitle: "Building a Full Stack Node.js Application | The Step-by-Step JavaScript Developer's Guide"
-  text: "<em>'Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide'</em> is an ongoing series on full stack Node.js web development.  Each step in the series covers a variety of web development topics, including: back-end development, front-end development, best practices, useful libraries, design patterns, error handling, UI/UX design, and much more."
+  text: "Welcome to the only guide you'll need to build full stack JavaScript applications.  This ongoing series is here to help supercharge your JavaScript development journey.  Each article in the series covers the relevant topics you need to build awesome web apps.  Join me in investigating topics like backend and frontend development, cloud deployment, UI/UX, and more.  Learn everything you need to excel as a JavaScript developer.  We'll cover every detail of web development, from web servers and HTTP, to frontend frameworks and beyond.  Its 2022 and you need the most up to date information you can get.  Everything I share with you comes from my own <em>current</em> experience.  So what are you waiting for?  Let's get started."
 image:
   pathLarge: ./media/building-a-nodejs-web-server_large.jpg
   pathSmall: ./media/building-a-nodejs-web-server_small.jpg

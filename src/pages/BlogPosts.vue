@@ -21,7 +21,7 @@
 
 <page-query>
 query Posts ($page: Int) {
-  posts: allBlogPost (sortBy: "date", order: DESC, perPage: 6, page: $page) @paginate {
+  posts: allBlogPost (sortBy: "date", order: DESC, filter: { title: { ne: "Projects Page" } }, perPage: 6, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -68,6 +68,7 @@ export default {
     title: "Blog Posts",
   },
   mounted() {
+    console.log(this.$page.posts.edges);
     gsap.from(".post", {
       duration: 0.5,
       opacity: 0,

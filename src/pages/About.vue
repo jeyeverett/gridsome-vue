@@ -4,16 +4,17 @@
       class="flex flex-col justify-between items-center mt-4 xs:mt-10 relative"
     >
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center snippets"
       >
-        <span class="sm:w-3/4 md:w-full snippets">
+        <span class="sm:w-3/4 md:w-full">
           <h1 class="text-5xl font-semibold text-blue mb-4">
             Hi there!
           </h1>
           <p class="pl-1 font-medium text-gray-700 dark:text-white">
             Driven to design high performance web applications that solve real
-            world problems, I am fuelled by delivering excellent work and
+            world problems, I'm fueled by delivering excellent work and
             constantly expanding my skillset.
+            <!-- Driven to solve real world problems with innovative web applications, I'm fueled by delivering excellent work and constantly expanding my skillset. -->
           </p>
           <p class="pl-1 font-medium text-gray-700 dark:text-white mt-2">
             Learn more about me below.
@@ -22,7 +23,7 @@
         <g-image
           alt="Jeysen Freedman"
           src="/images/farm-selfie.jpg"
-          class="rounded shadow w-80 order-first mb-4 md:mb-0 md:order-none snippets"
+          class="rounded shadow w-80 order-first mb-4 md:mb-0 md:order-none"
           height="200"
           width="200"
         />
@@ -44,9 +45,9 @@
             class="font-medium leading-relaxed text-gray-700 dark:text-white md:px-2 text-justify"
           >
             I'm a full stack developer with 10+ years of experience in science,
-            technology and engineering. I'm focused on deploying full stack
-            JavaScript applications to cloud infrastructures to create highly
-            performant and scalable web solutions. I'm passionate about
+            technology and engineering. I'm focused on using JavaScript and
+            cloud technologies to build high performance, scalable web solutions
+            that contribute to the evolution of the web. I'm passionate about
             education, engineering and design.
           </p>
         </article>
@@ -62,10 +63,10 @@
           <p
             class="font-medium leading-relaxed text-gray-700 dark:text-white md:px-2 text-justify"
           >
-            I'm interested in applying web technologies to enhance the web and
-            solve problems related to local agriculture, renewable energy,
-            sustainable housing, mental health and education. I help people and
-            businesses use the web to empower and transform their lives.
+            I can't think of a better way to spend my days than helping people
+            use the web in meaningful ways. I'm interested in how the web can
+            enhance society, particularly through its potential for maximizing
+            our freedom and helping us live healthy and fulfilling lives.
           </p>
         </article>
         <article class="px-2 xs:px-8 sm:px-16 md:px-0 pb-4 snippets">
@@ -98,10 +99,10 @@
           <p
             class="font-medium leading-relaxed text-gray-700 dark:text-white md:px-2 text-justify"
           >
-            While making the switch from engineering consulting to web
-            development, I had the opportunity to learn timber framing and log
-            building, build custom homes, and spend a season managing a 60 acre
-            organic farm.
+            During my transition from engineering consultant to web developer, I
+            had the opportunity to attend the Island School of Building Arts,
+            learn timber framing and log building, build custom homes, and spend
+            a season managing a 60 acre organic farm.
           </p>
         </article>
       </section>
@@ -113,14 +114,6 @@
             class="flex items-center snippets"
             title="reactjs"
           >
-            <!-- <g-image
-              alt="react"
-              src="../../content/media/react.png"
-              class="p-2 filter grayscale"
-              title="react"
-              width="64"
-              height="64"
-            /> -->
             <ReactIcon />
           </a>
           <a
@@ -129,14 +122,6 @@
             class="flex items-center snippets"
             title="vuejs"
           >
-            <!-- <g-image
-              alt="vuejs"
-              src="../../content/media/vue.png"
-              class="w-12 filter grayscale"
-              title="vuejs"
-              width="48"
-              height="48"
-            /> -->
             <VueIcon />
           </a>
 
@@ -146,14 +131,6 @@
             class="flex items-center snippets"
             title="amazon web services"
           >
-            <!-- <g-image
-              alt="amazon web services"
-              src="../../content/media/amazon-web-services.png"
-              class="p-2 filter greyscale hue-0 contrast-50"
-              title="amazon web services"
-              width="64"
-              height="64"
-            /> -->
             <AWSIcon />
           </a>
 
@@ -163,14 +140,6 @@
             class="flex items-center snippets"
             title="mongodb"
           >
-            <!-- <g-image
-              alt="mongodb"
-              src="../../content/media/mongodb.png"
-              class="p-2 filter grayscale"
-              title="mongodb"
-              width="64"
-              height="64"
-            /> -->
             <MongoIcon />
           </a>
 
@@ -188,14 +157,6 @@
             class="flex items-center snippets"
             title="firebase"
           >
-            <!-- <g-image
-              alt="firebase"
-              src="../../content/media/firebase.png"
-              class="p-2 filter grayscale"
-              title="firebase"
-              width="64"
-              height="64"
-            /> -->
             <FirebaseIcon />
           </a>
           <a
@@ -204,14 +165,6 @@
             class="flex items-center snippets"
             title="javascript"
           >
-            <!-- <g-image
-              alt="javascript"
-              src="../../content/media/javascript.png"
-              class="p-2 filter grayscale"
-              title="javascript"
-              width="64"
-              height="64"
-            /> -->
             <JavaScriptIcon />
           </a>
           <a
@@ -220,14 +173,6 @@
             class="flex items-center snippets"
             title="postgres"
           >
-            <!-- <g-image
-              alt="javascript"
-              src="../../content/media/javascript.png"
-              class="p-2 filter grayscale"
-              title="javascript"
-              width="64"
-              height="64"
-            /> -->
             <PostgresIcon />
           </a>
         </span>

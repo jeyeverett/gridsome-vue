@@ -1,6 +1,6 @@
 ---
 slug: "booxapp"
-date: "2021-06-02"
+date: "2021-11-14"
 title: "booxapp"
 summary: "Full stack book sharing and review app built on NodeJS and ExpressJS with SSR pages using EJS. CRUD operations for books, reviews and user profiles. Real-time chat with WebSockets and Socket.io. Auth via PassportJS. Mapbox GLJS integration."
 siteLink: "https://booxapp.herokuapp.com/"
