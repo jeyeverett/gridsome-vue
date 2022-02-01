@@ -68,7 +68,6 @@ export default {
     title: "Blog Posts",
   },
   mounted() {
-    console.log(this.$page.posts.edges);
     gsap.from(".post", {
       duration: 0.5,
       opacity: 0,

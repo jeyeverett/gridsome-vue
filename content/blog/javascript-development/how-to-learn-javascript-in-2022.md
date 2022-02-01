@@ -1,18 +1,18 @@
 ---
-slug: "how-to-learn-javascript-10-tips"
+slug: "how-to-learn-javascript-9-tips"
 date: "2022-01-31"
-title: "How to Learn JavaScript for Web Development in 2022: 10 Tips for New Web Developers"
+title: "How to Learn JavaScript for Web Development in 2022 | 9 Tips for New Web Developers"
 author:
   name: "jeysen-freedman"
   bio: "Full Stack Web Developer"
   image: ../../media/jeysen-freedman.jpg
 tags: ["coding"]
-summary: "lorem ipsum"
+summary: "Learning JavaScript is a must if you want to master web development. It gives you tremendous opportunity to build dynamic modern applications. Check out this post for some tips on getting started with JavaScript."
 pillar: "javascript-development"
 pillarContent:
   image: ./media/javascript_large.jpg
   pillarTitle: "Full Stack JavaScript"
-  text: "lorem ipsum"
+  text: "Everything JavaScript.  Articles range from beginner to advanced."
 image:
   pathLarge: ./media/javascript_large.jpg
   pathSmall: ./media/javascript_small.jpg
@@ -20,7 +20,28 @@ image:
   caption: 'Photo by <a href="https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Pankaj Patel</i></a> on <a href="https://unsplash.com/s/photos/javascript?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Unsplash</i></a>'
 ---
 
-If you're new to web development, learning JavaScript is a must. It is one of the most important programming languages for building web applications. In this blog post, we'll discuss some tips for learning JavaScript and getting started in your software development career!
+<nav id="table-of-contents" style="max-width: 500px;">
+  <div>Table of Contents</div>
+  <ul>
+    <li><a href="#introduction">Introduction<a><li>
+    <li>9 Tips<li>
+    <ul>
+      <li style="margin: 2px 0;"><a href="#1-start-by-learning-the-basics">1. Start by learning the basics<a><li>
+      <li style="margin: 2px 0;"><a href="#2-use-online-resources-to-learn-more-about-javascript">2. Use online resources to learn more about JavaScript<a><li>
+      <li style="margin: 2px 0;"><a href="#3-find-a-mentor-or-teacher-to-help-guide-you-through-your-learning-process">3. Find a mentor or teacher to help guide you through your learning process<a><li>
+      <li style="margin: 2px 0;"><a href="#4-use-online-forums-and-discussion-boards-to-ask-questions-and-get-help-from-others">4. Use online forums and discussion boards to ask questions and get help from others<a><li>
+      <li style="margin: 2px 0;"><a href="#5-stay-motivated-by-setting-goals-for-yourself-and-tracking-your-progress">5. Stay motivated by setting goals for yourself and tracking your progress<a><li>
+      <li style="margin: 2px 0;"><a href="#6-use-coding-bootcamps-or-online-courses-to-accelerate-your-learning-process">6. Use coding bootcamps or online courses to accelerate your learning process<a><li>
+      <li style="margin: 2px 0;"><a href="#7-practice-practice-practice">7. Practice, practice, practice!<a><li>
+      <li style="margin: 2px 0;"><a href="#8-experiment-with-different-technologies-and-frameworks">8. Experiment with different technologies and frameworks<a><li>
+      <li style="margin: 2px 0;"><a href="#9-keep-learning-and-growing-as-a-web-developer">9. Keep learning and growing as a web developer<a><li>
+    </ul>
+  </ul>
+</nav>
+
+## Introduction
+
+If you're new to web development, learning JavaScript is a must. It's one of the most important programming languages for building web applications. In this blog post, we'll discuss some tips for learning JavaScript and getting started in your software development career!
 
 ## 1. Start by learning the basics
 
@@ -30,7 +51,7 @@ One great way to learn is by building simple projects. For example, you could cr
 
 Modern web browsers have a built-in JavaScript playground you can use whenever you want. Just right click on any web page and select inspect. Then navigate to the console tab where you can write and execute any JavaScript you'd like.
 
-If you're looking for a more comprehensive introduction to web development, check out our Web Development Bootcamp course. In this course, you'll learn everything from HTML and CSS to JavaScript and React!
+<!-- If you're looking for a more comprehensive introduction to web development, check out our Web Development Bootcamp course. In this course, you'll learn everything from HTML and CSS to JavaScript and React! -->
 
 ## 2. Use online resources to learn more about JavaScript
 
@@ -91,9 +112,9 @@ Attending meetups is a great way to learn more about the language and meet other
 
 Another great way to get involved in the community is by contributing to open source projects. This can be anything from fixing typos, to adding new features. Open source projects are always looking for contributors and it's a great way to learn more about the language and help out the community.
 
-If you're looking for a place to start contributing, check out the "Awesome for Beginners" repository on GitHub.
+If you're looking for a place to start contributing, check out the [Awesome for Beginners](https://github.com/MunGell/awesome-for-beginners) repository on GitHub.
 
-## 9. Experiment with different technologies and frameworks
+## 8. Experiment with different technologies and frameworks
 
 JavaScript is a very versatile language and can be used for more than just frontend web development. This means that you'll likely come across different technologies and frameworks that use JavaScript.
 
@@ -101,7 +122,7 @@ For example, React Native allows you to write cross-platform mobile applications
 
 The great thing about learning JavaScript is that you can use it for a variety of different projects. So don't be afraid to experiment with different technologies and frameworks. You never know, maybe you'll invent the next great thing!
 
-## 10. Keep learning and growing as a web developer
+## 9. Keep learning and growing as a web developer
 
 The best thing about learning JavaScript is that the language is constantly evolving. This means that you'll always be learning new things and growing as a web developer.
 
@@ -109,6 +130,6 @@ Make sure to stay up-to-date with the latest JavaScript features by reading blog
 
 Learning JavaScript can be challenging, but it's definitely worth it in the end. It takes a lot of hard work and dedication, but eventually you'll get there. Don't give up if you don't understand something or if you feel like everyone else is progressing faster than you. Just keep practicing and stay focused, and you'll be a JavaScript master in no time!
 
-If you're looking for ways to improve your web development skills, check out my latest blog post: [...]
+<!-- If you're looking for ways to improve your web development skills, check out my latest blog post: [...] -->
 
 That's it for now! I hope these tips help you on your journey to learn JavaScript. If you have any questions, feel free to reach out to me on Twitter or in the comments below. Happy coding! :)

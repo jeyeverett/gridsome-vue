@@ -6,19 +6,21 @@ author:
   name: "jeysen-freedman"
   bio: "Full Stack Web Developer"
   image: ../../media/jeysen-freedman.jpg
-tags: ["coding"]
-summary: "lorem ipsum"
+tags: ["cloud", "web development"]
+summary: "Web development has been dramatically transformed by cloud technology.  Anyone with an internet connection can now access the same powerful computing resources as the tech giants.  Learn about cloud tech and take your web apps to the next level."
 pillar: "cloud-technology"
 pillarContent:
   image: ./media/cloud_large.jpg
   pillarTitle: "Cloud Technology in Web Development"
-  text: "lorem ipsum"
+  text: "Learn about cloud technology and take your web apps to the next level."
 image:
   pathLarge: ./media/cloud_large.jpg
   pathSmall: ./media/cloud_small.jpg
   alt: "clouds"
   caption: 'Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>CHUTTERSNAP</i></a> on <a href="https://unsplash.com/s/photos/cloud-tech?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Unsplash</i></a>'
 ---
+
+## Introduction
 
 Cloud technology is changing the way we use the web. It has revolutionized the way businesses operate and has made it possible for people to access advanced computing resources from anywhere in the world. Cloud technology has also made it easier for web developers to build better web applications. In this blog post, we will discuss how cloud technology is used in web development and how you can make use of it to improve your web projects.
 

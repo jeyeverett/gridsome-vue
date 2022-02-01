@@ -18,7 +18,7 @@ tags:
     "expressjs",
     "coding",
   ]
-summary: "In this article you'll look at using the path, fs and http core Node.js modules to code some basic server features.  Next, you'll get an Express.js server started, write Express middleware, serve static assets like HTML, CSS and JS files, and install dependencies."
+summary: "In Part 2 you'll look at using the path, fs and http core Node.js modules to code some basic server features.  Next, you'll get an Express.js server started, write Express middleware, serve static assets like HTML, CSS and JS files, and install dependencies."
 pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png

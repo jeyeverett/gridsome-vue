@@ -18,17 +18,17 @@
             :key="post.id"
             class="mb-5 text-lg list-decimal list-inside"
           >
-            <span class="">
-              <g-link :to="post.node.path" class="text-copy-primary">
-                {{ post.node.title }}
-              </g-link>
-            </span>
+            <g-link :to="post.node.path" class="text-copy-primary">
+              {{ post.node.title }}
+            </g-link>
           </li>
         </ul>
       </div>
     </section>
     <section>
-      <h2 class="text-3xl text-gray-700 font-semibold mb-10">Posts</h2>
+      <h2 class="text-3xl text-gray-700 font-semibold mb-10 dark:text-gray-300">
+        Posts
+      </h2>
       <ul
         class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto gap-8 mb-16"
       >

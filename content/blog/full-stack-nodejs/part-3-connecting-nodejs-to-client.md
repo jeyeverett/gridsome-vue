@@ -1,7 +1,7 @@
 ---
-slug: "connecting-nodejs-to-frontend"
+slug: "building-a-frontend-user-interface"
 date: "2022-01-10"
-title: "Connecting a Node.js Web API to a React.js Frontend"
+title: "Building a Frontend User Interface with React.js"
 author:
   name: "jeysen-freedman"
   bio: "Full Stack Web Developer"
@@ -19,7 +19,7 @@ tags:
     "expressjs",
     "coding",
   ]
-summary: ""
+summary: "In Part 3 you'll learn about React.js functional components and how you can use them to build flexible user interfaces.  Next, you'll build and style FormContainer and FormInput components that'll be used to send data to a backend Node.js API."
 pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png
@@ -34,13 +34,42 @@ image:
 
 > This is part three of **"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"**. [Find the full series here](/blog/full-stack-nodejs).
 
+<nav id="table-of-contents">
+  <div>Table of Contents</div>
+  <ul>
+    <li><a href="#introduction">Introduction<a><li>
+    <li><a href="#web-server-basics">Frontend user interface<a><li>
+    <ul>
+      <li><a href="#react">React<a><li>
+      <ul>
+        <li><a href="#getting-started-with-react">Getting started with React<a><li>
+        <li><a href="#building-a-react-component">Building a React component<a><li>
+        <li><a href="#adding-state-to-react-components">Adding state to React components<a><li>
+      </ul>
+    </ul>
+      <li><a href="#building-a-react-form">Building a React form<a><li>
+        <ul>
+          <li><a href="#formcontainer-component">FormContainer Component<a><li>
+          <li><a href="#forminput-component">FormInput Component<a><li>
+          <li><a href="#testing-and-styling-the-form">Testing and Styling the Form<a><li>
+        </ul>
+      <li><a href="#wrap-up">Wrap Up<a><li>
+    </ul>
+</nav>
+
 ## Introduction
 
-In the previous article you learned how to use the core **path**, **fs**, and **http** _Node.js_ modules used in building a web server. You set up some _express_ middleware to serve static assets, built your first server endpoint, and installed the Nodemon and Morgan development dependencies.
+In the previous article you learned how to use the core **path**, **fs**, and **http** _Node.js_ modules. You set up some _express_ middleware to serve static assets, implemented a server endpoint, and installed the Nodemon and Morgan development dependencies.
 
 For a recap, including the code needed to continue with Part 3, see [Part 2 - _"Building a Node.js Web Server"_](/blog/full-stack-nodejs/building-a-nodejs-web-server/#express) starting from _Express_.
 
-In this article we'll begin building a frontend user interface (UI) with React.js, style it with TailwindCSS, add some additional backend API endpoints, introduce error handling, manage the sending of JSON data between the frontend and backend, write and read to the file system, and more.
+This article will be focused on frontend development. We'll cover some React basics and then apply what we've learned to begin building our **full stack app**, starting with the user interface.
+
+Specifically, we'll do the following:
+
+- Introduce React functional components
+- Build a frontend user interface (UI) with React.js
+- Style it with TailwindCSS
 
 ## Frontend user interface
 
@@ -62,21 +91,21 @@ If you need a good example of how React is used, think of its inventor: **Facebo
 
 Alternatives to React include Vue.js, Angular, and Svelte.
 
-Because our project is only intended for learning purposes we'll include React in our project via CDN. Keep in mind that this isn't the approach you'd take to build any serious type of React app.
+Because our project is only intended for learning purposes we'll include React in our project via CDN. Keep in mind that this isn't the approach you'd take to build a production grade React app.
 
-We need the core React package along with the **react-dom** which is what allows React to work with the web browser.
+We'll include the core React package along with its web-specific counterpart, the **react-dom**.
 
 > If you've heard of React Native, or Electron, they use their own versions of **react-dom** alongside the core React package to build products for Android/iOS and cross-platform desktop applications.
 
 Since web browsers don't understand React, we use what's called a **transpiler** to convert React code into plain JavaScript. Transpilers are also called source-to-source compilers because they transform code written in one language, into code written in another language. In this case, even though React is built on JavaScript, it uses its own special syntax called JSX which needs to be transformed before the browser can understand it.
 
-> You should know about transpilers are also used to transform ES6+ JavaScript into earlier JavaScript versions. Since older browsers may not support ES6+, if you want your JavaScript code to run on as many browsers as possible you need to transform it into a pre-ES6 version, usually ES5
+> You should know that transpilers are also used to transform ES6+ JavaScript into earlier JavaScript versions. Since older browsers may not support ES6+, if you want your JavaScript code to run on as many browsers as possible you need to transform it into a pre-ES6 version, usually ES5.
 
 The transpiler most used with JavaScript and React is called [Babel](https://babeljs.io/) and we can include it in our project via CDN as well.
 
 #### Getting started with react
 
-Include these CDN links in the head of the index.html page located in your public folder:
+Include the following CDN links in the head of the index.html page located in your public folder:
 
 ```html
 <!DOCTYPE html>
@@ -112,6 +141,10 @@ As you can see, we don't need to do very much to get started with React. We'll w
 
 Run your server with `npm start` and navigate to `http://localhost:3000/`. The web page should look like it did before, but check the _Console_ tab in the devtools for any errors.
 
+> If you have any issues when working on frontend code, make sure you open the devtools and inspect the **Console** tab.
+
+> You can also press `Ctrl + Shift + C` within the browser to enable the **element selector**. With this enabled, click an html element to see the corresponding code within the devtools' **Elements** tab.
+
 You can check that React is included and operational by typing `React.version` into the devtools console.
 
 ```
@@ -119,7 +152,7 @@ You can check that React is included and operational by typing `React.version` i
 < '17.0.2'
 ```
 
-#### Building a react component
+#### Building a React component
 
 A React app is _composed_ of **components**.
 
@@ -131,9 +164,9 @@ function example() {
 }
 ```
 
-The typical strategy for building applications with React is to reduce components to their smallest possible size. For example, it would be incorrect to use a single component to return the HTML for your entire web page.
+The typical strategy for building applications with React is to reduce components to their smallest possible size. For example, it wouldn't be good practice to return the HTML for your entire web page inside a single component.
 
-Instead, you would logically group HTML into components, such as a button component, a navigation component composed of navigation _link_ components, etc.
+Instead, HTML should be logically grouped into components, such as a button component, a navigation component composed of navigation _link_ components, etc.
 
 This is easier to understand if you see it, so let's build a button component that triggers a browser _alert_.
 
@@ -166,7 +199,7 @@ We call the `render` method available on the `ReactDOM` object which takes the `
 
 With your server running, you should be able to visit `http://localhost:3000/` and see the button in action.
 
-#### Adding state to react components
+#### Adding state to React components
 
 React components can do more than just return HTML. They can receive data from parent components or global state stores and they can hold state within themselves.
 
@@ -176,7 +209,7 @@ Components have access to a **props parameter** (short for _properties_) by defa
 
 You pass data to a child component using the HTML attribute syntax shown below, and enclosing any JavaScript in curly braces `{ }`. The data is then accessible under the attribute name .
 
-> When you create a function, you specify names for the inputs it expects. These are called **parameters**.
+> When you create a function, you specify names for the inputs it expects - called **parameters**.
 
 > When you supply a value to a function, the supplied value is referred to as an **argument**.
 
@@ -208,16 +241,261 @@ ReactDOM.render(<App />, document.getElementById("app"));
 
 We've actually done quite a bit here.
 
-First, we store our button text in a variable and pass it down to Button under the `text` attribute. We can then access it under the `props` object which we've added as a _parameter_ - `Button(props)` - now that we are expecting _props_. We display the button text in the HTML using the curly braces `{props.text}`.
+First, we store our button text in a variable and pass it down to Button under the `text` attribute. We can then access it under the `props` object which we've added as a _parameter_ - `Button(props)` - now that we're expecting _props_. We display the button text in the HTML using the curly braces `{props.text}`.
 
 We've also added state to the button with the **useState hook**. This built-in React hook is a function that returns a **tuple** (an array with two items). We can name these items whatever we want, but the first is always the value, and the second is a function which **sets** that value (which is why its usually prefixed with _"set"_).
 
 The value we pass to _useState_ initializes the `count` value when the code is first run (when the page first loads).
 
-We are using the `setCount` function to increment the `count` value by 1 every time we click the button and use the curly braces to display the count in the HTML.
+We use the `setCount` function to increment the `count` value by 1 every time we click the button and use the curly braces to display the count in the HTML.
 
 Your button should now have the text `"Count Up!"` with a starting value of `0` next to it. Everytime you click the button you should see this value dynamically increase by 1.
 
-> If you have any issues when working on frontend code, make sure you open the devtools and inspect the **Console** tab.
+## Building a React form
 
-> You can also press `Ctrl + Shift + C` within the browser to enable the **element selector**. With this enabled, click an html element to see the corresponding code within the devtools' **Elements** tab.
+Now that we've got a feel for the React basics, let's build an app that uses all the features we've looked at up till now.
+
+We'll build an **idea notebook application** that you can use to store and retrieve ideas/notes.
+
+We'll use React to collect and send notes to our backend Node.js API as well as retrieve and display existing notes.
+
+First, let's figure out what data we want to include with each note.
+
+I think a good place to start is to include the **date**, **title** and **content**.
+
+We can use a flexible single component called `FormInput` to handle the title and content.
+
+Instead of having a user select the date, we'll just calculate it on the server whenever a note is submitted.
+
+Since we know we'll be sending the data from each `FormInput` to our backend API, we'll want to keep track of the state in the parent component that's common to the inputs.
+
+To accomplish this, we'll create a form component called `FormContainer` which will return a form with the _FormInput_ components. Each _FormInput_ will include the **props** it needs to render the correct component.
+
+### FormContainer Component
+
+Let's create `FormContainer` as follows:
+
+```js
+function FormContainer() {
+  const [title, setTitle] = React.useState("");
+  const [content, setContent] = React.useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(title, content);
+  };
+
+  return (
+    <form>
+      <FormInput type="text" name="title" title={title} setTitle={setTitle} />
+
+      <FormInput
+        type="textarea"
+        name="content"
+        content={content}
+        setContent={setContent}
+      />
+
+      <button type="submit" onClick={handleSubmit}>
+        Add Note
+      </button>
+    </form>
+  );
+}
+```
+
+As you can see, all we need to do is create a `FormInput` for each form field (title and content) and provide each with the correct properties.
+
+The state for the fields is held in `FormContainer` and by passing the **state** along with its **setter** we'll be able to update the state from within the `FormInput`.
+
+We also include a `button` to submit the form which when clicked will trigger the `onClick` event listener that calls the `handleSubmit` function.
+
+> Event listeners are built into JavaScript and automatically receive the **event object** when triggered.
+
+In `handleSubmit` we first call `event.preventDefault()` to stop the default browser behavior of refreshing the page, and then we log the values of `title` and `content`.
+
+Add `FormContainer` to the `App` component.
+
+```js
+function App() {
+  return (
+    <main>
+      <FormContainer />
+    </main>
+);
+```
+
+### FormInput Component
+
+Since we only have two inputs, we'll use conditional logic to render the correct input based on the _type_.
+
+React components need to return HTML with a **single root** so we'll use the built-in `React.Fragment` to wrap our HTML elements.
+
+```js
+function FormInput(props) {
+  if (props.type === "textarea") {
+    return (
+      <React.Fragment>
+        <label htmlFor={props.name}>{props.name}</label>
+        <textarea
+          id={props.name}
+          value={props.content}
+          onChange={(e) => props.setContent(e.target.value)}
+        />
+      </React.Fragment>
+    );
+  }
+
+  if (props.type === "text") {
+    return (
+      <React.Fragment>
+        <label htmlFor={props.name}>{props.name}</label>
+        <input
+          id={props.name}
+          type="text"
+          value={props.title}
+          onChange={(e) => props.setTitle(e.target.value)}
+        />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+Even though this looks like a lot of code, it's actually pretty straightforward. We access the data we need for each input on the `props` object and control the value of the inputs using the **state** and **state setter**.
+
+The `onChange` event listener fires every time we type into the input, calling the anonymous function that updates the corresponding state (title or content).
+
+If you run your server with `npm start` and refresh the browser page, you should see the form displayed on the page.
+
+### Testing and styling the form
+
+If you type some text into each of the inputs and click `Add Note` you should see the text logged to the console.
+
+To style the form you need to include the following TailwindCSS CDN in the head of the HTML document:
+
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+```
+
+> Keep in mind that it's not recommended to rely on the CDN for a production app.
+
+You can find the full code with styling below:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Express</title>
+  </head>
+  <body class="flex flex-col items-center">
+    <h1 class="text-3xl font-bold text-gray-700 my-4">Notes</h1>
+    <div id="app"></div>
+  </body>
+</html>
+<script type="text/babel">
+  function FormInput(props) {
+    if (props.type === "text") {
+      return (
+        <React.Fragment>
+          <label
+            htmlFor={props.name}
+            className="uppercase tracking-wide text-gray-700 font-medium text-sm"
+          >
+            {props.name}
+          </label>
+          <input
+            id={props.name}
+            type="text"
+            value={props.title}
+            onChange={(e) => props.setTitle(e.target.value)}
+            className="px-2 py-1 border border-gray-300 rounded-sm mb-4 shadow-sm"
+          />
+        </React.Fragment>
+      );
+    }
+
+    if (props.type === "textarea") {
+      return (
+        <React.Fragment>
+          <label
+            htmlFor={props.name}
+            className="uppercase tracking-wide text-gray-700 font-medium text-sm"
+          >
+            {props.name}
+          </label>
+          <textarea
+            id={props.name}
+            value={props.content}
+            onChange={(e) => props.setContent(e.target.value)}
+            className="px-2 py-1 border border-gray-300 rounded-sm shadow-sm"
+          />
+        </React.Fragment>
+      );
+    }
+  }
+
+  function FormContainer() {
+    const [title, setTitle] = React.useState("");
+    const [content, setContent] = React.useState("");
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(title, content);
+    };
+
+    return (
+      <form className="flex flex-col mx-auto">
+        <FormInput type="text" name="title" title={title} setTitle={setTitle} />
+        <FormInput
+          type="textarea"
+          name="content"
+          content={content}
+          setContent={setContent}
+        />
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="px-4 py-2 uppercase text-gray-700 shadow border border-gray-300 rounded-sm font-medium mt-4 text-xs bg-gray-300 hover:bg-white transition-all"
+        >
+          Add Note
+        </button>
+      </form>
+    );
+  }
+
+  function App() {
+    return (
+      <main>
+        <FormContainer />
+      </main>
+    );
+  }
+
+  ReactDOM.render(<App />, document.getElementById("app"));
+</script>
+```
+
+## Wrap Up
+
+So there you have it! We've covered the basics of React functional components and used those principles to build a UI for submitting data to our backend API.
+
+In the next article we'll create an API endpoint to receive this data and then wire up the frontend form to complete the transfer.
+
+We've still got a long way to go before we can call this a full stack application, but we're making great progress.
+
+Thanks for reading and I'll see ya in the next one!

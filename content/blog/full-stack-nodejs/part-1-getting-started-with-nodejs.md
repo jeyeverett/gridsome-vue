@@ -19,7 +19,7 @@ tags:
     "expressjs",
     "coding",
   ]
-summary: "In this article you'll learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager.  You'll learn how to use modern ES Modules in a Node environment and how install and import Express.js into a JavaScript file."
+summary: "In Part 1 you'll learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager.  You'll learn how to use modern ES Modules in a Node environment and how install and import Express.js into a JavaScript file."
 pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png
