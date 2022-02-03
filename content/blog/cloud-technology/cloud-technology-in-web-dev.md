@@ -44,15 +44,15 @@ Cloud technology has also made it possible for developers to create more complex
 
 In addition to the cloud technologies themselves, a number of cloud-based web development services have been created that make it easier than ever for developers to create and deploy applications. Some of these services include:
 
-Heroku: a cloud platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It supports several programming languages, including Ruby on Rails, Java, Node.js, and PHP.
+**Heroku:** a cloud platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It supports several programming languages, including Ruby on Rails, Java, Node.js, and PHP.
 
-Firebase: a mobile-oriented application development platform by Google with built-in support for cloud data storage, authentication, cloud functions, file storage, and much more. Its integration with Google Analytics makes it almost effortless to leverage user data into improved versions of your app.
+**Firebase:** a mobile-oriented application development platform by Google with built-in support for cloud data storage, authentication, cloud functions, file storage, and much more. Its integration with Google Analytics makes it almost effortless to leverage user data into improved versions of your app.
 
-Google App Engine: a Platform as a Service (PaaS) offered by Google that enables you to build web applications using the same technologies used to power Google’s own web applications.
+**Google App Engine:** a Platform as a Service (PaaS) offered by Google that enables you to build web applications using the same technologies used to power Google’s own web applications.
 
-AWS Lambda: an event-driven, serverless computing platform pioneered by AWS. With AWS Lambda, your code only runs in response to events and you only pay for the time it takes to execute. With a free 1 million requests and 3.2 million seconds of compute time per month, you can get to know Lambda at no cost.
+**AWS Lambda:** an event-driven, serverless computing platform pioneered by AWS. With AWS Lambda, your code only runs in response to events and you only pay for the time it takes to execute. With a free 1 million requests and 3.2 million seconds of compute time per month, you can get to know Lambda at no cost.
 
-Cloud Foundry: an open source Platform as a Service (PaaS) that allows you to quickly develop, deploy, and scale cloud-native web applications.
+**Cloud Foundry:** an open source Platform as a Service (PaaS) that allows you to quickly develop, deploy, and scale cloud-native web applications.
 
 ## Cloud-based hosting and storage services
 
@@ -134,4 +134,4 @@ I hope you're as excited as I am about the possibilities of cloud technology in 
 
 Thanks for reading!
 
-If you're looking for more information or help getting started with cloud technologies, contact me today! I'd be happy to help!
+<!-- If you're looking for more information or help getting started with cloud technologies, contact me today! I'd be happy to help! -->

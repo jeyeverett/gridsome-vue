@@ -43,7 +43,7 @@ image:
     </ul>
     <li><a href="#getting-started">Getting Started<a><li>
     <ul>
-      <li><a href="#nodejs">Node.js<a><li>
+      <li><a href="#what-is-nodejs">What is Node.js?<a><li>
       <ul>
         <li><a href="#under-the-hood">Under the Hood<a><li>
       </ul>
@@ -78,15 +78,13 @@ image:
 
 ## Introduction
 
-This is the first article in an _open-ended_ guide to full stack Node.js web development. I was inspired to create _"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"_ by [Aaron Frost's keynote on building bridges](https://youtu.be/E8TkRKWGSVc).
+Welcome to the first article in an _open-ended_ guide to full stack Node.js web development. _"Building a Full Stack Node.js Application - The Step-by-Step JavaScript Developer's Guide"_ was inspired by [Aaron Frost's keynote on building bridges](https://youtu.be/E8TkRKWGSVc).
 
-The goal of this guide is to give you the step-by-step instructions I wish I had when I first began learning web development. It follows a _hands-on_ approach to learning JavaScript oriented web development supplemented by the details _that I found helpful_ in connecting the dots.
+The goal of this guide is to give you the step-by-step instructions I wish I had when I first started my web development journey. It aims to mix theory with hands-on practice so you know what to do, and _why_ to do it.
 
 > The **major technologies** we'll explore over the course of the series include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
 
 This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web to get a primer. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn the basics.
-
-That being said, I'm hoping this guide can offer value to developers of all levels.
 
 ### New to Web Development?
 
@@ -104,17 +102,17 @@ Learning the fundamentals of web technology will propel you forward. Not only in
 
 Welcome to the first step in your journey to mastering full stack Node.js web development. In this article we'll look at what Node.js is, why it's useful, and how to get started using it.
 
-This article provides a lot of background on Node.js. If you already have it installed and want to jump right in, feel free to skip on to part 2.
+This article provides a lot of background on Node.js. If you already have it installed and want to jump right in, feel free to skip on to [Part 2 - _Building a Node.js Web Server_]("https://www.jeysenfreedman.com/blog/full-stack-nodejs/building-a-nodejs-web-server/").
 
 > This is a blockquote. This information is optional and provides extra context and detail.
 
-### Node.js
+### What is Node.js?
 
-Node.js is a _JavaScript runtime_ built on Google Chrome's V8 engine. Its claim to fame is its ability you to run JavaScript outside the browser. Node.js is the breakthrough that gave developers the power to build full stack applications with JavaScript.
+Node.js is a _JavaScript runtime_ built on Google Chrome's V8 engine. Its claim to fame is its ability you to run JavaScript outside the browser. Node.js is the breakthrough that gave developers the power to build _full stack_ applications with JavaScript.
 
 Top organizations like Netflix, LinkedIn, Walmart and NASA use Node.js as the foundation for many of their web services.
 
-How the performance of Node.js compares to other backend options is the subject of much debate. The general rule of thumb these days is that its better to _**write** code fast than code that **runs** fast_. Don't mistake this for an absolute truth! There will always be specific applications where performance is the top priority. But in this lightspeed-paced industry, the time it takes to get your code out the door can make or break you.
+How the performance of Node.js compares to other backend options is the subject of much debate. The general rule of thumb these days is that its better to _**write** code fast than code that **runs** fast_. Don't mistake this for an absolute truth! There will always be specific applications where performance is the top priority. But in this lightspeed-paced industry, the time it takes to get your code out the door can make or break you. The ability to use JavaScript for full stack development can simplify codebases and reduce time to deployment.
 
 #### Under the Hood
 
@@ -130,7 +128,7 @@ To get started you need Node.js installed on your computer. I'm starting with ve
 
 You can check if you have Node.js installed, and what version it is, by typing the command `node -v` into the CLI.
 
-A difference in a MAJOR version number can mean significant changes to the API/behavior. I am using Node.js **v16**. We'll practice with updating the version number. For now, keep in mind that using different versions can cause unexpected behavior.
+A difference in a MAJOR version number can mean significant changes to the API/behavior. I'm using Node.js **v16**. We'll practice with updating the version number. For now, keep in mind that using different versions can cause unexpected behavior.
 
 You can download Node.js from [https://nodejs.org/](https://nodejs.org/). Choose the **LTS option**, which stands for _long term stable_ and is the more reliable option. The _Current_ option has experimental features and is not recommended for **production** applications. It may also contain bugs that cause your programs to behave unexpectedly.
 
@@ -229,7 +227,7 @@ The **package.json** file is used for several purposes:
 3. Dependency management
 4. Custom scripts
 
-We will talk about these things in more detail as we continue.
+We'll talk about these things in more detail as we continue.
 
 ### Installing Express.js
 
@@ -280,7 +278,7 @@ The **package-_lock_.json** file is created as soon as you install your first pa
 
 #### The node_modules folder
 
-The **node_modules** folder is _also_ created when you install your first package. It holds the actual `code` for the package, including all of its dependencies' code.
+The **node_modules** folder is _also_ created when you install your first package. It holds the actual `code` for the package, including the code for all of its dependencies.
 
 > **IMPORTANT** - you need to be in the same folder as your package.json file to install packages
 
@@ -357,16 +355,16 @@ Running `node index.js` you should see the _express object_ logged to the termin
 
 Congratulations, your Node.js environment is ready to go!
 
-> If you run into any issues when following this guide, or any tutorial for that matter, being able to figure the issue on your own is **extremely** important. This ability to **debug** and **problem solve** is essential to being a successful developer. If you use Google to research your issue, you'll see that usually your question has already been asked and answered. If you're still stuck after trying everything, you can always contact me. Or, post your problem to [stackoverflow](https://stackoverflow.com/) including the full details of your problem and your code.
+> If you run into any issues when following this guide (or any tutorial) always try to troubleshoot it yourself before asking for help. This ability to **debug** and **problem solve** is essential to being a successful developer. If you use Google to research your issue, you'll see that usually your question has already been asked and answered. If you're still stuck after trying everything, you can always contact me. Or, post your problem to the [stackoverflow](https://stackoverflow.com/) community including the full details of your problem and your code.
 
 ## Conclusion
 
-In this article you learned that _Node.js_ lets us run JavaScript outside the browser. This superpower helps us build full stack web applications with just JavaScript.
+In this article you learned that _Node.js_ runs JavaScript outside the browser. This superpower enables you to build full stack web applications with just JavaScript.
 
 You learned about using _node package manager_ (_npm_) to access the _npm registry_ where you can choose from over a million different _packages_ to help make your project awesome.
 
 You installed _Express.js_, configured _ES Modules_ in the Node environment, and tested your environment to ensure everything was set up correctly.
 
-Now that our development environment is set up, in the next article we'll begin building our first web server with Express.js and Node.
+In the [next article](https://www.jeysenfreedman.com/blog/full-stack-nodejs/building-a-nodejs-web-server/) we'll cover some web server basics and then begin building our first Node.js web server.
 
 Thanks for following along and I'll see you in the next one!

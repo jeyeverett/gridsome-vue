@@ -14,8 +14,8 @@ pillarContent:
   pillarTitle: "Full Stack JavaScript"
   text: "Everything JavaScript.  Articles range from beginner to advanced."
 image:
-  pathLarge: ./media/javascript_2_large.jpg
-  pathSmall: ./media/javascript_2_small.jpg
+  pathLarge: ./media/top_questions_large.jpg
+  pathSmall: ./media/top_questions_small.jpg
   alt: "javascript"
   caption: 'Photo by <a href="https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Pankaj Patel</i></a> on <a href="https://unsplash.com/s/photos/javascript?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"><i>Unsplash</i></a>'
 ---

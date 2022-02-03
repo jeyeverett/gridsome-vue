@@ -79,7 +79,7 @@ In order to make use of our Node.js API, we need a way to interact with it. This
 
 > The frontend and backend communicate over HTTP.
 
-> There are tools to interact with a backend API **without** building a frontend, such as [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/), but we'll look at those later in the series.
+> There are tools to interact with a backend API **without** building a frontend, such as [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/).
 
 ### React
 
@@ -368,9 +368,13 @@ The `onChange` event listener fires every time we type into the input, calling t
 
 If you run your server with `npm start` and refresh the browser page, you should see the form displayed on the page.
 
+![Unstyled React form](./media/react_form_unstyled.png)
+
 ### Testing and styling the form
 
 If you type some text into each of the inputs and click `Add Note` you should see the text logged to the console.
+
+![React form test](./media/react_form_test.png)
 
 To style the form you need to include the following TailwindCSS CDN in the head of the HTML document:
 
@@ -379,6 +383,16 @@ To style the form you need to include the following TailwindCSS CDN in the head 
 ```
 
 > Keep in mind that it's not recommended to rely on the CDN for a production app.
+
+If you're familiar with CSS, using Tailwind can help you style your components in a _fraction_ of the time. It has responsivity _built-in_ and usually only needs a little bit of help to make components and web pages fully responsive and looking great on both mobile and desktop.
+
+Tailwind provides a variety of CSS classes that you can use directly in your HTML. No need to waste time switching between a CSS and HTML file, thinking up class names, using media queries, etc.
+
+I like to use [this TailwindCSS cheatsheet](https://nerdcave.com/tailwind-cheat-sheet) by _Jay Elaraj_ to quickly find the CSS classes I need.
+
+It took only a few minutes to transform the form into this:
+
+![Styled React form](./media/react_form_styled.png)
 
 You can find the full code with styling below:
 

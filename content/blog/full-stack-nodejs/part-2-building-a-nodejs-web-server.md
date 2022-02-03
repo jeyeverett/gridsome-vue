@@ -78,13 +78,13 @@ image:
 
 ## Introduction
 
-In the previous article you learned that _Node.js_ gives us the ability to run JavaScript outside the browser and specifically, to build production-grade backend web servers.
+In the previous article you learned that _Node.js_ gives us the ability to run JavaScript outside the browser and specifically, to build production grade backend web servers.
 
 You also learned that you have access to a million plus different _packages_ on the _npm registry_ for use in your project via the _node package manager_ (_npm_).
 
 To continue with _Part 2_, you should have a Node.js project initialized with _Express.js_ and _ES Modules_ configured in _package.json_. For a recap, see [Part 1](/blog/full-stack-nodejs/getting-started-with-full-stack-nodejs/#installing-expressjs) starting from _Installing Express.js_.
 
-We will begin this article with an overview of web servers and the path, url, fs and http core Node.js modules. If you're already familiar with these topics you can jump right into [express](#express).
+We'll begin this article with an overview of web servers, and then look at some of the built-in Node.js modules. If you're already familiar with these topics you can jump right into [express](#express).
 
 ## Web Server Basics
 
@@ -100,9 +100,13 @@ For example, when you want to use Google Search, you enter `www.google.com` into
 
 ### Web 1.0
 
-Traditionally, when you entered just a website's domain name (`www.example.com`) into your web browser, you requested the web page stored at the hosting server's **root directory**, usually called the **index page**. Although it isn't always shown, a _trailing slash_ is assumed, so `www.example.com` and `www.example.com/` are equivalent.
+The first version of the web was designed to make information easy to share. Why wait days for the mail when data can be sent at the speed of light?
 
-> The index page has the special name of **index.html**
+Since the web was built on computers, it made sense to make web pages accessible in the same way you would open a file. Traditionally, when you entered just a website's domain name (`www.example.com`) into your web browser, you requested the web page stored at the hosting server's **root directory**, usually called the **index page**.
+
+> Although it isn't always shown, a _trailing slash_ is assumed, so `www.example.com` and `www.example.com/` are equivalent.
+
+> An index page has the special name of **index.html** and any folder can have its own index page.
 
 Similar to how your computer stores files at specific _paths_, a basic server can store and retrieve files via its **file system**. When your URL contains additional information, e.g. `www.example.com/new/`, you're being more specific about what you want the server to return. In this case, the server would return the index page located in the _"new"_ folder.
 
@@ -122,7 +126,7 @@ Web 2.0 introduced a standardized way for users to not just consume content, but
 
 To manage the ability to _create_, _read_ (retrieve), _update_, and _destroy_ (delete) content (aka **CRUD**), HTTP was expanded to include additional features.
 
-Here began the era of Web APIs, with the most well known being the **REST API**.
+This was the dawn of Web APIs, with the most well known being the **REST API**.
 
 > **REST** - aka "**Re**presentational **S**tate **T**ransfer - is the modern standard for mapping CRUD functionality onto HTTP. Specifically, the additional HTTP features called **HTTP verbs**
 
@@ -137,7 +141,7 @@ With these enhancements, web servers became more powerful but also more complex.
 
 ## Node.js
 
-Since a primary application of Node.js is to build a web server, let's learn what's required to build one ourselves. A Web 1.0 type server is trivial to set up, so we will jump right into building a server that can handle full CRUD operations via a REST API.
+Since a primary application of Node.js is to build a web server, let's learn what's required to build one ourselves.
 
 Node.js ships with several _core modules_ but the few most commonly used to build a web server are the **path**, **url**, **fs**, and **http** modules.
 
@@ -155,7 +159,7 @@ These modules are useful because different operating systems use different forma
 
 > A Linux path might look like: `/home/jeysen/node-tutorial`
 
-If you develop your web application on a Windows computer and use _hard coded_ file paths, you will run into issues when you deploy it on a Linux machine. So we use these modules to make our file paths OS agnostic.
+If you develop your web application on a Windows computer and use _hard coded_ file paths, you will run into issues when you deploy it on a Linux machine. We use these modules to make files consistently accessible, regardless of the OS.
 
 > The majority of web applications are deployed to computers running a Linux OS.
 
@@ -413,9 +417,9 @@ Now that you have a taste for a basic http server, let's build something more co
 
 ## Express
 
-The moment you've been waiting for has finally arrived! It's time to dig into **express**. If you've read everything up till now, congratulations! If not, that's cool too :).
+The Express.js library is built on top of the Node.js _http module_ and makes basic web server functionality much easier and quicker to implement. Express provides abstracted functions that help you write middleware and request handlers without having to manage the boilerplate or lower level details yourself.
 
-Let's build this thing.
+Let's use Express alongside the core Node.js modules to build a web server.
 
 ### The API details
 
@@ -428,7 +432,7 @@ The API will:
 - Return a list of files in the file system
 - Include middleware for data transformation, serving static files, logging, and error handling
 
-As a bonus, we will build the frontend (responsible for collecting the user input) in [React](https://reactjs.org/) via CDN scripts.
+To interact with the API we'll need a frontend user interfance. We'll use [React](https://reactjs.org/) via CDN scripts to build one.
 
 > Since we aren't building a complex React app, we won't use the "create-react-app" CLI tool.
 
@@ -451,7 +455,7 @@ The project structure will look like:
 
 ### Basic express server
 
-We've got our work cut out for us but to get started, first make sure you're in the working directory that includes your **package.json** file with **express** installed.
+First make sure you're in the working directory that includes your **package.json** file with **express** installed.
 
 Add the following code to **index.js**:
 
@@ -689,6 +693,6 @@ app.listen(3000, () => {
 
 We're only just getting started, but if you've followed along up till now then you're getting a very detailed understanding of how Node.js and web servers work. Great job!
 
-In the next article we'll continue building the backend API, introduce the React frontend, write data sent by the client to the file system, add some error handling, and more.
+In [Part 3](https://www.jeysenfreedman.com/blog/full-stack-nodejs/building-a-frontend-user-interface/) we'll get started with the React frontend so we can make requests to our backend API.
 
 Have a coffee and I'll see ya in the next one!
