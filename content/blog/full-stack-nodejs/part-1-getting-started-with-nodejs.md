@@ -19,7 +19,7 @@ tags:
     "expressjs",
     "coding",
   ]
-summary: "In Part 1 you'll learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager.  You'll learn how to use modern ES Modules in a Node environment and how install and import Express.js into a JavaScript file."
+summary: "In Part 1 you'll learn what Node.js is, how to install and configure Node.js, and how to work with Node Package Manager.  You'll learn how to use modern ES Modules in a Node environment and how to install and import Express.js into a JavaScript file."
 pillar: "full-stack-nodejs"
 pillarContent:
   image: ./media/nodejs_logo.png
@@ -84,7 +84,7 @@ The goal of this guide is to give you the step-by-step instructions I wish I had
 
 > The **major technologies** we'll explore over the course of the series include: HTML, CSS, Sass, TailwindCSS, JavaScript, React, Vue, Node.js, Express.js, PostgreSQL, MongoDB, Firebase, AWS, and much more.
 
-This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI, aka _terminal_ or _console_). If you don't, there are countless free resources available for free on the web to get a primer. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn the basics.
+This guide assumes you have some basic understanding of HTML, CSS, JavaScript and the command line interface (CLI). If you don't, there are countless free resources available for free on the web to get a primer. I recommend [freeCodeCamp](https://www.freecodecamp.org/) as a good place to learn the basics.
 
 ### New to Web Development?
 
@@ -339,7 +339,7 @@ console.log(process.version);
 
 Run _index.js_ from the CLI with the command `node index.js`.
 
-You should see the version of Node.js you're using logged to the console:
+You should see the version of Node.js you're using logged to the CLI:
 
     $ node index.js
     v16.13.2
@@ -351,7 +351,7 @@ import express from "express";
 console.log(express);
 ```
 
-Running `node index.js` you should see the _express object_ logged to the terminal.
+Running `node index.js` you should see the _express object_ logged.
 
 Congratulations, your Node.js environment is ready to go!
 
@@ -365,6 +365,6 @@ You learned about using _node package manager_ (_npm_) to access the _npm regist
 
 You installed _Express.js_, configured _ES Modules_ in the Node environment, and tested your environment to ensure everything was set up correctly.
 
-In the [next article](https://www.jeysenfreedman.com/blog/full-stack-nodejs/building-a-nodejs-web-server/) we'll cover some web server basics and then begin building our first Node.js web server.
+In the [Part 2](https://www.jeysenfreedman.com/blog/full-stack-nodejs/building-a-nodejs-web-server/) we'll cover some web server basics and begin building a Node.js web server.
 
 Thanks for following along and I'll see you in the next one!
