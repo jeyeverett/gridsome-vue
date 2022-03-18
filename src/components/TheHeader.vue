@@ -17,7 +17,6 @@
       <theme-switcher class="py-1 sm:py-2 md:mr-3" v-if="$route.path !== '/'" />
       <span class="mt-4 sm:mt-0 flex items-center">
         <NavLink route="projects" />
-        <NavLink route="blog" />
         <NavLink route="about" />
         <Button
           :is-displayed="true"
