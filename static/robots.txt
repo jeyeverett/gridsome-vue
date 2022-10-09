@@ -1,5 +1,0 @@
-Sitemap: https://unruffled-wing-b3453f.netlify.app/sitemap.xml
-
-User-agent:*
-Disallow: /legal
-Disallow: /privacy
