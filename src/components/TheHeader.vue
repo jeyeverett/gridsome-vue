@@ -16,8 +16,8 @@
     >
       <theme-switcher class="py-1 sm:py-2 md:mr-3" v-if="$route.path !== '/'" />
       <span class="mt-4 sm:mt-0 flex items-center">
-        <NavLink route="projects" />
-        <NavLink route="about" />
+        <!-- <NavLink route="projects" />
+        <NavLink route="about" /> -->
         <Button
           :is-displayed="true"
           button-text="Contact me"
@@ -26,7 +26,7 @@
           @click="toggleModal"
         />
         <MailIcon
-          classes="block sm:hidden h-7 w-7 mb-0.5 ml-1 cursor-pointer text-blue"
+          classes="block sm:hidden h-7 w-7 mb-0.5 cursor-pointer text-blue"
           @click="toggleModal"
           title="contact"
         />

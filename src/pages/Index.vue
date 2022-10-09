@@ -9,8 +9,8 @@
       >
         <VueTypedJs
           id="h1"
-          :strings="['Hi, ^500I\'m Jeysen.']"
-          class="mb-2 text-4xl sm:text-6xl font-bold tracking-normal sm:tracking-tight"
+          :strings="['Be back soon!']"
+          class="mt-48 mb-2 text-4xl sm:text-6xl font-bold tracking-normal sm:tracking-tight"
           style="color: #1379a8"
           :start-delay="1000"
           @onStringTyped="completeAnimation('h1')"
@@ -20,7 +20,7 @@
         <VueTypedJs
           v-if="h1Complete"
           id="h2"
-          :strings="['Full Stack Web Developer']"
+          :strings="['Site under maintenance']"
           class="sm:pl-1 mb-5 md:mb-10 text-md sm:text-2xl font-semibold tracking-wide sm:tracking-wider uppercase"
           style="color: #1379a8"
           :start-delay="500"
@@ -28,40 +28,6 @@
         >
           <h2 class="typing font-semibold text-center sm:text-left" />
         </VueTypedJs>
-        <transition-group
-          name="about"
-          tag="p"
-          class="xs:pl-1 text-center sm:text-left xs:text-base sm:text-lg text-gray-600 font-medium mb-8 md:mb-12 text-md w-96 leading-relaxed"
-          @before-enter="beforeEnterP"
-          @enter="enterP"
-          appear
-        >
-          <span
-            v-for="fragment in fragments"
-            :key="fragment"
-            class="inline-block break-words code"
-            style="margin-right: 3.2px;"
-          >
-            {{ fragment }}
-          </span>
-        </transition-group>
-        <transition appear @before-enter="beforeEnter" @enter="enter">
-          <VueTypedJs
-            v-if="spanComplete"
-            :strings="['Let\'s work together']"
-            class=""
-            :show-cursor="false"
-            :start-delay="500"
-          >
-            <button
-              class="typing text-white font-semibold px-6 py-3 bg-blue border border-blue rounded hover:shadow-lg hover:bg-blue-dark hover:border-blue-dark shadow-lg truncate"
-              style="width: 210.8px; height: 50px;"
-              :style="{ 'transition-all': buttonComplete }"
-              id="button"
-              @click="toggleModal"
-            />
-          </VueTypedJs>
-        </transition>
       </div>
     </section>
   </div>
